@@ -1,4 +1,4 @@
-package user;
+package entity;
 
 /**
  * Created by Ying on 5/9/2017.
