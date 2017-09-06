@@ -1,6 +1,7 @@
 package servlet;
 
 import dataManager.UserDAO;
+import wrapper.UserUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,11 +24,11 @@ public class RegisterServlet extends HttpServlet {
         String name = request.getParameter("name");
         int userType = Integer.parseInt(request.getParameter("userType"));
         String email = request.getParameter("email");
-        String userId = "12323a";
-
+        String userId = UserUtility.generateUserId();
 
         UserDAO user = new UserDAO();
         user.createUser(userId,username,userType,password,name,email);
+        response.sendRedirect("login.jsp");
 
     }
 
