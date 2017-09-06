@@ -7,15 +7,25 @@ public class User {
     private String userId;
     private String username;
     private int userType;
+    private String password;
     private String name;
 
-    public User(String userId, String username, int userType, String name) {
+
+    public User(String userId, String username, int userType, String password, String name) {
         this.userId = userId;
         this.username = username;
         this.userType = userType;
+        this.password = password;
         this.name = name;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getUserId() {
         return userId;

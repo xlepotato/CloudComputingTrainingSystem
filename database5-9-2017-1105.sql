@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `servlet`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `servlet`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` varchar(60) NOT NULL,
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `userType` int(11) DEFAULT NULL,
@@ -33,12 +33,12 @@ CREATE TABLE `user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `servlet`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `servlet` WRITE;
-/*!40000 ALTER TABLE `servlet` DISABLE KEYS */;
-/*!40000 ALTER TABLE `servlet` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-05 11:09:53
+-- Dump completed on 2017-09-06  9:25:08

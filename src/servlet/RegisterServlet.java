@@ -9,20 +9,21 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Created by Ying on 5/9/2017.
+ * Created by Ying on 6/9/2017.
  */
-@WebServlet(name = "LoginServlet", urlPatterns = "/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        String username =  request.getParameter("username");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String name = request.getParameter("name");
+        String userType = request.getParameter("userType");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
     }
 }
