@@ -56,14 +56,14 @@
     <div class="kongbai">
     </div>
     <div id="dl"  >
-      <form name="loginform" method="post" action="/register">
+      <form name="loginform" method="post" action="/login">
         <fieldset>
           <legend align="center">用户登录</legend>
           <br /><br />
           <label>用户名：</label>
-          <input type="text" name="" id="myname" /><br /><br />
+          <input type="text" name="username" id="myname" /><br /><br />
           <label>密&nbsp;码：</label>
-          <input type="password" name="" id="mypwd" /><br /><br /><br />
+          <input type="password" name="password" id="mypwd" /><br /><br /><br />
           <input type="submit" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="reset" value="重置"/>
           <br /><br />

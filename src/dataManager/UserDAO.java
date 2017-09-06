@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     public static int getNextUserId() {
@@ -195,5 +196,25 @@ public class UserDAO {
         return success;
     }
 
+    public boolean checkForExistingUser(String username, String password){
+
+        boolean allowLogin = false;
+        List<User> list = new ArrayList<User>();
+        list = retrieveAllUser();
+        for (int i = 0; i < list.size(); i++){
+            if(list.get(i).getUsername().equals(username)){
+                System.out.println("Username exist in database");
+                if(list.get(i).getPassword().equals(password)){
+                    System.out.println("Correct password");
+                    allowLogin = true;
+                }else{
+                    System.out.println("Wrong password");
+                }
+            }else {
+                System.out.println("Username does not exist");
+            }
+        }
+        return allowLogin;
+    }
 
 }
