@@ -9,14 +9,24 @@ public class User {
     private int userType;
     private String password;
     private String name;
+    private String email;
 
 
-    public User(String userId, String username, int userType, String password, String name) {
+    public User(String userId, String username, int userType, String password, String name, String email) {
         this.userId = userId;
         this.username = username;
         this.userType = userType;
         this.password = password;
         this.name = name;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

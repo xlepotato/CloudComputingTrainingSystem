@@ -1,7 +1,3 @@
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
---
--- Host: localhost    Database: cloudcomputesystem
--- ------------------------------------------------------
 -- Server version	5.6.22-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

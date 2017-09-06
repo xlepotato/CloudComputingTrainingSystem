@@ -50,18 +50,13 @@ public class UserDAO {
         String username= rs.getString("username");
         String password = rs.getString("password");
         String name = rs.getString("name");
+        String email = rs.getString("email");
 
-
-
-
-
-
-        user = new User(userId, lyFat, curCalories, curProtein, curFat, curCarbo);
-
+        user = new User(userId, username, userType, password, name, email);
         return user;
     }
 
-    public boolean createUser(int userId, String uname, int age, String gender, String intensity, int uheight, double weight, double dailyCalories, double dailyProtein, double dailyCarbo, double dailyFat, double curCalories, double curProtein, double curFat, double curCarbo) {
+    public boolean createUser(String userId, String username, int userType, String password, String name, String email) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -72,26 +67,17 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO user(userId, uname, age, gender,  intensity,  uheight, weight, dailyCalories,  dailyProtein, dailyCarbo, dailyFat, curCalories, curProtein, curFat, curCarbo) VALUES(?, ?, ?, ?, ?,?, ?,?,?,?,?,?,?,?,?)";
+        dbQuery = "INSERT INTO user(userId, username, userType, password, name, email) VALUES(?, ?, ?, ?, ?, ?)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
         try {
-            pstmt.setInt(1, userId);
-            pstmt.setString(2, uname);
-            pstmt.setInt(3, age);
-            pstmt.setString(4, gender);
-            pstmt.setString(5, intensity);
-            pstmt.setInt(6, uheight);
-            pstmt.setDouble(7, weight);
-            pstmt.setDouble(8, dailyCalories);
-            pstmt.setDouble(9, dailyProtein);
-            pstmt.setDouble(10, dailyCarbo);
-            pstmt.setDouble(11, dailyFat);
-            pstmt.setDouble(12, curCalories);
-            pstmt.setDouble(13, curProtein);
-            pstmt.setDouble(14, curFat);
-            pstmt.setDouble(15, curCarbo);
+            pstmt.setString(1, userId);
+            pstmt.setString(2, username);
+            pstmt.setInt(3, userType);
+            pstmt.setString(4, password);
+            pstmt.setString(5, name);
+            pstmt.setString(5, email);
 
 
 
@@ -138,7 +124,7 @@ public class UserDAO {
         return list;
     }
 
-    public User retrieveUserByUsername(String uname) {
+    public User retrieveUserByUsername(String username) {
         // declare local variables
         User user = null;
         ResultSet rs = null;
@@ -150,18 +136,17 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT uname, age, gender,  intensity,  uheight, weight FROM user WHERE uname = ? ";
+        dbQuery = "SELECT userId, username, userType, password, name, email FROM user WHERE username = ? ";
 
-        //SELECT loanId,l.itemName,count(*)quantity, loanDate, dueDate,i.id, username FROM loanrecord l inner join inventory i on l.itemName = i.itemName WHERE username = ? group by loanId,itemName,loanDate,dueDate,i.id, username";
 
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - execute query
         try {
-            pstmt.setString(1, uname);
+            pstmt.setString(1, username);
             rs = pstmt.executeQuery();
             if (rs.next()) {
-                user = convertToUserParticular(rs);
+                user = convertToUser(rs);
                 //   list.add(user);
             }
         } catch (Exception e) {
@@ -175,42 +160,8 @@ public class UserDAO {
     }
 
 
-    public User retrieveRecommendIntakeByUsername(String uname) {
-        // declare local variables
-        User user = null;
-        ResultSet rs = null;
-        DBController db = new DBController();
-        String dbQuery;
-        PreparedStatement pstmt;
 
-        // step 1 -connect to database
-        db.getConnection();
-
-        // step 2 - declare the SQL statement
-        dbQuery = "SELECT dailyCalories, dailyProtein, dailyCarbo, dailyFat FROM user WHERE uname = ? ";
-
-        //SELECT loanId,l.itemName,count(*)quantity, loanDate, dueDate,i.id, username FROM loanrecord l inner join inventory i on l.itemName = i.itemName WHERE username = ? group by loanId,itemName,loanDate,dueDate,i.id, username";
-
-        pstmt = db.getPreparedStatement(dbQuery);
-
-        // step 3 - execute query
-        try {
-            pstmt.setString(1, uname);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                user = convertToUserRecommendIntake(rs);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // step 4 - close connection
-        db.terminate();
-
-        return user;
-    }
-
-    public boolean updateMeasurement(int age, String intensity,int uheight,double weight, double dailyCalories, double dailyProtein, double dailyCarbo, double dailyFat,String uname) {
+    public boolean updateUser(String name, String password, String email, String username) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -221,21 +172,15 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "UPDATE user SET age = ?, intensity = ?, uheight = ?, weight = ?, dailyCalories = ?,  dailyProtein = ?, dailyCarbo = ?, dailyFat = ?  WHERE uname = ?";
+        dbQuery = "UPDATE user SET name = ?, password = ?, email = ? WHERE username = ?";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to update record using executeUpdate method
         try {
 
-            pstmt.setInt(1, age);
-            pstmt.setString(2, intensity);
-            pstmt.setInt(3, uheight);
-            pstmt.setDouble(4, weight);
-            pstmt.setDouble(5, dailyCalories);
-            pstmt.setDouble(6, dailyProtein);
-            pstmt.setDouble(7, dailyCarbo);
-            pstmt.setDouble(8, dailyFat);
-            pstmt.setString(9, uname);
+            pstmt.setString(1, name);
+            pstmt.setString(2, password);
+            pstmt.setString(3, email);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
