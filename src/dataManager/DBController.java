@@ -3,6 +3,8 @@ package dataManager;
 /**
  * Created by Ying on 6/9/2017.
  */
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,26 +18,24 @@ public class DBController {
      * Method Name : testDriver Input Parameter : nil Purpose : To test if the
      * driver is properly installed Return :nil
      *******************************************************/
-    public void testDriver() throws Exception {
+    public DBController() {
         System.out.println("Initializing Server... ");
         try {
-            Class.forName("org.gjt.mm.mysql.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             System.out.println(" Driver Found.");
         } catch (ClassNotFoundException e) {
             System.out.println(" Driver Not Found, exiting..");
-            throw (e);
         }
     }
 
     public void getConnection() {
         String url = "";
         try {
-            url = "jdbc:mysql://localhost/jedp";
-            con = DriverManager.getConnection(url, "root", "password");
+            url = "jdbc:mysql://localhost:3306/cloudcomputesystem";
+            con = DriverManager.getConnection(url, "root", "IT1639");
             System.out.println("Successfully connected to " + url + ".");
         } catch (java.sql.SQLException e) {
-            System.out.println("Connection failed ->" + url);
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -108,8 +108,5 @@ public class DBController {
         }
     }
 
-    public static void main(String[] arg) throws Exception {
-        DBController db = new DBController();
-        db.testDriver();
-    }
+
 }

@@ -24,6 +24,8 @@ public class LoginServlet extends HttpServlet {
         String username =  request.getParameter("username");
         String password = request.getParameter("password");
 
+        System.out.println(username);
+        System.out.println(password);
         UserDAO user = new UserDAO();
         List<User>userList = new ArrayList<User>();
         boolean userVerification = false;
@@ -32,6 +34,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("dashboard.jsp");
         }else{
             System.out.println("Login failed");
+            response.sendRedirect("failAuthentication.jsp");
         }
 
 

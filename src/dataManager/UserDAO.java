@@ -211,7 +211,7 @@ public class UserDAO {
                     System.out.println("Wrong password");
                 }
             }else {
-                System.out.println("Username does not exist");
+              //  System.out.println("Username does not exist");
             }
         }
         return allowLogin;
