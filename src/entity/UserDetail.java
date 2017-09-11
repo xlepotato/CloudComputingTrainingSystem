@@ -3,7 +3,7 @@ package entity;
 /**
  * Created by Aloysius on 11/9/2017.
  */
-public class UserLastUse {
+public class UserDetail {
 
     private String userId;
     private int userlevel;
@@ -11,7 +11,7 @@ public class UserLastUse {
     private String lastBrowse;
     private String lastLogin;
 
-    public UserLastUse(String userid, int userlevel, String progress, String lastBrowse, String lastlogin)
+    public UserDetail(String userid, int userlevel, String progress, String lastBrowse, String lastlogin)
     {
         this.userId = userid;
         this.userlevel = userlevel;
