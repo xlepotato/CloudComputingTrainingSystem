@@ -2,13 +2,13 @@ package entity;
 /**
  * Created by Aloysius on 11/9/2017.
  */
-public class Questions {
+public class Question {
     private int questionNo;
     private String questionDetail;
     private String answer;
     private int exerciseNo;
 
-    public Questions(int questionNo, String questionDetail, String answer, int exerciseNo){
+    public Question(int questionNo, String questionDetail, String answer, int exerciseNo){
         this.questionNo = questionNo;
         this.questionDetail = questionDetail;
         this.answer = answer;
