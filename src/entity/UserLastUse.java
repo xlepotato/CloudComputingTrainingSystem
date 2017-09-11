@@ -1,5 +1,8 @@
 package entity;
 
+/**
+ * Created by Aloysius on 11/9/2017.
+ */
 public class UserLastUse {
 
     private String userId;
