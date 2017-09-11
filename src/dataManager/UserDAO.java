@@ -78,7 +78,7 @@ public class UserDAO {
             pstmt.setInt(3, userType);
             pstmt.setString(4, password);
             pstmt.setString(5, name);
-            pstmt.setString(5, email);
+            pstmt.setString(6, email);
 
 
 

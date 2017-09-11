@@ -31,12 +31,11 @@ public class LoginServlet extends HttpServlet {
         boolean userVerification = false;
         userVerification = user.checkForExistingUser(username, password);
         if (userVerification){
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("homepage.jsp");
         }else{
             System.out.println("Login failed");
             response.sendRedirect("failAuthentication.jsp");
         }
-
 
     }
 

@@ -19,16 +19,22 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+        String confirmPassword = request.getParameter("confirmPassword");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String name = request.getParameter("name");
-        int userType = Integer.parseInt(request.getParameter("userType"));
+     //   int userType = Integer.parseInt(request.getParameter("userType"));
+        int userType = 0;
         String email = request.getParameter("email");
         String userId = UserUtility.generateUserId();
-
         UserDAO user = new UserDAO();
-        user.createUser(userId,username,userType,password,name,email);
-        response.sendRedirect("login.jsp");
+
+        if (confirmPassword.equals(password)){
+            user.createUser(userId, username, userType, password, name, email);
+            response.sendRedirect("index.jsp");
+        }else{
+            System.out.println("Password does not match with the confirm password");
+        }
 
     }
 

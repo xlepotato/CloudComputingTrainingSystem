@@ -46,8 +46,41 @@
       .kongbai{
         height:150px;
       }
+      /*#loginForm {*/
+        /*width: 500px;*/
+      /*}*/
+      /*#loginForm label {*/
+        /*width: 250px;*/
+      /*}*/
+      #loginForm label.error, #loginForm input.submit {
+        /*margin-left: 253px;*/
+      }
+      form.formValidation label.error, label.error {
+        /* remove the next line when you have trouble in IE6 with labels in list */
+        color: red;
+        font-style: italic;
+      }
+      /*input {	border: 1px solid black; }*/
+      /*input.checkbox { border: none }*/
+      /*input:focus { border: 1px dotted black; }*/
+      input.error { border: 1px dotted green; }
+      form.formValidation .gray * { color: gray; }
 
     </style>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script>
+        $.validator.setDefaults({
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+
+        $().ready(function() {
+            // validate the comment form when it is submitted
+            $("#loginForm").validate();
+        });
+    </script>
   </head>
   <body background="assets/img/yun.jpg">
 
@@ -56,18 +89,18 @@
     <div class="kongbai">
     </div>
     <div id="dl"  >
-      <form name="loginform" method="post" action="/login">
+      <form class="formValidation" name="loginform" id="loginForm" method="post" action="/login">
         <fieldset>
           <legend align="center">用户登录</legend>
           <br /><br />
           <label>用户名：</label>
-          <input type="text" name="username" id="myname" /><br /><br />
+          <input type="text" name="username" id="myname" required /><br /><br />
           <label>密&nbsp;码：</label>
-          <input type="password" name="password" id="mypwd" /><br /><br /><br />
+          <input type="password" name="password" id="mypwd" required /><br /><br /><br />
           <input type="submit" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="reset" value="重置"/>
           <br /><br />
-          <ul><a href="#">注册</a></ul>
+          <ul><a href="register.jsp">注册</a></ul>
           <ul><a href="#">游客通道</a></ul>
         </fieldset>
       </form>
