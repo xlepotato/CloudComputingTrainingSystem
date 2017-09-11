@@ -2,12 +2,12 @@ package entity;
 /**
  * Created by Aloysius on 11/9/2017.
  */
-public class StudentGrades {
+public class StudentGrade {
     private String userId;
     private int score;
     private String courseName;
 
-    public StudentGrades(String userId, int score, String courseName)
+    public StudentGrade(String userId, int score, String courseName)
     {
         this.userId = userId;
         this.score = score;

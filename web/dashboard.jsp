@@ -61,24 +61,24 @@
     <form action="" method="get">
         <table width="512" border="0">
             <tr>
-                <td width="115" id="name">name</td>
-                <td width="92" id="lv">lv</td>
-                <td width="283" id="email">email</td>
+                <td width="115" id="name">Name:  <%=a.getName()%></td>
+                <td width="92" id="lv">Lv: </td>
+                <td width="283" id="email">Email: <%=a.getEmail()%></td>
             </tr>
         </table>
 
     </form>
 </div>
 <div class="progress">
-    progress
+    Progress
 </div>
 <div class="last">
     <div class="lastBrowse">
-        lastBrowse
+        Your Last Browse is
     </div>
 
     <div class="lastLogin">
-        lastLogin
+        Last Login @
     </div>
 </div>
 </body>

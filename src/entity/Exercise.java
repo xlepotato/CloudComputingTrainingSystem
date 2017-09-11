@@ -2,11 +2,11 @@ package entity;
 /**
  * Created by Aloysius on 11/9/2017.
  */
-public class Exercises {
+public class Exercise {
     private int exerciseNo;
     private String exerciseName;
 
-    public Exercises(int exerciseNo, String exerciseName)
+    public Exercise(int exerciseNo, String exerciseName)
     {
         this.exerciseNo = exerciseNo;
         this.exerciseName = exerciseName;
