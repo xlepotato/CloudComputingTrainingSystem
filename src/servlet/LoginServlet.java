@@ -23,6 +23,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username =  request.getParameter("username");
         String password = request.getParameter("password");
+        session.setAttribute("username",username);
 
         System.out.println(username);
         System.out.println(password);

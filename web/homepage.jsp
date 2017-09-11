@@ -121,12 +121,14 @@
 
         }
 
+        /*search*/
         .sousuo{
             text-align:center;
             width: 80%;
             height:60px;
 
         }
+        /* test */
         .wenbenkuang{
             float:left;
             text-align:right;
@@ -143,7 +145,7 @@
             font-size: 24px;
         }
         .search{
-            background-image:url(../image/%E6%90%9C%E7%B4%A2%E6%8C%89%E9%92%AE.jpg);
+            background-image:url(assets/img/搜索按钮.jpg);
             position:absolute;
             width:50px;
             height:40px;
@@ -152,6 +154,7 @@
             z-index:99;
         }
 
+        /* img*/
         .tupian{
             background-color:#FFF;
             text-align:center;
@@ -160,6 +163,7 @@
             float:inherit;
         }
 
+        /* text */
         .wenzi{
             color:white;
             text-align:left;
@@ -272,7 +276,7 @@
     <div class="menu-right">
         <ul>
 
-            <li><a href="#">个人中心</a>
+            <li><a href="dashboard.jsp">个人中心</a>
                 <ul>
                     <li><a href="#"></a></li>
                 </ul>
@@ -280,7 +284,7 @@
 
 
 
-            <li><a href="#">注销</a>
+            <li><a href="index.jsp">注销</a>
 
             </li>
 
@@ -305,15 +309,15 @@
 <div class="tupian"  style="  top:110px; ">
 
 
-    <img src="../image/01.jpg" style="display:none;" id="div1" border="0" width="100%" height="500px"/>
+    <img src="assets/img/01.jpg" style="display:none;" id="div1" border="0" width="100%" height="500px"/>
 
-    <img src="../image/02.jpg" style="display:none;" id="div2" border="0" width="100%" height="500px"/>
+    <img src="assets/img/02.jpg" style="display:none;" id="div2" border="0" width="100%" height="500px"/>
 
-    <img src="../image/03.jpg" style="display:none;" id="div3" border="0" width="100%" height="500px"/>
+    <img src="assets/img/03.jpg" style="display:none;" id="div3" border="0" width="100%" height="500px"/>
 
-    <img src="../image/04.jpg" style="display:none;" id="div4" border="0" width="100%" height="500px"/>
+    <img src="assets/img/04.jpg" style="display:none;" id="div4" border="0" width="100%" height="500px"/>
 
-    <img src="../image/05.jpg" style="display:none;" id="div5" border="0" width="100%" height="500px"/>
+    <img src="assets/img/05.jpg" style="display:none;" id="div5" border="0" width="100%" height="500px"/>
 
 </div>
 
