@@ -6,7 +6,7 @@ public class StudentGrades {
     private String userId;
     private int score;
     private String courseName;
-    
+
     public StudentGrades(String userId, int score, String courseName)
     {
         this.userId = userId;
