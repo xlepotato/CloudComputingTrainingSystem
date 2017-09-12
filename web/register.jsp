@@ -11,6 +11,15 @@
 <head>
     <meta charset="utf-8">
     <title>无标题文档</title>
+    <%--<script src='https://www.google.com/recaptcha/api.js'></script>--%>
+    <%--<script type="text/javascript">--%>
+        <%--var onloadCallback = function() {--%>
+            <%--grecaptcha.render('html_element', {--%>
+                <%--'sitekey' : '6LdvVjAUAAAAAPeUntB19KPoxro4-FRoSaFJGAbY'--%>
+            <%--});--%>
+        <%--};--%>
+    <%--</script> --%>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -21,11 +30,11 @@
         </tr>
         <tr>
             <td width="192" align="right">用户名：</td>
-            <td width="192"><input type="text" name="username" id="username" minlength="2" required></td>
+            <td width="192"><input type="text" name="username" id="username" required></td>
         </tr>
         <tr>
             <td align="right">密码：</td>
-            <td><input type="password" name="password" id="password" required></td>
+            <td><input type="password" name="password" id="password" minlength="3" required></td>
         </tr>
         <tr>
             <td align="right">重复密码：</td>
@@ -41,7 +50,8 @@
         </tr>
         <tr>
             <td align="right">验证码：</td>
-            <td><img width="90" height="30"></td>
+            <td><img width="90" height="30"> <div class="g-recaptcha" data-sitekey="6LdvVjAUAAAAAPeUntB19KPoxro4-FRoSaFJGAbY"></div></td>
+            <%--<div class="g-recaptcha" data-sitekey="6LdvVjAUAAAAAPeUntB19KPoxro4-FRoSaFJGAbY"></div>--%>
         </tr>
         <tr>
             <td align="right"><input type="submit" name="queren" id="queren" value="确认"></td>
@@ -50,6 +60,9 @@
     </table>
 
 </form>
+<%--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"--%>
+        <%--async defer>--%>
+<%--</script>--%>
 <script src="assets/js/jquery.js"></script>
 <script src="assests/js/jquery.validate.js"></script>
 </body>

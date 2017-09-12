@@ -1,5 +1,6 @@
 <%@ page import="dataManager.UserDAO" %>
-<%@ page import="entity.User" %><%--
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 11/9/2017
@@ -16,6 +17,7 @@
         String username = session.getAttribute("username").toString();
         UserDAO user = new UserDAO();
         User a = user.retrieveUserByUsername(username);
+        UserDetail ud = user.retrieveUserDetailByUsername(username);
     %>
 </head>
 <style type="text/css">
@@ -62,7 +64,7 @@
         <table width="512" border="0">
             <tr>
                 <td width="115" id="name">Name:  <%=a.getName()%></td>
-                <td width="92" id="lv">Lv: </td>
+                <td width="92" id="lv">Lv: <%=ud.getuserLevel()%> </td>
                 <td width="283" id="email">Email: <%=a.getEmail()%></td>
             </tr>
         </table>
@@ -71,14 +73,15 @@
 </div>
 <div class="progress">
     Progress
+    <%=ud.getprogress()%>
 </div>
 <div class="last">
     <div class="lastBrowse">
-        Your Last Browse is
+        Your Last Browse is <%=ud.getlastBrowse()%>
     </div>
 
     <div class="lastLogin">
-        Last Login @
+        Last Login @ <%=ud.getlastLogin()%>
     </div>
 </div>
 </body>
