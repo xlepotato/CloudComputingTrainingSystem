@@ -124,7 +124,7 @@
         /*search*/
         .sousuo{
             text-align:center;
-            width: 80%;
+            width: 90%;
             height:60px;
 
         }

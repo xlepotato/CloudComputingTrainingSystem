@@ -4,6 +4,8 @@ package dataManager;
  * Created by Ying on 5/9/2017.
  */
 import entity.User;
+import entity.UserDetail;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,6 +56,20 @@ public class UserDAO {
         String email = rs.getString("email");
 
         user = new User(userId, username, userType, password, name, email);
+        return user;
+    }
+
+
+    private UserDetail convertToUserDetail(ResultSet rs) throws SQLException {
+        UserDetail user;
+
+        String userId= rs.getString("userId");
+        int userlevel = rs.getInt("userlevel");
+        String progress = rs.getString("progress");
+        String lastBrowse = rs.getString("lastBrowse");
+        String lastLogin = rs.getString("lastLogin");
+
+        user = new UserDetail(userId, userlevel, progress, lastBrowse, lastLogin);
         return user;
     }
 
@@ -160,6 +176,40 @@ public class UserDAO {
         return user;
     }
 
+    public UserDetail retrieveUserDetailByUsername(String username) {
+        // declare local variables
+        UserDetail user = null;
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT userId, userlevel, progress, lastBrowse, lstLogin FROM user WHERE username = ? ";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setString(1, username);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                user = convertToUserDetail(rs);
+                //   list.add(user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return user;
+    }
 
 
     public boolean updateUser(String name, String password, String email, String username) {
