@@ -50,11 +50,15 @@
         </tr>
         <tr>
             <td align="right">验证码：</td>
-            <td><img width="90" height="30"> <div class="g-recaptcha" data-sitekey="6LdvVjAUAAAAAPeUntB19KPoxro4-FRoSaFJGAbY"></div></td>
-            <%--<div class="g-recaptcha" data-sitekey="6LdvVjAUAAAAAPeUntB19KPoxro4-FRoSaFJGAbY"></div>--%>
+            <td>
+                <%--<img width="90" height="30"> --%>
+                <div class="g-recaptcha" data-sitekey="6LevWTAUAAAAABb2HDh9kXHwIveKfKDMr1q_oE5G" data-callback="recaptchaCallback"></div>
+            <%--<img src="/jcaptcha">--%>
+            <%--<input type='text' name='j_captcha_response' value=''>--%>
+            </td>
         </tr>
         <tr>
-            <td align="right"><input type="submit" name="queren" id="queren" value="确认"></td>
+            <td align="right"><input type="submit" name="queren" id="queren" value="确认" disabled></td>
             <td><input type="reset" name="chongzhi" id="chongzhi" value="重置"></td>
         </tr>
     </table>
@@ -64,6 +68,16 @@
         <%--async defer>--%>
 <%--</script>--%>
 <script src="assets/js/jquery.js"></script>
-<script src="assests/js/jquery.validate.js"></script>
+<script src="assets/js/jquery.validate.js"></script>
+<script>
+    function recaptchaCallback() {
+        var btnSubmit = document.getElementById("queren");
+
+        if ( btnSubmit.isDisabled = true) {
+            btnSubmit.disabled = false;
+        }
+    }
+</script>
+
 </body>
 </html>

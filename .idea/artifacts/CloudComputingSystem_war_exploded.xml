@@ -10,6 +10,8 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="mysql:mysql-connector-java:5.1.40" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.40.jar" />
+          <element id="library" level="project" name="javax.json:javax.json-api:1.0" />
+          <element id="library" level="project" name="org.glassfish:javax.json:1.0" />
         </element>
       </element>
     </root>

@@ -1,7 +1,8 @@
 package servlet;
 
 import dataManager.UserDAO;
-import wrapper.UserUtility;
+import wrapper.utility.UserUtility;
+import wrapper.utility.VerifyRecaptcha;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,13 +24,17 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String name = request.getParameter("name");
+        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+        System.out.println(gRecaptchaResponse);
+        boolean verify = VerifyRecaptcha.verify(gRecaptchaResponse);
      //   int userType = Integer.parseInt(request.getParameter("userType"));
         int userType = 0;
         String email = request.getParameter("email");
         String userId = UserUtility.generateUserId();
         UserDAO user = new UserDAO();
 
-        if (confirmPassword.equals(password)){
+        System.out.println(verify);
+        if (confirmPassword.equals(password) && verify){
             user.createUser(userId, username, userType, password, name, email);
             response.sendRedirect("index.jsp");
         }else{
