@@ -20,46 +20,58 @@
         <%--};--%>
     <%--</script> --%>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style type="text/css">
+        table {
+            font-size: 24px;
+        }
+        th {
+            font-size: 36px;
+        }
+    </style>
 </head>
 
 <body>
 <form name="zhucebiao" method="post" action="/register">
-    <table width="400" border="1" align="center">
+    <table width="501" border="0" align="center">
         <tr>
-            <th colspan="2" align="center">注册表</th>
+            <th height="52" colspan="2" align="center" valign="middle">注册表</th>
         </tr>
         <tr>
-            <td width="192" align="right">用户名：</td>
-            <td width="192"><input type="text" name="username" id="username" required></td>
+            <td width="181" height="45" align="right">用户名：</td>
+            <td width="310" height="45"><input type="text" name="username" id="username" style="width:240px;height:30px;" required></td>
         </tr>
         <tr>
-            <td align="right">密码：</td>
-            <td><input type="password" name="password" id="password" minlength="3" required></td>
+            <td height="45" align="right">密码：</td>
+            <td height="45"><input type="password" name="password" id="password" style="width:240px;height:30px;" minlength="3" required></td>
         </tr>
         <tr>
-            <td align="right">重复密码：</td>
-            <td><input type="password" name="confirmPassword" id="textfield3" required></td>
+            <td height="45" align="right">重复密码：</td>
+            <td height="45"><input type="password" name="confirmPassword" id="textfield3" style="width:240px;height:30px;" required></td>
         </tr>
         <tr>
-            <td align="right">姓名：</td>
-            <td><input type="text" name="name" id="name" required></td>
+            <td height="45" align="right">姓名：</td>
+            <td height="45"><input type="text" name="name" id="name" style="width:240px;height:30px;" required></td>
         </tr>
         <tr>
-            <td align="right">电子邮件</td>
-            <td><input type="text" name="email" id="email" required></td>
+            <td height="45" align="right">电子邮件</td>
+            <td height="45"><input type="text" name="email" id="email" style="width:240px;height:30px;" required></td>
         </tr>
         <tr>
-            <td align="right">验证码：</td>
-            <td>
-                <%--<img width="90" height="30"> --%>
+            <td height="45" align="right">验证码：</td>
+            <td height="45">
+
+                <img src="/imageGenerate" onclick="this.src='/imageGenerate'">
+                <input type="text" name="captcha" value="">
+
+        <%--<img width="90" height="30"> --%>
                 <div class="g-recaptcha" data-sitekey="6LevWTAUAAAAABb2HDh9kXHwIveKfKDMr1q_oE5G" data-callback="recaptchaCallback"></div>
             <%--<img src="/jcaptcha">--%>
             <%--<input type='text' name='j_captcha_response' value=''>--%>
             </td>
         </tr>
         <tr>
-            <td align="right"><input type="submit" name="queren" id="queren" value="确认" disabled></td>
-            <td><input type="reset" name="chongzhi" id="chongzhi" value="重置"></td>
+            <td height="45" align="right"><input type="submit" name="queren" id="queren" value="确认" style="width:70px;height:30px; font-size:18px;" disabled></td>
+            <td height="45"><input type="reset" name="chongzhi" id="chongzhi" value="重置" style="width:70px;height:30px; font-size:18px;"></td>
         </tr>
     </table>
 
