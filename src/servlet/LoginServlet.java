@@ -28,8 +28,9 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username);
         System.out.println(password);
         UserDAO user = new UserDAO();
-        List<User>userList = new ArrayList<User>();
-        boolean userVerification = false;
+        List<User>userList = new ArrayList<>();
+
+        boolean userVerification ;
         userVerification = user.checkForExistingUser(username, password);
         if (userVerification){
             response.sendRedirect("homepage.jsp");
