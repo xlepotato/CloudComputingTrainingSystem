@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Ying
-  Date: 11/9/2017
-  Time: 11:39 AM
+  Date: 20/9/2017
+  Time: 9:38 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -27,11 +27,19 @@
             background-color:#00C;
             height:50px;
             width:100%;
+            font-size:20px;
+        }
+
+        .menu{
+            text-align:center;
+            background-color:#00C;
+            height:50px;
+            width:100%;
             font-size:18px;
         }
 
         .menu-left{
-            width:50%;
+            width:60%;
             float:left;
         }
         .menu-left ul{
@@ -41,7 +49,7 @@
         }
         .menu-left ul li{
             float:left;
-            width:20%;
+            width:16%;
             text-align:center;
 
         }
@@ -63,20 +71,17 @@
             position:absolute;
             display:none;
             list-style-type:none;
-
         }
 
         .menu-left ul li ul li{
             float:none;
             width:100%;
-
         }
         .menu-left ul li ul li a{
             border-right:none;
             border-top:none;
             background:#000;
             color:white;
-
         }
         .menu-left ul li:hover ul{
             display:block;
@@ -84,7 +89,7 @@
         }
         .menu-right{
             float:right;
-            width:45%;
+            width:38%;
         }
 
         .menu-right-left{
@@ -178,7 +183,6 @@
             display:block;
 
         }
-
 
         .tupian{
             background-color:#FFF;
@@ -301,7 +305,12 @@
                 </ul>
             </li>
 
+            <li><a href="#">查看成绩</a>
+                <ul>
+                    <li><a href="#"></a></li>
 
+                </ul>
+            </li>
 
         </ul>
 
@@ -332,13 +341,13 @@
 
                 <li><a href="#">个人中心</a>
                     <ul>
-                        <li><a href="dashboard.jsp"></a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </li>
 
 
 
-                <li><a href="index.jsp">注销</a>
+                <li><a href="#">注销</a>
 
                 </li>
 
@@ -380,5 +389,6 @@
     © 北京信息职业技术学院. All rights reserved. - 京ICP备16052387号
     <br/>
 </div>
+
 </body>
 </html>

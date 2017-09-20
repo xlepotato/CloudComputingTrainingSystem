@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Ying
-  Date: 11/9/2017
-  Time: 11:39 AM
+  Date: 20/9/2017
+  Time: 9:17 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,6 +21,14 @@
         }
 
         ul{margin:0;padding:0;}
+
+        .menu{
+            text-align:center;
+            background-color:#00C;
+            height:50px;
+            width:100%;
+            font-size:20px;
+        }
 
         .menu{
             text-align:center;
@@ -63,20 +71,17 @@
             position:absolute;
             display:none;
             list-style-type:none;
-
         }
 
         .menu-left ul li ul li{
             float:none;
             width:100%;
-
         }
         .menu-left ul li ul li a{
             border-right:none;
             border-top:none;
             background:#000;
             color:white;
-
         }
         .menu-left ul li:hover ul{
             display:block;
@@ -179,7 +184,6 @@
 
         }
 
-
         .tupian{
             background-color:#FFF;
             text-align:center;
@@ -194,6 +198,7 @@
             width:80%;
             height:300px;
         }
+
         .banquan{
             text-align:center;
             width:100%;
@@ -201,6 +206,7 @@
             height:30px;
             color:white;
         }
+
 
         #dright1{
             width:100%;
@@ -271,41 +277,14 @@
                 </ul>
             </li>
 
-            <li><a href="#">实训模块</a>
-                <ul>
-                    <li><a href="history.jsp">发展简史</a></li>
-                    <li><a href="technology.jsp">技术含量</a></li>
-                    <li><a href="industryChain.jsp">云计算产业链特点</a></li>
-                    <li><a href="influenceRange.jsp">影响范围</a></li>
-                    <li><a href="evolutionForm.jsp">演化形式</a></li>
-                </ul>
-            </li>
 
-            <li><a href="#">在线学习</a>
-                <ul>
-                    <li><a href="#"></a></li>
-
-                </ul>
-            </li>
-
-            <li><a href="#">在线测评</a>
-                <ul>
-                    <li><a href="#"></a></li>
-                </ul>
-            </li>
-
-            <li><a href="#">远程解答</a>
-                <ul>
-                    <li><a href="#"></a></li>
-
-                </ul>
-            </li>
 
 
 
         </ul>
 
     </div>
+
     <div class="menu-right">
         <div class="menu-right-left">
             <ul>
@@ -330,15 +309,10 @@
         <div class="menu-right-right">
             <ul>
 
-                <li><a href="#">个人中心</a>
-                    <ul>
-                        <li><a href="dashboard.jsp"></a></li>
-                    </ul>
-                </li>
 
 
 
-                <li><a href="index.jsp">注销</a>
+                <li><a href="index.jsp">登录</a>
 
                 </li>
 
@@ -347,8 +321,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="tupian"  style="  top:110px; ">
 
@@ -380,5 +352,6 @@
     © 北京信息职业技术学院. All rights reserved. - 京ICP备16052387号
     <br/>
 </div>
+
 </body>
 </html>
