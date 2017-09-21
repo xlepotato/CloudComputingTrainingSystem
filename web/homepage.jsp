@@ -330,9 +330,9 @@
         <div class="menu-right-right">
             <ul>
 
-                <li><a href="#">个人中心</a>
+                <li><a href="dashboard.jsp">个人中心</a>
                     <ul>
-                        <li><a href="dashboard.jsp"></a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </li>
 

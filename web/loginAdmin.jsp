@@ -347,7 +347,7 @@
 
 
 
-                <li><a href="#">注销</a>
+                <li><a href="index.jsp">注销</a>
 
                 </li>
 
