@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 13/9/2017
@@ -21,6 +21,16 @@
 </head>
 
 <body>
+<%
+    if (session.getAttribute("authorisedUser") == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You do not have the permission to access this page. Please login.')");
+        pw.println("location='index.jsp';");
+        pw.println("</script>");
+
+    }
+%>
 <table width="80%" border="0" align="center">
     <tr>
         <td><h1 align="center">影响范围</h1></td>
