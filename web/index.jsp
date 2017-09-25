@@ -83,7 +83,7 @@
           <input type="reset" value="重置" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;" />
           <br /><br />
           <ul><a href="register.jsp">注册</a></ul>
-          <ul><a href="#">游客通道</a></ul>
+          <ul><a href="guestLogin.jsp">游客通道</a></ul>
         </fieldset>
       </form>
     </div>

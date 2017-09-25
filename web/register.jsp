@@ -64,13 +64,14 @@
                 <input type="text" name="captcha" value="">
 
         <%--<img width="90" height="30"> --%>
-                <div class="g-recaptcha" data-sitekey="6LevWTAUAAAAABb2HDh9kXHwIveKfKDMr1q_oE5G" data-callback="recaptchaCallback"></div>
+                <%--<div class="g-recaptcha" data-sitekey="6LevWTAUAAAAABb2HDh9kXHwIveKfKDMr1q_oE5G"></div>--%>
+                <%--  data-callback="recaptchaCallback" --%>
             <%--<img src="/jcaptcha">--%>
             <%--<input type='text' name='j_captcha_response' value=''>--%>
             </td>
         </tr>
         <tr>
-            <td height="45" align="right"><input type="submit" name="queren" id="queren" value="确认" style="width:70px;height:30px; font-size:18px;" disabled></td>
+            <td height="45" align="right"><input type="submit" name="queren" id="queren" value="确认" style="width:70px;height:30px; font-size:18px;" `   ></td>
             <td height="45"><input type="reset" name="chongzhi" id="chongzhi" value="重置" style="width:70px;height:30px; font-size:18px;"></td>
         </tr>
     </table>
