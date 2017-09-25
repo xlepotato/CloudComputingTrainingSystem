@@ -1,6 +1,7 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
-<%@ page import="entity.UserDetail" %><%--
+<%@ page import="entity.UserDetail" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 11/9/2017
@@ -14,10 +15,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>无标题文档</title>
     <%
-        String username = session.getAttribute("username").toString();
-        UserDAO user = new UserDAO();
-        User a = user.retrieveUserByUsername(username);
-        UserDetail ud = user.retrieveUserDetailByUsername(username);
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='index.jsp';");
+            pw.println("</script>");
+
+        }
     %>
 </head>
 <style type="text/css">
@@ -55,6 +60,19 @@
 
 </style>
 <body>
+<%
+    String username = session.getAttribute("username").toString();
+    UserDAO user = new UserDAO();
+    User a = user.retrieveUserByUsername(username);
+    UserDetail ud = user.retrieveUserDetailByUsername(username);
+    if (ud == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You have not added your details yet.')");
+        pw.println("location='homepage.jsp';");
+        pw.println("</script>");
+    }
+%>
 <div class="logo">
     <img src="assets/img/title.jpg" width="90%" height="300" />
 </div>

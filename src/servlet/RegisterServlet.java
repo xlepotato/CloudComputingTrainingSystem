@@ -21,6 +21,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+        PrintWriter pw = response.getWriter();
         String confirmPassword = request.getParameter("confirmPassword");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -43,10 +44,13 @@ public class RegisterServlet extends HttpServlet {
 
         if (confirmPassword.equals(password) && verifyJCaptcha){
             user.createUser(userId, username, userType, password, name, email);
-            response.sendRedirect("index.jsp");
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('Register success')");
+            pw.println("location='index.jsp';");
+            pw.println("</script>");
+//            response.sendRedirect("index.jsp");
         }else{
             System.out.println("Password does not match with the confirm password");
-            PrintWriter pw = response.getWriter();
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('Password does not match')");
             pw.println("location='register.jsp';");

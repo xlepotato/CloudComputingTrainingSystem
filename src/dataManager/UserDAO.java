@@ -266,5 +266,16 @@ public class UserDAO {
         }
         return allowLogin;
     }
+    public int checkForUserType(String username){
+        int userType = 0;
+        List<User> list = new ArrayList<User>();
+        list = retrieveAllUser();
+        for (int i =0 ; i < list.size(); i++){
+            if (username.equals(list.get(i).getUsername())){
+                userType = list.get(i).getUserType();
+            }
+        }
+        return userType;
+    }
 
 }

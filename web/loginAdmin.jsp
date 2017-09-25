@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 20/9/2017
@@ -265,6 +265,16 @@
 </head>
 
 <body onLoad="show();">
+<%
+    if (session.getAttribute("authorisedUser") == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You do not have the permission to access this page. Please login.')");
+        pw.println("location='index.jsp';");
+        pw.println("</script>");
+
+    }
+%>
 <div class="menu">
     <div class="menu-left">
         <ul>
@@ -339,7 +349,7 @@
         <div class="menu-right-right">
             <ul>
 
-                <li><a href="#">个人中心</a>
+                <li><a href="dashboard.jsp">个人中心</a>
                     <ul>
                         <li><a href="#"></a></li>
                     </ul>
@@ -347,7 +357,7 @@
 
 
 
-                <li><a href="#">注销</a>
+                <li><a href="/logout">注销</a>
 
                 </li>
 

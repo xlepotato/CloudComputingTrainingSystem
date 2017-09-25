@@ -29,11 +29,21 @@ public class LoginServlet extends HttpServlet {
         System.out.println(password);
         UserDAO user = new UserDAO();
         List<User>userList = new ArrayList<>();
+        int userType;
 
         boolean userVerification ;
         userVerification = user.checkForExistingUser(username, password);
         if (userVerification){
-            response.sendRedirect("homepage.jsp");
+
+            userType = user.checkForUserType(username);
+            System.out.println("usertype:" + userType);
+            if (userType == 0) {
+                session.setAttribute("authorisedUser",true);
+                response.sendRedirect("homepage.jsp");
+            } else if (userType == 1){
+                session.setAttribute("authorisedUser",true);
+                response.sendRedirect("loginAdmin.jsp");
+            }
         }else{
             System.out.println("Login failed");
             response.sendRedirect("failAuthentication.jsp");
