@@ -36,10 +36,10 @@ public class ExerciseDAO {
         return qns;
     }
 
-    public Question retrieveQuestion(){
+    public ArrayList<Question> retrieveQuestion(int inputExerciseNo){
 
         // declare local variables
-        Question qns = null;
+        ArrayList<Question> qnsList = new ArrayList<Question>();
         ResultSet rs = null;
         DBController db = new DBController();
         String dbQuery;
@@ -49,18 +49,19 @@ public class ExerciseDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT questionNo, questionDetail, answer, q.exerciseNo FROM question q INNER JOIN exercise e ON q.exerciseNo = e.exerciseNo GROUP BY q.exerciseNo";
+        dbQuery = "SELECT questionNo, questionDetail, answer, q.exerciseNo FROM question q INNER JOIN exercise e ON q.exerciseNo = e.exerciseNo WHERE e.exerciseNo = ? ";
 
 
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - execute query
         try {
-         //   pstmt.setString(1, username);
+            pstmt.setInt(1, inputExerciseNo);
             rs = pstmt.executeQuery();
-            if (rs.next()) {
-                qns = convertToQuestion(rs);
-                //   list.add(user);
+            while (rs.next())
+            {
+                Question qns = convertToQuestion(rs);
+                qnsList.add(qns);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +70,7 @@ public class ExerciseDAO {
         // step 4 - close connection
         db.terminate();
 
-        return qns;
+        return qnsList;
     }
 
 

@@ -31,7 +31,7 @@ public class DBController {
     public void getConnection() {
         String url = "";
         try {
-            url = "jdbc:mysql://localhost:3306/cloudcomputesystem";
+            url = "jdbc:mysql://localhost:3306/cloudcomputesystem?useUnicode=true&characterEncoding=UTF-8";
             con = DriverManager.getConnection(url, "root", "IT1639");
             System.out.println("Successfully connected to " + url + ".");
         } catch (java.sql.SQLException e) {
