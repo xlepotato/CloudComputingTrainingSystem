@@ -1,7 +1,8 @@
 <%@ page import="dataManager.ExerciseDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.Exercise" %>
-<%@ page import="entity.Question" %><%--
+<%@ page import="entity.Question" %>
+<%@ page import="entity.MCQ" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 25/9/2017
@@ -95,7 +96,7 @@
         exer =  exList.get(i).getexerciseName();
         %>
     <br>
-    <%=exList.get(i).getexerciseNo()%>. Exercise Name: <%=exer%> <br> <br>
+   <h1> <%=exList.get(i).getexerciseNo()%>.  <%=exer%></h1> <br> <br>
     <%
         exerciseNo = exList.get(i).getexerciseNo();
         ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
@@ -104,10 +105,14 @@
         for (int a = 0; a < qnsList.size(); a++ ) {
             qnsList.get(a).getquestionDetails();
             System.out.println(qnsList.get(a).getquestionDetails() + " details");
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getquestionNo());
             %>
     <%=qnsList.get(a).getquestionNo()%>. <%=qnsList.get(a).getquestionDetails()%>
+    <%=mcqList.get(a).getOption()%>. <%=mcqList.get(a).getOptionDetail()%>
     <br>
     <%
+
+
         }
     }
 

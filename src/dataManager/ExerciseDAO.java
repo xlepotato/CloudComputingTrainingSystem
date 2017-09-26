@@ -1,5 +1,6 @@
 package dataManager;
 import entity.Exercise;
+import entity.MCQ;
 import entity.Question;
 import entity.User;
 
@@ -34,6 +35,15 @@ public class ExerciseDAO {
         int exerciseNo = rs.getInt("exerciseNo");
         qns = new Question(questionNo,questionDetail,answer,exerciseNo);
         return qns;
+    }
+    private MCQ convertToMCQ(ResultSet rs) throws SQLException{
+        MCQ mcq;
+        int mcqId = rs.getInt("mcqId");
+        String option = rs.getString("option");
+        String optionDetail = rs.getString("optionDetail");
+        int questionNo = rs.getInt("questionNo");
+        mcq = new MCQ(mcqId,option,optionDetail,questionNo);
+        return mcq;
     }
 
     public ArrayList<Question> retrieveQuestion(int inputExerciseNo){
@@ -73,6 +83,43 @@ public class ExerciseDAO {
         return qnsList;
     }
 
+
+    public ArrayList<MCQ> retrieveMCQOption(int inputQuestionNo){
+
+        // declare local variables
+        ArrayList<MCQ> mcqList = new ArrayList<MCQ>();
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT mcqId, optionLetter, optionDetail, m.questionNo FROM mcq m INNER JOIN question q ON m.questionNo = q.questionId WHERE m.questionNo = ? ";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setInt(1, inputQuestionNo);
+            rs = pstmt.executeQuery();
+            while (rs.next())
+            {
+                MCQ mcq = convertToMCQ(rs);
+                mcqList.add(mcq);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return mcqList;
+    }
 
     public ArrayList<Exercise> retrieveAllExercise() {
         // declare local variables

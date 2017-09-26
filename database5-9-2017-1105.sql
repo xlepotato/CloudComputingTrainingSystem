@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
 -- Host: localhost    Database: cloudcomputesystem
 -- ------------------------------------------------------
--- Server version	5.7.19-log
+-- Server version	5.6.22-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -48,7 +48,7 @@ DROP TABLE IF EXISTS `mcq`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mcq` (
   `mcqId` int(11) NOT NULL AUTO_INCREMENT,
-  `option` varchar(200) NOT NULL,
+  `optionLetter` varchar(200) NOT NULL,
   `optionDetail` varchar(200) NOT NULL,
   `questionNo` int(11) NOT NULL,
   PRIMARY KEY (`mcqId`),
@@ -160,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-25 11:22:26
+-- Dump completed on 2017-09-26 14:12:33

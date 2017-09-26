@@ -3,24 +3,48 @@ package entity;
  * Created by Aloysius on 11/9/2017.
  */
 public class MCQ {
-    private int id;
+    private int mcqId;
     private String option;
     private int questionNo;
+    private String optionDetail;
 
-    public MCQ(int id, String option, int questionNo)
-    {
-        this.id = id;
+    public MCQ(int mcqId, String option, String optionDetail, int questionNo) {
+        this.mcqId = mcqId;
         this.option = option;
+        this.questionNo = questionNo;
+        this.optionDetail = optionDetail;
+    }
+
+
+    public int getMcqId() {
+        return mcqId;
+    }
+
+    public void setMcqId(int mcqId) {
+        this.mcqId = mcqId;
+    }
+
+    public String getOption() {
+        return option;
+    }
+
+    public void setOption(String option) {
+        this.option = option;
+    }
+
+    public int getQuestionNo() {
+        return questionNo;
+    }
+
+    public void setQuestionNo(int questionNo) {
         this.questionNo = questionNo;
     }
 
-    //GET Methods for variables
-    public int getid() {return id;}
-    public String getoption(){return option;}
-    public int getquestionNo(){return questionNo;}
+    public String getOptionDetail() {
+        return optionDetail;
+    }
 
-    //SET Methods for variables
-    public void setid(int id){this.id = id;}
-    public void setoption(String option){this.option = option;}
-    public void setquestionNo(int questionNo){this.questionNo = questionNo;}
+    public void setOptionDetail(String optionDetail) {
+        this.optionDetail = optionDetail;
+    }
 }
