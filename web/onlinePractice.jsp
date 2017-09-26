@@ -24,6 +24,9 @@
             text-align:center;
 
         }
+        #question {
+            text-indent: 50px;
+        }
     </style>
 </head>
 <body>
@@ -108,15 +111,27 @@
             ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getquestionNo());
             %>
     <%=qnsList.get(a).getquestionNo()%>. <%=qnsList.get(a).getquestionDetails()%>
-    <%=mcqList.get(a).getOption()%>. <%=mcqList.get(a).getOptionDetail()%>
-    <br>
     <%
+        for (int m =0; m < mcqList.size(); m++){
+    %>
+    <br> <p id="question">
 
+    <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
+    <%
+        if(m == (mcqList.size()-1)){
+    %> <br>
+    <%
+                    }
+                }
+
+            }
         }
-    }
 
     %>
+
+</p>
+
 
 </form>
 

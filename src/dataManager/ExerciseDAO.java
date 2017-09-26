@@ -39,7 +39,7 @@ public class ExerciseDAO {
     private MCQ convertToMCQ(ResultSet rs) throws SQLException{
         MCQ mcq;
         int mcqId = rs.getInt("mcqId");
-        String option = rs.getString("option");
+        String option = rs.getString("optionLetter");
         String optionDetail = rs.getString("optionDetail");
         int questionNo = rs.getInt("questionNo");
         mcq = new MCQ(mcqId,option,optionDetail,questionNo);
