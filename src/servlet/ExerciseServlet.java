@@ -14,25 +14,27 @@ import java.io.IOException;
  * Created by Aloysius on 13/9/2017.
  */
 
-@WebServlet(name = "ExerciseServlet")
+@WebServlet(name = "ExerciseServlet", urlPatterns = "/exercise")
 public class ExerciseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
         String username =  session.getAttribute("username").toString();
-        String qns1 = request.getParameter("qns1").toString();
-        String qns2 = request.getParameter("qns2").toString();
-        String qns3 = request.getParameter("qns3").toString();
-        String qns4 = request.getParameter("qns4").toString();
-        String qns5 = request.getParameter("qns5").toString();
-        String qns6 = request.getParameter("qns6").toString();
-        String qns7 = request.getParameter("qns7").toString();
-        String qns8 = request.getParameter("qns8").toString();
-        String qns9 = request.getParameter("qns9").toString();
-        String qns10 = request.getParameter("qns10").toString();
+
+        String qns1 = request.getParameter("selectedChoice");
+//        String qns2 = request.getParameter("qns2").toString();
+//        String qns3 = request.getParameter("qns3").toString();
+//        String qns4 = request.getParameter("qns4").toString();
+//        String qns5 = request.getParameter("qns5").toString();
+//        String qns6 = request.getParameter("qns6").toString();
+//        String qns7 = request.getParameter("qns7").toString();
+//        String qns8 = request.getParameter("qns8").toString();
+//        String qns9 = request.getParameter("qns9").toString();
+//        String qns10 = request.getParameter("qns10").toString();
+        System.out.println(qns1 + "nyan");
 
 
-
+response.sendRedirect("homepage.jsp");
 
 
     }

@@ -2,7 +2,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.Exercise" %>
 <%@ page import="entity.Question" %>
-<%@ page import="entity.MCQ" %><%--
+<%@ page import="entity.MCQ" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 25/9/2017
@@ -10,6 +11,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <style type="text/css">
@@ -28,6 +30,19 @@
             text-indent: 50px;
         }
     </style>
+    <%--<%--%>
+        <%--PrintWriter pw = response.getWriter();--%>
+        <%--ArrayList<String> userInput = (ArrayList<String>)request.getAttribute("userInput");--%>
+        <%--for(int i = 0; i < userInput.size(); i ++){--%>
+            <%--if (userInput.get(i) != null){--%>
+                <%--pw.println("<script type=\"text/javascript\">");--%>
+                <%--pw.println("document.getElementById(\"selectedChoice\"+ i).checked = true;");--%>
+                <%--pw.println("</script>");--%>
+
+            <%--}--%>
+        <%--}--%>
+
+    <%--%>--%>
 </head>
 <body>
 <%
@@ -35,7 +50,7 @@
     ArrayList<Exercise> exList = exercise.retrieveAllExercise();
 
 %>
-<form action="" method="get">
+<form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
     <table width="80%" border="0" align="center">
         <tr>
             <td><h1 align="center">在线练习</h1></td>
@@ -106,21 +121,27 @@
         System.out.println(exerciseNo + " - exerciseNo");
         System.out.println(qnsList.size() + " qnsList size");
         for (int a = 0; a < qnsList.size(); a++ ) {
-            qnsList.get(a).getquestionDetails();
-            System.out.println(qnsList.get(a).getquestionDetails() + " details");
-            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getquestionNo());
+            qnsList.get(a).getQuestionDetail();
+            System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
             %>
-    <%=qnsList.get(a).getquestionNo()%>. <%=qnsList.get(a).getquestionDetails()%>
+    <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
     <%
+      String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
         for (int m =0; m < mcqList.size(); m++){
     %>
     <br> <p id="question">
-
+    <%
+        String idName = parameterName + mcqList.get(m).getOption();
+    %>
+    <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
     <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
+
     <%
+     
         if(m == (mcqList.size()-1)){
-    %> <br>
+    %> <br><br>
     <%
                     }
                 }
@@ -132,6 +153,7 @@
 
 </p>
 
+    <input type="submit" value="Submit" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;"/>
 
 </form>
 
@@ -140,8 +162,43 @@
 
 </table>
 <div class="back">
-    <a href="index_.html" style="color:#FFF;">返回</a>
+    <a href="homepage.jsp" style="color:#FFF;">返回</a>
 </div>
+<script>
+    var count = 0;
+   <%
+   String parameterName = "";
+   %>
+    function validateRadioBtn() {
+        <%
+
+    for (int i = 0; i < exList.size(); i ++ ) {
+        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
+        exerciseNo = exList.get(i).getexerciseNo();
+        ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+        System.out.println(exerciseNo + " - exerciseNo");
+        System.out.println(qnsList.size() + " qnsList size");
+        for (int a = 0; a < qnsList.size(); a++ ) {
+            qnsList.get(a).getQuestionDetail();
+            System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
+               parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+
+        %>
+        if(document.qnsForm.<%=parameterName%>.value == "" || null) {
+            alert("please answer all the question " + <%=parameterName%>);
+          count ++;
+            return false;
+        } else if (count = 90){
+            console.log(count);
+            document.qnsForm.submit();
+        }
+        <%
+            }
+        }
+        %>
+    }
+</script>
 </body>
 </html>
 

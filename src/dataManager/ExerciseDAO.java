@@ -33,7 +33,8 @@ public class ExerciseDAO {
         String questionDetail = rs.getString("questionDetail");
         String answer = rs.getString("answer");
         int exerciseNo = rs.getInt("exerciseNo");
-        qns = new Question(questionNo,questionDetail,answer,exerciseNo);
+        int questionId = rs.getInt("questionId");
+        qns = new Question(questionNo,questionDetail,answer,exerciseNo, questionId);
         return qns;
     }
     private MCQ convertToMCQ(ResultSet rs) throws SQLException{
@@ -59,7 +60,7 @@ public class ExerciseDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT questionNo, questionDetail, answer, q.exerciseNo FROM question q INNER JOIN exercise e ON q.exerciseNo = e.exerciseNo WHERE e.exerciseNo = ? ";
+        dbQuery = "SELECT questionNo, questionDetail, answer, q.exerciseNo, questionId FROM question q INNER JOIN exercise e ON q.exerciseNo = e.exerciseNo WHERE e.exerciseNo = ? ";
 
 
         pstmt = db.getPreparedStatement(dbQuery);

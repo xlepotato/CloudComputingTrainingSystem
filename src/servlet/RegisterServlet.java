@@ -49,10 +49,15 @@ public class RegisterServlet extends HttpServlet {
             pw.println("location='index.jsp';");
             pw.println("</script>");
 //            response.sendRedirect("index.jsp");
-        }else{
+        }else if(verifyJCaptcha && confirmPassword.equals(password)==false){
             System.out.println("Password does not match with the confirm password");
             pw.println("<script type=\"text/javascript\">");
-            pw.println("alert('Password does not match')");
+            pw.println("alert('Password and confirmed password does not match')");
+            pw.println("location='register.jsp';");
+            pw.println("</script>");
+        }else{
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('Captcha verification fail.')");
             pw.println("location='register.jsp';");
             pw.println("</script>");
         }

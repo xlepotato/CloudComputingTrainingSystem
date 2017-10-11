@@ -7,23 +7,53 @@ public class Question {
     private String questionDetail;
     private String answer;
     private int exerciseNo;
+    private int questionId;
 
-    public Question(int questionNo, String questionDetail, String answer, int exerciseNo){
+    public Question(int questionNo, String questionDetail, String answer, int exerciseNo, int questionId) {
         this.questionNo = questionNo;
         this.questionDetail = questionDetail;
         this.answer = answer;
         this.exerciseNo = exerciseNo;
+        this.questionId = questionId;
     }
 
-    //GET Methods for variables
-    public int getquestionNo(){return questionNo;}
-    public String getquestionDetails(){return questionDetail;}
-    public String getanswer(){return answer;}
-    public int getexerciseNo(){return exerciseNo;}
+    public int getQuestionNo() {
+        return questionNo;
+    }
 
-    //SET Methods for variables
-    public void setquestionNo(int questionNo){this.questionNo = questionNo;}
-    public void setquestionDetails(String questionDetails){this.questionDetail = questionDetails;}
-    public void setanswer(String answer){this.answer = answer;}
-    public void setexerciseNo(int exerciseNo){this.exerciseNo = exerciseNo;}
+    public void setQuestionNo(int questionNo) {
+        this.questionNo = questionNo;
+    }
+
+    public String getQuestionDetail() {
+        return questionDetail;
+    }
+
+    public void setQuestionDetail(String questionDetail) {
+        this.questionDetail = questionDetail;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public int getExerciseNo() {
+        return exerciseNo;
+    }
+
+    public void setExerciseNo(int exerciseNo) {
+        this.exerciseNo = exerciseNo;
+    }
+
+    public int getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(int questionId) {
+        this.questionId = questionId;
+    }
 }
