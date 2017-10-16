@@ -33,10 +33,12 @@
     <%--<%--%>
         <%--PrintWriter pw = response.getWriter();--%>
         <%--ArrayList<String> userInput = (ArrayList<String>)request.getAttribute("userInput");--%>
+        <%--System.out.println(userInput.size());--%>
         <%--for(int i = 0; i < userInput.size(); i ++){--%>
             <%--if (userInput.get(i) != null){--%>
                 <%--pw.println("<script type=\"text/javascript\">");--%>
-                <%--pw.println("document.getElementById(\"selectedChoice\"+ i).checked = true;");--%>
+                <%--pw.println("console.log(document.getElementById(\"selectedChoice\" + i).checked = true);");--%>
+                <%--pw.println("document.getElementById(\"selectedChoice\" + i).checked = true;");--%>
                 <%--pw.println("</script>");--%>
 
             <%--}--%>
