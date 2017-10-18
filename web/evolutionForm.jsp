@@ -1,9 +1,3 @@
-<%@ page import="java.io.PrintWriter" %><%--
-  Created by IntelliJ IDEA.
-  User: Aloylim98
-  Date: 13/9/2017
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,20 +11,17 @@
         body {
             background-color: #000;
         }
+
+        .back{
+            text-align:center;
+
+        }
+
     </style>
 </head>
 
 <body>
-<%
-    if (session.getAttribute("authorisedUser") == null){
-        PrintWriter pw = response.getWriter();
-        pw.println("<script type=\"text/javascript\">");
-        pw.println("alert('You do not have the permission to access this page. Please login.')");
-        pw.println("location='index.jsp';");
-        pw.println("</script>");
 
-    }
-%>
 <table width="80%" border="0" align="center">
     <tr>
         <td><h1 align="center">演化形式</h1></td>
@@ -53,5 +44,10 @@
 
 </table>
 
+
+
+<div class="back">
+    <a href="homepage.jsp" style="color:#FFF;">返回</a>
+</div>
 </body>
 </html>
