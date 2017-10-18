@@ -291,7 +291,7 @@
                 </ul>
             </li>
 
-            <li><a href="onlinePractice.jsp">在线学习</a>
+            <li><a href="onlinePracticeEx1.jsp">在线学习</a>
             </li>
 
             <li><a href="#">在线测评</a>
@@ -319,7 +319,7 @@
                 <li>
                     <div class="sousuo">
                         <div class="wenbenkuang">
-                            <form method="post" action="/search" onsubmit="return checkReg()" onreset="chearInfo()">
+                            <form method="get" action="/search" onsubmit="return checkReg()" onreset="chearInfo()">
                                 <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入搜索内容" style="color:gray; width:100%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}" /><br />
                             </form>
                         </div>
