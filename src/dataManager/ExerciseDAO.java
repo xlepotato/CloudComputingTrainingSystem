@@ -179,4 +179,39 @@ public class ExerciseDAO {
         return Searching;
     }
 
+    public Exercise retrieveExerciseByExerciseNo(int exerciseNo) {
+        // declare local variables
+        Exercise ex = null;
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT exerciseNo, exerciseName FROM exercise WHERE exerciseNo = ? ";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setInt(1, exerciseNo);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                ex = convertToExercise(rs);
+                //   list.add(user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return ex;
+    }
+
 }

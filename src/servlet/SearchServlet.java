@@ -19,10 +19,36 @@ import java.util.List;
 public class SearchServlet extends HttpServlet {
 
     protected void doPost(HttpServlet request, HttpServletResponse response) throws ServletException, IOException {
+//
+//        String SearchResult;
+//
+//        String EntSearch =  request.getInitParameter("ss");
+//        SearchDAO search = new SearchDAO();
+//
+//        SearchResult = search.checkforSearchResult(EntSearch);
+//
+//        boolean SearchSuccess;
+//
+//        SearchSuccess = search.checkforExistingResult(EntSearch);
+//
+//        if(SearchSuccess)
+//        {
+//            System.out.println("Search Success");
+//            response.sendRedirect( "SearchResult.jsp");
+//        }
+//        else
+//        {
+//            System.out.println("Search fail");
+//            response.sendRedirect("homepage.jsp");
+//        }
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String SearchResult;
 
-        String EntSearch =  request.getInitParameter("ss");
+        String EntSearch =  request.getParameter("ss");
         SearchDAO search = new SearchDAO();
 
         SearchResult = search.checkforSearchResult(EntSearch);
@@ -41,6 +67,5 @@ public class SearchServlet extends HttpServlet {
             System.out.println("Search fail");
             response.sendRedirect("homepage.jsp");
         }
-
     }
 }
