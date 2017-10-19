@@ -49,6 +49,8 @@
     <%--%>--%>
 </head>
 <body>
+<a href="onlinePracticeEx2.jsp"> Exercise 2 </a>
+
 <%
     ExerciseDAO exercise = new ExerciseDAO();
     //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();

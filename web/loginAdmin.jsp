@@ -295,7 +295,7 @@
                 </ul>
             </li>
 
-            <li><a href="onlinePractice.jsp">在线学习</a>
+            <li><a href="onlinePracticeEx2.jsp">在线学习</a>
             </li>
 
             <li><a href="#">在线测评</a>

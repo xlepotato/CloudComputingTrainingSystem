@@ -48,6 +48,7 @@
     <%--%>--%>
 </head>
 <body>
+<a href="onlinePracticeEx1.jsp"> Exercise 1 </a>
 <%
     ExerciseDAO exercise = new ExerciseDAO();
   //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
@@ -55,60 +56,12 @@
     session.setAttribute("exercy", exerciseNo);
 
 %>
-<form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
+<form name="qnsForm" action="/exercise2" method="post" onsubmit="return validateRadioBtn()">
     <table width="80%" border="0" align="center">
         <tr>
             <td><h1 align="center">在线练习</h1></td>
         </tr>
-        <%--<%--%>
-            <%--System.out.println(exList.size()+ "size");--%>
-            <%--for (int i = 0; i < exList.size(); i ++ ){--%>
-                <%--System.out.println(exList.get(i).getexerciseName());--%>
-        <%--%>--%>
-        <%--<tr>--%>
-            <%--<%--%>
-                <%--int exerciseNo = exList.get(i).getexerciseNo();--%>
-                <%--ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);--%>
-                <%--System.out.println(exerciseNo + "exerciseNo");--%>
-                <%--for (int a =0; a < qnsList.size(); i++ ){--%>
-                    <%--System.out.println(qnsList.size());--%>
-            <%--%>--%>
-        <%--<td>--%>
-            <%--<%--%>
-                <%--qnsList.get(a).getquestionDetails();--%>
-            <%--%>--%>
-        <%--</td>--%>
-            <%--<%--%>
-                <%--}--%>
-            <%--%>--%>
-        <%--</tr>--%>
-        <%--<%--%>
-            <%--}--%>
-        <%--%>--%>
 
-        <%--===========================--%>
-
-        <%--<tr>--%>
-            <%--<td>--%>
-                <%--Question Details here--%>
-            <%--</td>--%>
-            <%--<td>--%>
-                <%--Another question detail--%>
-            <%--</td>--%>
-
-            <%--<td>--%>
-                <%--Another question detail e1--%>
-            <%--</td>--%>
-
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>--%>
-                <%--Another another question detail e2--%>
-            <%--</td>--%>
-            <%--<td>--%>
-                <%--Qns e2 2--%>
-            <%--</td>--%>
-        <%--</tr>--%>
     </table>
     <%
       //  String exer = "";
@@ -139,9 +92,7 @@
     <%
         String idName = parameterName + mcqList.get(m).getOption();
     %>
-    <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
-    <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
+    <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
     <%
      
