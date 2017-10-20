@@ -3,6 +3,7 @@ package servlet;
 import dataManager.ExerciseDAO;
 import entity.MCQ;
 import entity.Question;
+import wrapper.utility.ExerciseUtility;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,17 +28,27 @@ public class Exercise2Servlet extends HttpServlet {
         int exerciseNoFromFrontEnd = Integer.parseInt(session.getAttribute("exercy").toString());
         System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
         String msg = "";
+    //    String [] checkboxValue = new String[ex.retrieveQuestion(exerciseNoFromFrontEnd).size()];
         int score = 0;
 //        System.out.println("exercise Size: " + exList.size());
 //        for (int q = 0; q < exList.size(); q++ ) {
         ArrayList<Question> q1 = ex.retrieveQuestion(exerciseNoFromFrontEnd);
         System.out.println(q1.size());
         for (int i = 0; i < q1.size(); i++ ) {
-//                String qns [] = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
             ArrayList<String> arrList = new ArrayList<String>();
-            arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
+//                String qns [] = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+            String [] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+            String answer = "";
+            for(int n = 0; n<checkboxValue.length;n++){
+
+                answer = answer + checkboxValue[n];
+                System.out.println(answer + " answer !!!");
+                arrList.add(answer);
+            }
+
+          //  arrList.add(checkboxValue);
             System.out.println(q1.get(i).getQuestionId() + "qns id @@@@@@@@@@@@@@@@");
-            request.setAttribute("userInput", arrList);
+            request.setAttribute("userInput", answer);
             //   System.out.println(arrList.size());
             for (int a = 0; a < arrList.size(); a++) {
                 //    System.out.println(arrList.get(a) + " choice");
@@ -64,6 +75,8 @@ public class Exercise2Servlet extends HttpServlet {
 
             // To be continued at here :DDD
             ArrayList<String> arrList = new ArrayList<>();
+
+
 //            for (int q = 0; q < exList.size(); q++ ) {
 //           int exerciseNoFromFrontEnd = Integer.parseInt(request.getAttribute("exerciseNo").toString());
 //           System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
@@ -72,16 +85,29 @@ public class Exercise2Servlet extends HttpServlet {
             for (int i = 0; i < q1.size(); i++ ) {
                 System.out.println(i + " i atm ~ ");
                 System.out.println(q1.get(i).getQuestionId() + " qns id currently retrieving qns ");
-                arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
+          //      arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
+                String answer = "";
+
+                String [] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+            //    arrList.add(checkboxValue);
+                for(int n = 0; n<checkboxValue.length;n++){
+//                    String answer = "";
+//                    answer = answer + checkboxValue[n];
+//                    System.out.println(answer + " answer !!!");
+                    answer = answer + checkboxValue[n];
+                    arrList.add(answer);
+                }
+
                 //    while (i < q1.size()) {
 
                 //*NOTE: change QuestionNo to QuestionId
                 ArrayList<MCQ> mcqList = ex.retrieveMCQOption(q1.get(i).getQuestionId());
-                System.out.println(arrList.get(i) + " **** user given input");
+
+                System.out.println(answer + " **** user given input");
                 //       System.out.println(mcqList.get(i).getOption() + " *** right answer taken from DB");
                 System.out.println(q1.get(i).getAnswer() + " *** right answer taken from DB");
-                if (arrList.get(i).equals(q1.get(i).getAnswer())) {
-                    System.out.println(arrList.get(i) + " user given input");
+                if (answer.equals(q1.get(i).getAnswer())) {
+                    System.out.println(answer + " user given input");
                     System.out.println(q1.get(i).getAnswer() + " right answer taken from DB");
                     score = score + 1;
                     System.out.println(score + " score nyan");
@@ -90,8 +116,12 @@ public class Exercise2Servlet extends HttpServlet {
 
             }
             System.out.println("You have scored " + score);
-
-            response.sendRedirect("homepage.jsp");
+            String grade = ExerciseUtility.computeGrade(score,q1.size());
+            request.setAttribute("ex2Score",score);
+            request.setAttribute("grade", grade);
+            request.setAttribute("servlet","ex2");
+            getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
+         //   response.sendRedirect("scores.jsp");
         }
 
     }

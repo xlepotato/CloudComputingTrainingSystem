@@ -131,7 +131,7 @@
         for (int a = 0; a < qnsList.size(); a++ ) {
             qnsList.get(a).getQuestionDetail();
             //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
-            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
     %>
     <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
     <%

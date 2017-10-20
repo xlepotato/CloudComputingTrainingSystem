@@ -80,8 +80,13 @@
         System.out.println(qnsList.size() + " qnsList size");
         for (int a = 0; a < qnsList.size(); a++ ) {
             qnsList.get(a).getQuestionDetail();
-        //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
-            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
+            /*
+               *NOTE: questionId in Question table is unique, questionNo is just the numbering of the question.
+               questionNo in MCQ table is referring to the questionId in Question table
+               For more info, refer to SQL table
+
+            */
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
             %>
     <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
     <%
