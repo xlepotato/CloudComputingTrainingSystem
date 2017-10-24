@@ -117,11 +117,13 @@ public class Exercise2Servlet extends HttpServlet {
             }
             System.out.println("You have scored " + score);
             String grade = ExerciseUtility.computeGrade(score,q1.size());
-            request.setAttribute("ex2Score",score);
-            request.setAttribute("grade", grade);
-            request.setAttribute("servlet","ex2");
-            getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
-         //   response.sendRedirect("scores.jsp");
+            String displayScore = score + " / " + q1.size();
+            session.setAttribute("ex2Score",displayScore);
+            session.setAttribute("grade", grade);
+            session.setAttribute("servlet","ex2");
+
+         //   getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
+            response.sendRedirect("scores.jsp");
         }
 
     }

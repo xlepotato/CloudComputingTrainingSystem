@@ -7,7 +7,6 @@ public class ExerciseUtility {
 
     public static String computeGrade(double score, int numOfQuestion){
 
-
         double scorePercentage = (score/numOfQuestion) * 100;
         System.out.println(scorePercentage);
         if(scorePercentage >= 80)
