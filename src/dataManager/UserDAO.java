@@ -111,6 +111,44 @@ public class UserDAO {
         return success;
     }
 
+    public boolean createUserDetail(String userId, int userlevel, String progress, String lastLogin, String lastBrowse) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "INSERT INTO userdetail(userId, userlevel, progress, lastLogin, lastBrowse) VALUES(?, ?, ?, ?, ?)";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to insert record using executeUpdate method
+        try {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, userlevel);
+            pstmt.setString(3, progress);
+            pstmt.setString(4, lastLogin);
+            pstmt.setString(5, lastBrowse);
+
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
+
     public ArrayList<User> retrieveAllUser() {
         // declare local variables
         ArrayList<User> list = new ArrayList<User>();

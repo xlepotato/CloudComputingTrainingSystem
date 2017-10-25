@@ -291,10 +291,10 @@
                 </ul>
             </li>
 
-            <li><a href="onlinePracticeEx1.jsp">在线学习</a>
+            <li><a href="onlineLearning.jsp">在线学习</a>
             </li>
 
-            <li><a href="#">在线测评</a>
+            <li><a href="onlinePracticeEx1.jsp">在线测评</a>
                 <ul>
                     <li><a href="#"></a></li>
                 </ul>
