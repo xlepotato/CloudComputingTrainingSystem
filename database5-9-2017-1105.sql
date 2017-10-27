@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
 -- Host: localhost    Database: cloudcomputesystem
 -- ------------------------------------------------------
--- Server version	5.7.19-log
+-- Server version	5.6.22-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -97,6 +97,33 @@ INSERT INTO `question` VALUES (1,'云计算是对（ ）技术的发展与运用
 UNLOCK TABLES;
 
 --
+-- Table structure for table `score`
+--
+
+DROP TABLE IF EXISTS `score`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `score` (
+  `userId` varchar(60) NOT NULL,
+  `exerciseNo` int(11) NOT NULL,
+  `quizScore` double DEFAULT NULL,
+  `quizOverall` int(11) DEFAULT NULL,
+  PRIMARY KEY (`userId`,`exerciseNo`),
+  KEY `exerciseNo_idx` (`exerciseNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `score`
+--
+
+LOCK TABLES `score` WRITE;
+/*!40000 ALTER TABLE `score` DISABLE KEYS */;
+INSERT INTO `score` VALUES ('0a6b3cd5-666f-4135-8717-541032c78455',1,30,30),('c729461a-7e95-4b7b-aec4-8008b6244557',1,20,30),('c729461a-7e95-4b7b-aec4-8008b6244557',2,50,80);
+/*!40000 ALTER TABLE `score` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -160,4 +187,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-16 10:48:59
+-- Dump completed on 2017-10-27 10:01:56

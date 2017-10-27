@@ -43,6 +43,10 @@ public class LoginServlet extends HttpServlet {
             } else if (userType == 1){
                 session.setAttribute("authorisedUser",true);
                 response.sendRedirect("loginAdmin.jsp");
+            }  else if (userType == 2){
+                //Teacher's login
+                session.setAttribute("authorisedUser",true);
+                response.sendRedirect("loginTeacher.jsp");
             }
         }else{
             System.out.println("Login failed");
