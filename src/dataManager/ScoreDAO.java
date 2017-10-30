@@ -6,6 +6,7 @@ import entity.Score;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Ying on 27/10/2017.
@@ -35,9 +36,10 @@ public class ScoreDAO {
         String userId= rs.getString("userId");
         int questionId = rs.getInt("questionId");
         String chosenOptionLetter = rs.getString("chosenOptionLetter");
+        int exerciseNo = rs.getInt("exerciseNo");
 
 
-        ans = new Answer(userId, questionId, chosenOptionLetter);
+        ans = new Answer(userId, questionId, chosenOptionLetter, exerciseNo);
         return ans;
     }
 
@@ -84,7 +86,7 @@ public class ScoreDAO {
         Method Name: createAnswer
         Usage: To be used after user successfully submitted the online exercise quiz.
      */
-    public boolean createAnswer(String userId, int questionId, String chosenOptionLetter) {
+    public boolean createAnswer(String userId, int questionId, String chosenOptionLetter, int exerciseNo) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -95,7 +97,7 @@ public class ScoreDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO answer(userId, questionId, chosenOptionLetter) VALUES(?, ?, ?)";
+        dbQuery = "INSERT INTO answer(userId, questionId, chosenOptionLetter, exerciseNo) VALUES(?, ?, ?, ?)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
@@ -103,6 +105,7 @@ public class ScoreDAO {
             pstmt.setString(1, userId);
             pstmt.setInt(2, questionId);
             pstmt.setString(3, chosenOptionLetter);
+            pstmt.setInt(4, exerciseNo);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
@@ -154,6 +157,44 @@ public class ScoreDAO {
         db.terminate();
 
         return score;
+    }
+
+
+
+    public ArrayList<Answer> retrieveStudentAnswerByUserIdAndExNo(String userId, int exerciseNo) {
+        // declare local variables
+        ArrayList<Answer> list = new ArrayList<Answer>();
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT userId, questionId, chosenOptionLetter, exerciseNo FROM answer WHERE userId = ? AND exerciseNo = ? GROUP BY userId, questionId";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, exerciseNo);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Answer ans = convertToAnswer(rs);
+                list.add(ans);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return list;
     }
 
 }

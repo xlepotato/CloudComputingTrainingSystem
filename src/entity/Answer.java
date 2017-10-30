@@ -8,12 +8,22 @@ public class Answer {
     String userId;
     int questionId;
     String chosenOptionLetter;
+    int exerciseNo;
 
 
-    public Answer(String userId, int questionId, String chosenOptionLetter) {
+    public Answer(String userId, int questionId, String chosenOptionLetter, int exerciseNo) {
         this.userId = userId;
         this.questionId = questionId;
         this.chosenOptionLetter = chosenOptionLetter;
+        this.exerciseNo = exerciseNo;
+    }
+
+    public int getExerciseNo() {
+        return exerciseNo;
+    }
+
+    public void setExerciseNo(int exerciseNo) {
+        this.exerciseNo = exerciseNo;
     }
 
     public String getUserId() {
