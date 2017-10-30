@@ -26,7 +26,8 @@ CREATE TABLE `answer` (
   `userId` varchar(60) NOT NULL,
   `chosenOptionLetter` varchar(45) DEFAULT NULL,
   `questionId` int(11) NOT NULL,
-  PRIMARY KEY (`userId`,`questionId`),
+  `exerciseNo` int(11) NOT NULL,
+  PRIMARY KEY (`userId`,`questionId`,`exerciseNo`),
   KEY `questionId_idx` (`questionId`),
   CONSTRAINT `question` FOREIGN KEY (`questionId`) REFERENCES `question` (`questionId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `user` FOREIGN KEY (`userId`) REFERENCES `score` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -216,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-30 14:07:11
+-- Dump completed on 2017-10-30 14:19:21
