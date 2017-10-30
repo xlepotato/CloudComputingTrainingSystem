@@ -5,10 +5,19 @@ package wrapper.utility;
  */
 public class ExerciseUtility {
 
-    public static String computeGrade(double score, int numOfQuestion){
-
+/*
+    Method Name: computeScorePercentage
+    Usage: Used in calculating the total score as well as score of a single exercise.
+ */
+    public static double computeScorePercentage(double score, int numOfQuestion){
         double scorePercentage = (score/numOfQuestion) * 100;
         System.out.println(scorePercentage);
+        return scorePercentage;
+    }
+
+    public static String computeGrade(double score, int numOfQuestion){
+
+        double scorePercentage = computeScorePercentage(score,numOfQuestion);
         if(scorePercentage >= 80)
             return "A";
         else if (scorePercentage >= 75 && scorePercentage < 80)
@@ -27,9 +36,20 @@ public class ExerciseUtility {
             return "F";
 
     }
+
+    public static double sumUpScore(double existingDBScore, double newScore){
+        double latestScore = existingDBScore + newScore;
+        return latestScore;
+    }
+    public static int sumUpScoreOverall(int existingDBScoreOverall, int newScoreOverall){
+        int latestScoreOverall = existingDBScoreOverall + newScoreOverall;
+        return latestScoreOverall;
+    }
+
+
     public static void main(String []arg){
         //Testing
-        String grade = computeGrade(5,27);
+        String grade = computeGrade(27,27);
         System.out.println(grade);
     }
 }

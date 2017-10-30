@@ -1,6 +1,8 @@
 package servlet;
 
 import dataManager.ExerciseDAO;
+import dataManager.ScoreDAO;
+import dataManager.UserDAO;
 import entity.MCQ;
 import entity.Question;
 import wrapper.utility.ExerciseUtility;
@@ -24,6 +26,8 @@ public class Exercise2Servlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         HttpSession session = request.getSession();
         ExerciseDAO ex = new ExerciseDAO();
+        UserDAO u = new UserDAO();
+        ScoreDAO s = new ScoreDAO();
         //   ArrayList<Exercise> exList = ex.retrieveAllExercise();
         int exerciseNoFromFrontEnd = Integer.parseInt(session.getAttribute("exercy").toString());
         System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
@@ -118,6 +122,12 @@ public class Exercise2Servlet extends HttpServlet {
             System.out.println("You have scored " + score);
             String grade = ExerciseUtility.computeGrade(score,q1.size());
             String displayScore = score + " / " + q1.size();
+
+            s.createScore(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),exerciseNoFromFrontEnd,score,q1.size());
+            double latestScore = ExerciseUtility.sumUpScore(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScore(),score);
+            int latestScoreOverall = ExerciseUtility.sumUpScoreOverall(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScoreOverall(),q1.size());
+            u.updateUserTotalScore(latestScore,latestScoreOverall,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
+
             session.setAttribute("ex2Score",displayScore);
             session.setAttribute("grade", grade);
             session.setAttribute("servlet","ex2");

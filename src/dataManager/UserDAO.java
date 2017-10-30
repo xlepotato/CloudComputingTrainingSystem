@@ -68,8 +68,10 @@ public class UserDAO {
         String progress = rs.getString("progress");
         String lastBrowse = rs.getString("lastBrowse");
         String lastLogin = rs.getString("lastLogin");
+        double totalScore = rs.getDouble("totalScore");
+        int totalScoreOverall = rs.getInt("totalScoreOverall");
 
-        user = new UserDetail(userId, userlevel, progress, lastBrowse, lastLogin);
+        user = new UserDetail(userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall);
         return user;
     }
 
@@ -126,7 +128,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO userdetail(userId, userlevel, progress, lastLogin, lastBrowse) VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?)";
+        dbQuery = "INSERT INTO userdetail(userId, userlevel, progress, lastLogin, lastBrowse) VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?, 0, 0)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
@@ -200,7 +202,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT a.userId, userlevel, progress, lastBrowse, lastLogin FROM userdetail a INNER JOIN user b ON a.userId = b.userId WHERE username = ? GROUP BY a.userId";
+        dbQuery = "SELECT a.userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall FROM userdetail a INNER JOIN user b ON a.userId = b.userId WHERE username = ? GROUP BY a.userId";
 
 
         pstmt = db.getPreparedStatement(dbQuery);
@@ -457,5 +459,49 @@ public class UserDAO {
 
         return success;
     }
+
+
+
+    /*
+        Method Name: updateUserTotalScore
+        Usage: to update the student total score after a completion of any exercises.
+     */
+
+    public boolean updateUserTotalScore(double totalScore,int totalScoreOverall,String userId) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "UPDATE userdetail" +
+                " SET totalScore = ?, totalScoreOverall = ? WHERE userId = ? ";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to update record using executeUpdate method
+        try {
+
+            pstmt.setDouble(1, totalScore);
+            pstmt.setInt(2, totalScoreOverall);
+            pstmt.setString(3, userId);
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(success);
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
 
 }

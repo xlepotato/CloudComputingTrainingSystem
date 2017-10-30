@@ -1,7 +1,8 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
 <%@ page import="entity.UserDetail" %>
-<%@ page import="java.io.PrintWriter" %><%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.text.DecimalFormat" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 11/9/2017
@@ -61,6 +62,7 @@
 </style>
 <body>
 <%
+//    DecimalFormat df = new DecimalFormat()
     String username = session.getAttribute("username").toString();
     UserDAO user = new UserDAO();
     User a = user.retrieveUserByUsername(username);
@@ -92,6 +94,10 @@
 <div class="progress">
     Progress
     <%=ud.getprogress()%>
+</div>
+<div class="totalScore">
+    Total Score:
+    <%=Integer.valueOf((int) ud.getTotalScore())%> / <%=ud.getTotalScoreOverall()%>
 </div>
 <div class="last">
     <div class="lastBrowse">

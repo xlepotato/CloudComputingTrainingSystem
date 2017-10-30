@@ -1,6 +1,8 @@
 package servlet;
 
 import dataManager.ExerciseDAO;
+import dataManager.ScoreDAO;
+import dataManager.UserDAO;
 import entity.Exercise;
 import entity.MCQ;
 import entity.Question;
@@ -28,6 +30,8 @@ public class QuestionServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         HttpSession session = request.getSession();
         ExerciseDAO ex = new ExerciseDAO();
+        UserDAO u = new UserDAO();
+        ScoreDAO s = new ScoreDAO();
      //   ArrayList<Exercise> exList = ex.retrieveAllExercise();
         int exerciseNoFromFrontEnd = Integer.parseInt(session.getAttribute("exercy").toString());
         System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
@@ -78,6 +82,7 @@ public class QuestionServlet extends HttpServlet {
                     System.out.println(i + " i atm ~ ");
                     System.out.println(q1.get(i).getQuestionId() + " qns id currently retrieving qns ");
                     arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
+
                 //    while (i < q1.size()) {
 
                     //*NOTE: change QuestionNo to QuestionId
@@ -97,12 +102,16 @@ public class QuestionServlet extends HttpServlet {
             System.out.println("You have scored " + score);
             String grade = ExerciseUtility.computeGrade(score,q1.size());
             String displayScore = score + " / " + q1.size();
+            s.createScore(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),exerciseNoFromFrontEnd,score,q1.size());
+            double latestScore = ExerciseUtility.sumUpScore(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScore(),score);
+            int latestScoreOverall = ExerciseUtility.sumUpScoreOverall(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScoreOverall(),q1.size());
+            u.updateUserTotalScore(latestScore,latestScoreOverall,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
             session.setAttribute("ex1Score",displayScore);
             session.setAttribute("servlet","ex1");
             session.setAttribute("grade", grade);
 //            getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
             response.sendRedirect("scores.jsp");
-            System.out.println("for commit purpose");
+
                 }
 
 

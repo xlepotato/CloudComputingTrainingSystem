@@ -27,6 +27,9 @@ public class ScoreDAO {
         return score;
     }
 
+
+    // to be created after user submit online exercise / quiz
+
     public boolean createScore(String userId, int exerciseNo, double quizScore, int quizOverall) {
         // declare local variables
         boolean success = false;
@@ -63,6 +66,9 @@ public class ScoreDAO {
 
         return success;
     }
+
+
+    // to be used on the online exercise score display page
 
     public Score retrieveScoreByUserIdAndExerciseNo(String userId, int exerciseNo) {
         // declare local variables

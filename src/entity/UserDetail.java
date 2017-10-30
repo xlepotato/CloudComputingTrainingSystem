@@ -10,14 +10,43 @@ public class UserDetail {
     private String progress;
     private String lastBrowse;
     private String lastLogin;
+    private double totalScore;
+    private int totalScoreOverall;
 
-    public UserDetail(String userid, int userlevel, String progress, String lastBrowse, String lastlogin)
-    {
-        this.userId = userid;
+//    public UserDetail(String userid, int userlevel, String progress, String lastBrowse, String lastlogin)
+//    {
+//        this.userId = userid;
+//        this.userlevel = userlevel;
+//        this.progress = progress;
+//        this.lastBrowse = lastBrowse;
+//        this.lastLogin = lastlogin;
+//    }
+
+
+    public UserDetail(String userId, int userlevel, String progress, String lastBrowse, String lastLogin, double totalScore, int totalScoreOverall) {
+        this.userId = userId;
         this.userlevel = userlevel;
         this.progress = progress;
         this.lastBrowse = lastBrowse;
-        this.lastLogin = lastlogin;
+        this.lastLogin = lastLogin;
+        this.totalScore = totalScore;
+        this.totalScoreOverall = totalScoreOverall;
+    }
+
+    public double getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(double totalScore) {
+        this.totalScore = totalScore;
+    }
+
+    public int getTotalScoreOverall() {
+        return totalScoreOverall;
+    }
+
+    public void setTotalScoreOverall(int totalScoreOverall) {
+        this.totalScoreOverall = totalScoreOverall;
     }
 
     //GET Methods for variables
