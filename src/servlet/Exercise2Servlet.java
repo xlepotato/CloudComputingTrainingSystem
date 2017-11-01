@@ -93,6 +93,7 @@ public class Exercise2Servlet extends HttpServlet {
                 String answer = "";
 
                 String [] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+
             //    arrList.add(checkboxValue);
                 for(int n = 0; n<checkboxValue.length;n++){
 //                    String answer = "";
@@ -100,6 +101,8 @@ public class Exercise2Servlet extends HttpServlet {
 //                    System.out.println(answer + " answer !!!");
                     answer = answer + checkboxValue[n];
                     arrList.add(answer);
+                    s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),checkboxValue[n],exerciseNoFromFrontEnd);
+
                 }
 
                 //    while (i < q1.size()) {
