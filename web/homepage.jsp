@@ -118,7 +118,7 @@
         }
 
         .search{
-            background-image:url(assets/img/搜索按钮.jpg);
+            background-image:url(assets/img/search.jpg);
             position:absolute;
             width:70%;
             height:40px;
