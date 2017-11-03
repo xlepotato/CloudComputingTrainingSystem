@@ -82,7 +82,8 @@ public class QuestionServlet extends HttpServlet {
                     System.out.println(i + " i atm ~ ");
                     System.out.println(q1.get(i).getQuestionId() + " qns id currently retrieving qns ");
                     arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
-                    s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),request.getParameter("selectedChoice"),exerciseNoFromFrontEnd);
+                    System.out.println(arrList.get(i));
+                    s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),arrList.get(i),exerciseNoFromFrontEnd);
                 //    while (i < q1.size()) {
 
                     //*NOTE: change QuestionNo to QuestionId

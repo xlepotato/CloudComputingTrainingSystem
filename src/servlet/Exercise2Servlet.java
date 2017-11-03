@@ -101,9 +101,11 @@ public class Exercise2Servlet extends HttpServlet {
 //                    System.out.println(answer + " answer !!!");
                     answer = answer + checkboxValue[n];
                     arrList.add(answer);
-                    s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),checkboxValue[n],exerciseNoFromFrontEnd);
 
                 }
+                System.out.println(answer + " ANSWER YOOO");
+                s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),answer,exerciseNoFromFrontEnd);
+
 
                 //    while (i < q1.size()) {
 

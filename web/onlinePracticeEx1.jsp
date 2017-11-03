@@ -165,8 +165,6 @@
 
 
 
-
-</table>
 <div class="back">
     <a href="homepage.jsp" style="color:#FFF;">返回</a>
 </div>

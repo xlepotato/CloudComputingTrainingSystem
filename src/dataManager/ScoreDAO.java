@@ -161,7 +161,7 @@ public class ScoreDAO {
 
 
 
-    public ArrayList<Answer> retrieveStudentAnswerByUserIdAndExNo(String userId, int exerciseNo) {
+    public ArrayList<Answer> retrieveStudentCheckboxAnswerByUserIdAndQnsId(String userId, int questionId) {
         // declare local variables
         ArrayList<Answer> list = new ArrayList<Answer>();
         ResultSet rs = null;
@@ -173,7 +173,7 @@ public class ScoreDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT userId, questionId, chosenOptionLetter, exerciseNo FROM answer WHERE userId = ? AND exerciseNo = ? GROUP BY userId, questionId";
+        dbQuery = "SELECT userId, questionId, chosenOptionLetter, exerciseNo FROM answer WHERE userId = ? AND questionId = ? GROUP BY userId, questionId";
 
 
         pstmt = db.getPreparedStatement(dbQuery);
@@ -181,7 +181,7 @@ public class ScoreDAO {
         // step 3 - execute query
         try {
             pstmt.setString(1, userId);
-            pstmt.setInt(2, exerciseNo);
+            pstmt.setInt(2, questionId);
             rs = pstmt.executeQuery();
             if (rs.next()) {
                 Answer ans = convertToAnswer(rs);
@@ -195,6 +195,43 @@ public class ScoreDAO {
         db.terminate();
 
         return list;
+    }
+
+
+    public Answer retrieveStudentAnswerByUserIdAndQnsId(String userId, int questionId) {
+        // declare local variables
+        Answer ans = null;
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT userId, questionId, chosenOptionLetter, exerciseNo FROM answer WHERE userId = ? AND questionId = ? GROUP BY userId, questionId";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, questionId);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                ans = convertToAnswer(rs);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return ans;
     }
 
 }

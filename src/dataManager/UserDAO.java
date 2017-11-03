@@ -128,7 +128,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO userdetail(userId, userlevel, progress, lastLogin, lastBrowse) VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?, 0, 0)";
+        dbQuery = "INSERT INTO userdetail VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?, 0, 0)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
