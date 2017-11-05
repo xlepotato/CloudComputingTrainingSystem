@@ -96,10 +96,10 @@
                     <form action="" method="post">
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
-                                                                                                    name="field1"
+                                                                                                    name="name"
                                                                                                     value=""/></label>
                         <label for><span>Email <span class="required">*</span></span><input type="text"
-                                                                                                     class="input-field"
+                                                                                                     class="email"
                                                                                                      name="field2"
                                                                                                      value=""/></label>
                         <label><span>Telephone</span><input type="text" class="tel-number-field" name="tel_no_1"
