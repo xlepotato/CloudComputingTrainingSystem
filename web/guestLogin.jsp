@@ -312,7 +312,7 @@
 
 
 
-                <li><a href="index.jsp">登录</a>
+                <li><a href="initialIndex.jsp">登录</a>
 
                 </li>
 

@@ -2,10 +2,11 @@
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
-  Time: 10:49 AM
+  Time: 11:28 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
@@ -23,14 +24,6 @@
         line-height: 1.8;
     }
 
-    /* Full height image header */
-    .bgimg-1 {
-        background-position: center;
-        background-size: cover;
-        background-image: url("assets/img/denglu.jpg");
-        min-height: 100%;
-    }
-
     .w3-bar .w3-button {
         padding: 16px;
     }
@@ -40,9 +33,10 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="#home" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
+
             <div class="sousuo">
                 <div class="wenbenkuang">
                     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
@@ -52,14 +46,12 @@
                                onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}"/><br/>
                     </form>
                 </div>
-            </div>
 
+            </div>
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
             <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
             <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
-
-
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-th"></i> Static</button>
                 <div class="dropdown-content">
@@ -69,6 +61,7 @@
                 </div>
             </div>
 
+
         </div>
         <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -77,132 +70,90 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
+</div>
+
+<!-- Body Section -->
+<div class="w3-container" style="padding:128px 16px" id="body">
+    <div class="w3-quarter">
+        <a href="#"></a>
+        <div class="user ch-img-2" align="center"></div>
+        <div id="main">
+            <div class="form-style-2" align="left">
+                <h1>Your awesome profile</h1>
+                <form method="post" enctype="multipart/form-data" action="upload.php">
+                    <input type="file" name="images" id="images" multiple/><br><br>
+                    <button type="submit" id="btn"><span>&nbsp;Upload Profile Picture!</span></button>
+                </form>
+
+                <div id="response"></div>
+                <ul id="image-list">
+
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="upload.js"></script>
+    </div>
+
+    <div class="w3-threequarter">
+
+        <div class="w3-table">
+
+            <table style="width:100%">
+                <tr>
+                    <th>Name:</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Username:</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Last Browse:</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Last Login:</th>
+                    <td></td>
+                </tr>
+
+            </table>
+
+        </div>
+        <br>
+
+        <div class="form-style-2" align="left">
+            <a href="studentDashboard.jsp"><span>&nbsp;<input type="submit" value="Return"></span></a>
+
+            <a href="updateParticular.jsp"><input type="submit" value="Update particulars"
+                                                    align="right"><span>&nbsp;</span></a>
+
+        </div>
 
 
-    <!-- Sidebar on small screens when clicking the menu icon -->
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large"
-         style="display:none" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close
-            ×</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">WELCOME</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">DASHBOARD</a>
-        <a href="#Info" onclick="w3_close()" class="w3-bar-item w3-button">INFORMATION</a>
-        <a href="#Learn" onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-    </nav>
+    </div>
 
 </div>
 
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-left w3-text-black" style="padding:48px">
-        <span class="w3-jumbo w3-hide-small"></span><br>
-        <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
-        <p><span class="w3-large"><h3><font color="white">Start learning more about cloud computing!</font></h3></span>
-        </p>
-        <ul class="ch-grid">
-            <li>
-                <div class="ch-item ch-img-1">
-                    <div class="ch-info">
-                        <h3>Chapter 1</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-2">
-                    <div class="ch-info">
-                        <h3>Chapter 2</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-3">
-                    <div class="ch-info">
-                        <h3>Chapter 3</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-4">
-                    <div class="ch-info">
-                        <h3>Chapter 4</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-4">
-                    <div class="ch-info">
-                        <h3>Future Chapters</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-
-        <p><a href="#about"
-              class="w3-button w3-white w3-padding-large w3-large w3-margin-bottom w3-opacity w3-hover-opacity-off">Learn
-            more and start today</a></p>
-    </div>
-    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-</header>
-
-<!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-    <h3 class="w3-center">ABOUT CLOUD COMPUTING</h3>
-    <p class="w3-center w3-large">Fun Facts about Cloud Computing</p>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
-        <div class="w3-quarter">
-            <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-            <p class="w3-large">What?</p>
-            <p>&nbsp;&nbsp;云计算（cloud
-                computing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。云是网络、互联网的一种比喻说法。过去在图中往往用云来表示电信网，后来也用来表示互联网和底层基础设施的抽象。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Who?</p>
-            <p>云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">When?</p>
-            <p>现阶段广为接受的是美国国家标准与技术研究院（NIST）定义：云计算是一种按使用量付费的模式，这种模式提供可用的、便捷的、按需的网络访问，
-                进入可配置的计算资源共享池（资源包括网络，服务器，存储，应用软件，服务），这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应商进行很少的交互。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">How?</p>
-            <p>对云计算的定义有多种说法。对于到底什么是云计算，至少可以找到100种解释。</p>
-        </div>
-    </div>
-</div>
-
-<!-- Promo Section - "Learn Cloud Computing" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-    <div class="w3-row-padding">
-        <div class="w3-col m6">
-            <h3>Want to know more about cloud computing?</h3>
-            <p>Click on the link below.</p>
-            <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
-        </div>
-    </div>
-</div>
-
-
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large"
+     style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="studentDashboard.jsp" onclick="w3_close()" class="w3-bar-item w3-button">WELCOME</a>
+    <a href="studentDashboard.jsp" onclick="w3_close()" class="w3-bar-item w3-button">DASHBOARD</a>
+    <a href="#Info" onclick="w3_close()" class="w3-bar-item w3-button">INFORMATION</a>
+    <a href="#Learn" onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+        top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -258,6 +209,38 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <style type="text/css">
 
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table#t01 {
+        width: 100%;
+        background-color: #f1f1c1;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    .user {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+
+        object-fit: cover;
+    }
+
+    .ch-img-1 {
+        background-image: url(assets/img/02.jpg);
+    }
+
     .navbar {
         overflow: hidden;
         background-color: #333;
@@ -275,7 +258,7 @@
 
     .dropdown {
         float: left;
-        overflow: visible;
+        overflow: hidden;
     }
 
     .dropdown .dropbtn {
@@ -315,6 +298,15 @@
 
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+
+    .ch-grid {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+        display: block;
+        text-align: center;
+        width: 100%;
     }
 
     .ch-grid:after,
@@ -422,6 +414,148 @@
 
     .ch-item:hover .ch-info p {
         opacity: 1;
+    }
+
+    .form-style-2 {
+        max-width: 500px;
+        padding: 20px 12px 10px 20px;
+        font: 13px Arial, Helvetica, sans-serif;
+    }
+
+    .form-style-2-heading {
+        font-weight: bold;
+        font-style: italic;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+        font-size: 15px;
+        padding-bottom: 3px;
+    }
+
+    .form-style-2 label {
+        display: block;
+        margin: 0px 0px 15px 0px;
+    }
+
+    .form-style-2 label > span {
+        width: 100px;
+        font-weight: bold;
+        float: left;
+        padding-top: 8px;
+        padding-right: 5px;
+    }
+
+    .form-style-2 span.required {
+        color: red;
+    }
+
+    .form-style-2 .tel-number-field {
+        width: 40px;
+        text-align: center;
+    }
+
+    .form-style-2 input.input-field {
+        width: 48%;
+
+    }
+
+    .form-style-2 input.input-field,
+    .form-style-2 .tel-number-field,
+    .form-style-2 .textarea-field,
+    .form-style-2 .select-field {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border: 1px solid #C2C2C2;
+        box-shadow: 1px 1px 4px #EBEBEB;
+        -moz-box-shadow: 1px 1px 4px #EBEBEB;
+        -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        padding: 7px;
+        outline: none;
+    }
+
+    .form-style-2 .input-field:focus,
+    .form-style-2 .tel-number-field:focus,
+    .form-style-2 .textarea-field:focus,
+    .form-style-2 .select-field:focus {
+        border: 1px solid #0C0;
+    }
+
+    .form-style-2 .textarea-field {
+        height: 100px;
+        width: 55%;
+    }
+
+    .form-style-2 input[type=submit],
+    .form-style-2 input[type=button] {
+        border: none;
+        padding: 8px 15px 8px 15px;
+        background: #FF8500;
+        color: #fff;
+        box-shadow: 1px 1px 4px #DADADA;
+        -moz-box-shadow: 1px 1px 4px #DADADA;
+        -webkit-box-shadow: 1px 1px 4px #DADADA;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+
+    .form-style-2 input[type=submit]:hover,
+    .form-style-2 input[type=button]:hover {
+        background: #EA7B00;
+        color: #fff;
+    }
+
+    .form-style-2 input.input-field,
+    .form-style-2 .tel-number-field,
+    .form-style-2 .textarea-field,
+    .form-style-2 .select-field {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border: 1px solid #C2C2C2;
+        box-shadow: 1px 1px 4px #EBEBEB;
+        -moz-box-shadow: 1px 1px 4px #EBEBEB;
+        -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        padding: 7px;
+        outline: none;
+    }
+
+    .form-style-2 .input-field:focus,
+    .form-style-2 .tel-number-field:focus,
+    .form-style-2 .textarea-field:focus,
+    .form-style-2 .select-field:focus {
+        border: 1px solid #0C0;
+    }
+
+    .form-style-2 .textarea-field {
+        height: 100px;
+        width: 55%;
+    }
+
+    .form-style-2 input[type=submit],
+    .form-style-2 input[type=button] {
+        border: none;
+        padding: 8px 15px 8px 15px;
+        background: #FF8500;
+        color: #fff;
+        box-shadow: 1px 1px 4px #DADADA;
+        -moz-box-shadow: 1px 1px 4px #DADADA;
+        -webkit-box-shadow: 1px 1px 4px #DADADA;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+
+    .form-style-2 input[type=submit]:hover,
+    .form-style-2 input[type=button]:hover {
+        background: #EA7B00;
+        color: #fff;
     }
 
 

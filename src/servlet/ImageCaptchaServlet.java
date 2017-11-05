@@ -103,7 +103,7 @@
 //
 //            if (confirmPassword.equals(password)) {
 //                user.createUser(userId, username, userType, password, name, email);
-//                response.sendRedirect("index.jsp");
+//                response.sendRedirect("initialIndex.jsp");
 //            } else {
 //                System.out.println("Password does not match with the confirm password");
 //            }
