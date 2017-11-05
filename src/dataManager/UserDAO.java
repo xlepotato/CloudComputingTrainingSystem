@@ -430,7 +430,7 @@ public class UserDAO {
     Method Name: removeUser
     Usage: For admin to remove student or teacher's account
  */
-    public static boolean removeUser(int userId) {
+    public boolean removeUser(String userId) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -446,7 +446,7 @@ public class UserDAO {
 
         // step 3 - to delete record using executeUpdate method
         try {
-            pstmt.setInt(1, userId);
+            pstmt.setString(1, userId);
             if (pstmt.executeUpdate() == 1)
                 success = true;
             pstmt.close();
