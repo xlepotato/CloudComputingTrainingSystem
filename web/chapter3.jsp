@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -28,7 +28,17 @@
     }
 </style>
 <body>
+<%
+    //Validation on authorised access
+    if (session.getAttribute("authorisedUser") == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You do not have the permission to access this page. Please login.')");
+        pw.println("location='initialIndex.jsp';");
+        pw.println("</script>");
 
+    }
+%>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
@@ -197,7 +207,7 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .navbar {

@@ -43,7 +43,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Log In</div>
-                    <form action="" method="post">
+                    <form action="/login" method="post">
                         <label for><span>Username <span class="required"></span></span><input type="text"
                                                                                                          class="input-field"
                                                                                                          name="username"
@@ -53,11 +53,12 @@
                                                                                                          name="password"
                                                                                                          value=""/></label>
 
-                        <label for><span>Account Type</span><select name="field4" class="select-field">
-                            <option value="Male">Student</option>
-                            <option value="Female">Teacher</option>
-                            <option value="Female">Admin</option>
-                        </select></label>
+                        <label for><span>Account Type</span>
+                            <select name="field4" class="select-field">
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="admin">Admin</option>
+                            </select></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
@@ -70,7 +71,7 @@
         <br>
         <br>
         <a href="index.jsp"><input type="button" value="Return to Home Page"/><span>&nbsp;</span></a>
-        <span><a href="Register.html"><input type="button" value="Move to Register Page"/>&nbsp;</a></span>
+        <span><a href="registration.jsp"><input type="button" value="Move to Register Page"/>&nbsp;</a></span>
     </div>
 
 

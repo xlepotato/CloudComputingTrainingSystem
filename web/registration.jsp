@@ -51,7 +51,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Register</div>
-                    <form action="" method="post" accept-charset="utf-8">
+                    <form action="/register" method="post" accept-charset="utf-8">
                         <label for><span>Username <span class="required"></span></span><input type="text"
                                                                                                          class="input-field"
                                                                                                          name="username"

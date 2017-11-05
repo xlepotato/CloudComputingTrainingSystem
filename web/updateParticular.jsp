@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +28,18 @@
         padding: 16px;
     }
 </style>
+    <%
+        //Validation on authorised access
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='initialIndex.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->

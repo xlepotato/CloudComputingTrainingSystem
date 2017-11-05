@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -9,6 +12,7 @@
 
 <!DOCTYPE html>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +32,32 @@
         padding: 16px;
     }
 </style>
-<body>
+    <%
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='initialIndex.jsp';");
+            pw.println("</script>");
 
+        }
+    %>
+</head>
+<body>
+<%
+    //    DecimalFormat df = new DecimalFormat()
+    String username = session.getAttribute("username").toString();
+    UserDAO user = new UserDAO();
+    User a = user.retrieveUserByUsername(username);
+    UserDetail ud = user.retrieveUserDetailByUsername(username);
+    if (ud == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You have not added your details yet.')");
+        pw.println("location='homepage.jsp';");
+        pw.println("</script>");
+    }
+%>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
@@ -103,23 +131,23 @@
             <table style="width:100%">
                 <tr>
                     <th>Name:</th>
-                    <td></td>
+                    <td> <%=a.getName()%></td>
                 </tr>
                 <tr>
                     <th>Username:</th>
-                    <td></td>
+                    <td><%=a.getUsername()%></td>
                 </tr>
                 <tr>
                     <th>Email:</th>
-                    <td></td>
+                    <td> <%=a.getEmail()%></td>
                 </tr>
                 <tr>
                     <th>Last Browse:</th>
-                    <td></td>
+                    <td> <%=ud.getlastBrowse()%></td>
                 </tr>
                 <tr>
                     <th>Last Login:</th>
-                    <td></td>
+                    <td> <%=ud.getlastLogin()%></td>
                 </tr>
 
             </table>
