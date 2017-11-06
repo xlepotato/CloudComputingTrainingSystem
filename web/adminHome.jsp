@@ -93,10 +93,10 @@
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <a href="adminHome.jsp">Home</a>
+    <a href="adminStudentRecord.jsp">Students</a>
+    <a href="adminTeacherRecord.jsp">Teachers</a>
+    <a href="#">data</a>
 </div>
 
 <div id="main">
