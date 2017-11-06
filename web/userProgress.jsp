@@ -82,7 +82,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Special Technology</h3>
-                    <p>by Cloud Computing <a href="Chapter2.html">Click to View</a></p>
+                    <p>by Cloud Computing <label></label></p>
                 </div>
                 <div class="ch-thumb ch-img-2"></div>
             </div>
