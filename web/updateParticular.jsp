@@ -94,6 +94,10 @@
                 <th>
                     <div class="form-style-2-heading">Update your information here</div>
                     <form action="" method="post">
+                        <label for><span>Username <span class="required">*</span></span><input type="text"
+                                                                                               class="email"
+                                                                                               name="field2"
+                                                                                               value=""/></label>
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
                                                                                                     name="name"
@@ -102,12 +106,6 @@
                                                                                                      class="email"
                                                                                                      name="field2"
                                                                                                      value=""/></label>
-                        <label><span>Telephone</span><input type="text" class="tel-number-field" name="tel_no_1"
-                                                            value="" maxlength="4"/>-<input type="text"
-                                                                                            class="tel-number-field"
-                                                                                            name="tel_no_2" value=""
-                                                                                            maxlength="4"/>-<input
-                                type="text" class="tel-number-field" name="tel_no_3" value="" maxlength="10"/></label>
                         <label for><span>Gender</span><select name="field4" class="select-field">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -123,6 +121,7 @@
         <br>
         <br>
         <a href="accountDetail.jsp"><input type="button" value="Return to Account Page"/><span>&nbsp;</span></a>
+        <a href="passwordChange.jsp"><input type="button" value="Change Password"/><span>&nbsp;</span></a>
     </div>
 
 
