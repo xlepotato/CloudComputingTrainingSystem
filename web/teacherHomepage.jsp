@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Ying
-  Date: 3/11/2017
-  Time: 10:49 AM
+  User: Aloylim98
+  Date: 6/11/2017
+  Time: 1:50 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
@@ -49,7 +48,6 @@
             </div>
             <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
             <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
-            <a href="OnlineLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
 
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-envelope"></i> Contact</button>
@@ -445,4 +443,3 @@ toggle between hiding and showing the dropdown content */
 
 </body>
 </html>
-

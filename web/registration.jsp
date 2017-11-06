@@ -52,26 +52,32 @@
                 <th>
                     <div class="form-style-2-heading">Register</div>
                     <form action="/register" method="post" accept-charset="utf-8">
-                        <label for><span>Username <span class="required"></span></span><input type="text"
+                        <label for><span>用户名： <span class="required"></span></span><input type="text"
                                                                                                          class="input-field"
                                                                                                          name="username"
                                                                                                          value=""/></label>
 
-                        <label for><span>Password <span class="required"></span></span><input type="text"
+                        <label for><span>密码: <span class="required"></span></span><input type="password"
                                                                                                          class="input-field"
                                                                                                          name="password"
                                                                                                          value=""/></label>
 
-                        <label for><span>Retype Password <span class="required"></span></span><input
+                        <label for><span>重复密码： <span class="required"></span></span><input
                                 type="text" class="input-field" name="2ndpassword" value=""/></label>
 
-                        <label><span>Telephone Number</span><input type="text" class="tel-number-field" name="tel_no_1"
-                                                                   value="" maxlength="4"/>-<input type="text"
-                                                                                                   class="tel-number-field"
-                                                                                                   name="tel_no_2"
-                                                                                                   value=""
-                                                                                                   maxlength="4"/>-<input
-                                type="text" class="tel-number-field" name="tel_no_3" value="" maxlength="10"/></label>
+                        <label for><span>姓名： <span class="required"></span></span><input type="text"
+                                                                                          class="input-field"
+                                                                                          name="name"
+                                                                                          value=""/></label>
+                        <label for><span>电子邮件: <span class="required"></span></span><input type="email"
+                                                                                          class="input-field"
+                                                                                          name="email"
+                                                                                          value=""/></label>
+                        <label for><span>验证码: <span class="required"></span></span><input type="text"
+                                                                                           class="input-field"
+                                                                                           name="verification"
+                                                                                           value=""/></label>
+
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>

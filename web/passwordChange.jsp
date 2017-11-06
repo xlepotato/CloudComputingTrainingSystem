@@ -9,25 +9,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online Learning Portal</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Raleway", sans-serif
-    }
+    <title>Online Learning Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif
+        }
 
-    body, html {
-        height: 100%;
-        line-height: 1.8;
-    }
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
 
-    .w3-bar .w3-button {
-        padding: 16px;
-    }
-</style>
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+    </style>
     <%
         //Validation on authorised access
         if (session.getAttribute("authorisedUser") == null){
@@ -92,27 +92,23 @@
         <table style="width:100%">
             <tr>
                 <th>
-                    <div class="form-style-2-heading">Update your information here</div>
+                    <div class="form-style-2-heading">Change your password</div>
                     <form action="" method="post">
-                        <label for><span>Username <span class="required">*</span></span><input type="text"
-                                                                                               class="email"
-                                                                                               name="field2"
+                        <label for><span>Old Password <span class="required">*</span></span><input type="password"
+                                                                                               class="input-field"
+                                                                                               name="oldPassword"
                                                                                                value=""/></label>
-                        <label for><span>Name <span class="required">*</span></span><input type="text"
-                                                                                                    class="input-field"
-                                                                                                    name="name"
-                                                                                                    value=""/></label>
-                        <label for><span>Email <span class="required">*</span></span><input type="text"
-                                                                                                     class="email"
-                                                                                                     name="field2"
-                                                                                                     value=""/></label>
-                        <label for><span>Gender</span><select name="field4" class="select-field">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select></label>
+                        <label for><span>New Password <span class="required">*</span></span><input type="password"
+                                                                                           class="input-field"
+                                                                                           name="newPassword"
+                                                                                           value=""/></label>
+                        <label for><span>Confirm New Password <span class="required">*</span></span><input type="password"
+                                                                                            class="input-field"
+                                                                                            name="cfmNewPassword"
+                                                                                            value=""/></label>
 
 
-                        <label><span>&nbsp;</span><input type="submit" value="Update"/></label>
+                        <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
 
                     </form>
                 </th>
@@ -121,7 +117,7 @@
         <br>
         <br>
         <a href="accountDetail.jsp"><input type="button" value="Return to Account Page"/><span>&nbsp;</span></a>
-        <a href="passwordChange.jsp"><input type="button" value="Change Password"/><span>&nbsp;</span></a>
+        <a href="updateParticular.jsp"><input type="button" value="Go to Update Particulars Page"/><span>&nbsp;</span></a>
     </div>
 
 

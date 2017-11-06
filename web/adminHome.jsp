@@ -94,17 +94,18 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="adminHome.jsp">Home</a>
-    <a href="adminStudentRecord.jsp">Student</a>
+    <a href="adminStudentRecord.jsp">Students</a>
     <a href="adminTeacherRecord.jsp">Teachers</a>
-    <a href="#">Data</a>
+    <a href="#">data</a>
 </div>
 
 <div id="main">
-    <h2>Student Administration</h2>
-    <p>This page is for the administration for Teacher members, functionalities include adding,modifying and deleting data.</p>
+    <h2>Admin Home</h2>
+    <p>Below is the main page for admins, for other pages please use the nagivation bar.</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     <div class="button-left">
         <input name="log out" value="log out" type="button" style="height:40px;width:40%;"/>
+
     </div>
 </div>
 
