@@ -31,5 +31,6 @@
     </orderEntry>
     <orderEntry type="library" name="javax.json:javax.json-api:1.0" level="project" />
     <orderEntry type="library" name="org.glassfish:javax.json:1.0" level="project" />
+    <orderEntry type="library" name="org.apache.poi:poi-excelant:3.14" level="project" />
   </component>
 </module>
