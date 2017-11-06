@@ -103,6 +103,10 @@
     <h2>Admin Home</h2>
     <p>Below is the main page for admins, for other pages please use the nagivation bar.</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <div class="button-left">
+        <input name="log out" value="log out" type="button" style="height:40px;width:40%;"/>
+
+    </div>
 </div>
 
 <script>
