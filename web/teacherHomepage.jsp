@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Ying
-  Date: 3/11/2017
-  Time: 10:49 AM
+  User: Aloylim98
+  Date: 6/11/2017
+  Time: 1:50 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
@@ -445,4 +444,3 @@ toggle between hiding and showing the dropdown content */
 
 </body>
 </html>
-
