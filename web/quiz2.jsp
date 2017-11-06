@@ -5,7 +5,7 @@
   Created by IntelliJ IDEA.
   User: Ying
   Date: 6/11/2017
-  Time: 11:42 AM
+  Time: 2:28 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -26,11 +26,10 @@
     }
 </style>
 <body>
-
 <%
     ExerciseDAO exercise = new ExerciseDAO();
     //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-    int exerciseNo = 1;
+    int exerciseNo = 2;
     session.setAttribute("exercy", exerciseNo);
 
 %>
@@ -38,7 +37,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <div class="sousuo">
@@ -66,11 +65,12 @@
 
 <!--Body section-->
 
-<form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
+<form name="qnsForm" action="/exercise2" method="post" onsubmit="return validateRadioBtn()">
     <table width="80%" border="0" align="center">
         <tr>
             <td><h1 align="center">在线练习</h1></td>
         </tr>
+
     </table>
     <%
         //  String exer = "";
@@ -89,7 +89,12 @@
         System.out.println(qnsList.size() + " qnsList size");
         for (int a = 0; a < qnsList.size(); a++ ) {
             qnsList.get(a).getQuestionDetail();
-            //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+            /*
+               *NOTE: questionId in Question table is unique, questionNo is just the numbering of the question.
+               questionNo in MCQ table is referring to the questionId in Question table
+               For more info, refer to SQL table
+
+            */
             ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
     %>
     <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
@@ -101,9 +106,7 @@
     <%
         String idName = parameterName + mcqList.get(m).getOption();
     %>
-    <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
-    <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
+    <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
     <%
 
@@ -123,6 +126,9 @@
 </form>
 
 
+
+
+</table>
 
 
 
@@ -180,41 +186,6 @@
     // Close the sidebar with the close button
     function w3_close() {
         mySidebar.style.display = "none";
-    }
-</script>
-<script>
-    var count = 0;
-    <%
-    String parameterName = "";
-    %>
-    function validateRadioBtn() {
-        <%
-
-//    for (int i = 0; i < exList.size(); i ++ ) {
-//        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
-//        exerciseNo = exList.get(i).getexerciseNo();
-   //     ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
-        System.out.println(exerciseNo + " - exerciseNo");
-        System.out.println(qnsList.size() + " qnsList size");
-        for (int a = 0; a < qnsList.size(); a++ ) {
-            qnsList.get(a).getQuestionDetail();
-            System.out.println(qnsList.get(a).getQuestionDetail() + " details");
-            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
-               parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
-
-        %>
-        if(document.qnsForm.<%=parameterName%>.value == "" || null) {
-            alert("please answer all the question " + <%=parameterName%>);
-            count = count ++;
-            return false;
-        } else if (count = qnsList.size() - 1 ){
-            console.log(count);
-            document.qnsForm.submit();
-        }
-        <%
-          //  }
-        }
-        %>
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
@@ -452,4 +423,3 @@
 
 </body>
 </html>
-
