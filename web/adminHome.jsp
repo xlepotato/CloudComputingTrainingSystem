@@ -135,19 +135,7 @@
             <input name="尾页" value="尾页" type="button" id="首页" />
         </div>
     </form>
-
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-    }
-</script>
-
+</div>
 </body>
 
 <style type="text/css">
@@ -184,4 +172,16 @@
         text-align:center;
     }
 </style>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
 </html>
