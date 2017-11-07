@@ -96,7 +96,7 @@
                     <form action="" method="post">
                         <label for><span>Username <span class="required">*</span></span><input type="text"
                                                                                                class="email"
-                                                                                               name="field2"
+                                                                                               name="username"
                                                                                                value=""/></label>
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
@@ -104,7 +104,7 @@
                                                                                                     value=""/></label>
                         <label for><span>Email <span class="required">*</span></span><input type="text"
                                                                                                      class="email"
-                                                                                                     name="field2"
+                                                                                                     name="email"
                                                                                                      value=""/></label>
 
 

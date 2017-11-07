@@ -23,9 +23,9 @@ public class UpdateParticularServlet extends HttpServlet {
         String name = request.getAttribute("name").toString();
         String email = request.getAttribute("email").toString();
         String username = request.getAttribute("username").toString();
-        String password = request.getAttribute("password").toString();
+//        String password = request.getAttribute("password").toString();
         UserDAO u = new UserDAO();
-        boolean success = u.updateUser(name,password,email,username);
+        boolean success = u.updateUser(name,email,username,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
         if (success){
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('Update success')");

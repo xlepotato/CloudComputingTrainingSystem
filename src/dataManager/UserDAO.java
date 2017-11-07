@@ -232,7 +232,7 @@ public class UserDAO {
     }
 
 
-    public boolean updateUser(String name, String password, String email, String username) {
+    public boolean updateUser(String name, String email, String username, String userId) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -243,15 +243,15 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "UPDATE user SET name = ?, password = ?, email = ? WHERE username = ?";
+        dbQuery = "UPDATE user SET name = ?, email = ?, username = ? WHERE userId = ?";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to update record using executeUpdate method
         try {
 
             pstmt.setString(1, name);
-            pstmt.setString(2, password);
-            pstmt.setString(3, email);
+            pstmt.setString(2, email);
+            pstmt.setString(3, username);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
