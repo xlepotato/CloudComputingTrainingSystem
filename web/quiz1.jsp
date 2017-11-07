@@ -126,8 +126,9 @@
 
                 </p></td>
         </tr><hr>
+        <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px; alignment: right"/>
     </table>
-    <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px;"/>
+
 
 </form>
 </body>
