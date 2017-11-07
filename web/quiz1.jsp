@@ -73,6 +73,7 @@
 </div>
 
 <!--Body section-->
+    <body background="image/01.jpg">
 <form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
     <table width="80%" border="1" align="center">
         <tr>
@@ -128,7 +129,6 @@
     <input type="submit" value="Submit" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;"/>
 
 </form>
-
 </body>
 
 <!-- Footer -->
