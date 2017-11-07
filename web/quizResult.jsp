@@ -1,12 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: Ying
-  Date: 3/11/2017
-  Time: 10:49 AM
+  Date: 6/11/2017
+  Time: 3:00 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="dataManager.ExerciseDAO" %>
+<%@ page import="entity.Question" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.MCQ" %>
+<%@ page import="dataManager.ScoreDAO" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.Answer" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
@@ -19,46 +25,42 @@
         height: 100%;
         line-height: 1.8;
     }
-    /* Full height image header */
-    .bgimg-1 {
-        background-position: center;
-        background-size: cover;
-        background-image: url("assets/img/denglu.jpg");
-        min-height: 100%;
-    }
     .w3-bar .w3-button {
         padding: 16px;
     }
 </style>
 <body>
+<%
+
+    ExerciseDAO exercise = new ExerciseDAO();
+    ScoreDAO score = new ScoreDAO();
+    UserDAO u = new UserDAO();
+    //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
+    int exerciseNo = ((Integer) session.getAttribute("exercy"));
+
+
+    String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
+
+%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
-
             <div class="sousuo">
                 <div class="wenbenkuang">
                     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
                         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入搜索内容" style="color:gray; width:100%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}" /><br />
                     </form>
                 </div>
-
             </div>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
-            <a href="OnlineLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
 
-            <div class="dropdown">
-                <button class="dropbtn"><i class="fa fa-envelope"></i> Contact</button>
-                <div class="dropdown-content">
-                    <a href="#Contact">Contact Us</a>
-                    <a href="#Location">Our location</a>
-                </div>
-            </div>
-            <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log out</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
+            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
 
 
         </div>
@@ -68,126 +70,154 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-
-
-    <!-- Sidebar on small screens when clicking the menu icon -->
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">WELCOME</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">DASHBOARD</a>
-        <a href="#Info" onclick="w3_close()" class="w3-bar-item w3-button">INFORMATION</a>
-        <a href="#Learn" onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-    </nav>
-
 </div>
 
+<!--Body section-->
 
 
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-left w3-text-black" style="padding:48px">
-        <span class="w3-jumbo w3-hide-small"></span><br>
-        <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
-        <p><span class="w3-large"><h3><font color="white">Start learning more about cloud computing!</font></h3></span></p>
-        <ul class="ch-grid">
-            <li>
-                <div class="ch-item ch-img-1">
-                    <div class="ch-info">
-                        <h3>Chapter 1</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-2">
-                    <div class="ch-info">
-                        <h3>Chapter 2</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-3">
-                    <div class="ch-info">
-                        <h3>Chapter 3</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-4">
-                    <div class="ch-info">
-                        <h3>Chapter 4</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ch-item ch-img-4">
-                    <div class="ch-info">
-                        <h3>Future Chapters</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+<form id="result" name="result" method="post" action="">
 
-        <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-bottom w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+    <div class="ScoreTable">
+
+
+        <%
+            if (session.getAttribute("servlet").equals("ex1")){
+        %>
+        <table style="width:100%">
+            <caption>测验结果</caption>
+            <tr>
+                <th>练习号: 1</th>
+                <th>练习结果: <%=session.getAttribute("ex1Score")%></th>
+                <th>成绩级别: <%=session.getAttribute("grade")%></th>
+            </tr>
+        </table>
+        <%--<tr>--%>
+        <%--<td> asd </td>--%>
+        <%--<td> aaa </td>--%>
+        <%--</tr>--%>
+        <%--<tr>--%>
+        <%--<td> aa </td>--%>
+        <%--<td> sss </td>--%>
+        <%--</tr>--%>
+        <br>
+        <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+        <%
+            //  exerciseNo = exList.get(i).getexerciseNo();
+            ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+            System.out.println(exerciseNo + " - exerciseNo");
+            System.out.println(qnsList.size() + " qnsList size");
+            for (int a = 0; a < qnsList.size(); a++ ) {
+                qnsList.get(a).getQuestionDetail();
+                //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+                ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
+        %>
+        <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
+        <%
+            String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+            for (int m =0; m < mcqList.size(); m++){
+        %>
+        <br> <p id="question">
+            <%
+        String idName = parameterName + mcqList.get(m).getOption();
+    %>
+        <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
+            <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
+
+
+            <%
+
+        if(m == (mcqList.size()-1)){
+    %> <br><br>
+            <%
+                }
+            }
+            %>
+        <br>  Selected choice: <%=score.retrieveStudentAnswerByUserIdAndQnsId(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),qnsList.get(a).getQuestionId()).getChosenOptionLetter()%>
+        <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
+        <%
+            }
+
+        %>
+        </p>
+
+        <%
+        }
+        else if(session.getAttribute("servlet").equals("ex2")){
+        %>
+        <table style="width:100%">
+            <caption>测验结果</caption>
+            <tr>
+                <th>练习号: 2</th>
+                <th>练习结果: <%=session.getAttribute("ex2Score")%></th>
+                <th>成绩级别: <%=session.getAttribute("grade")%></th>
+            </tr>
+        </table>
+        <br>
+        <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+        <%
+            //  exerciseNo = exList.get(i).getexerciseNo();
+            ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+            System.out.println(exerciseNo + " - exerciseNo");
+            System.out.println(qnsList.size() + " qnsList size");
+            for (int a = 0; a < qnsList.size(); a++ ) {
+                qnsList.get(a).getQuestionDetail();
+            /*
+               *NOTE: questionId in Question table is unique, questionNo is just the numbering of the question.
+               questionNo in MCQ table is referring to the questionId in Question table
+               For more info, refer to SQL table
+
+            */
+                ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
+        %>
+        <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
+        <%
+            String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+            for (int m =0; m < mcqList.size(); m++){
+        %>
+        <br> <p id="question">
+            <%
+                String idName = parameterName + mcqList.get(m).getOption();
+            %>
+        <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
+
+            <%
+
+                if(m == (mcqList.size()-1)){
+            %> <br><br>
+            <%
+                        }
+                    }
+                    ArrayList<Answer> ansList = score.retrieveStudentCheckboxAnswerByUserIdAndQnsId(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),qnsList.get(a).getQuestionId());
+                    String answer = "";
+                    for (int z = 0; z < ansList.size(); z++){
+                        answer = answer + ansList.get(z).getChosenOptionLetter();
+//                        System.out.println(answer + "this is important yoooo");
+                    }
+                    %>
+        <br>  Selected choice: <%=answer%>
+        <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
+        <%
+            }
+
+        %>
+
+        </p>
+        <%
+            }
+        %>
+
+
+
+
     </div>
-    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-</header>
+</form>
 
-<!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-    <h3 class="w3-center">ABOUT CLOUD COMPUTING</h3>
-    <p class="w3-center w3-large">Fun Facts about Cloud Computing</p>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
-        <div class="w3-quarter">
-            <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-            <p class="w3-large">What?</p>
-            <p>&nbsp;&nbsp;云计算（cloud computing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。云是网络、互联网的一种比喻说法。过去在图中往往用云来表示电信网，后来也用来表示互联网和底层基础设施的抽象。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Who?</p>
-            <p>云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">When?</p>
-            <p>现阶段广为接受的是美国国家标准与技术研究院（NIST）定义：云计算是一种按使用量付费的模式，这种模式提供可用的、便捷的、按需的网络访问， 进入可配置的计算资源共享池（资源包括网络，服务器，存储，应用软件，服务），这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应商进行很少的交互。</p>
-        </div>
-        <div class="w3-quarter">
-            <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">How?</p>
-            <p>对云计算的定义有多种说法。对于到底什么是云计算，至少可以找到100种解释。</p>
-        </div>
-    </div>
-</div>
 
-<!-- Promo Section - "Learn Cloud Computing" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-    <div class="w3-row-padding">
-        <div class="w3-col m6">
-            <h3>Want to know more about cloud computing?</h3>
-            <p>Click on the link below.</p>
-            <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
-        </div>
-    </div>
-</div>
 
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -244,6 +274,30 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <style type="text/css">
 
+    table, th, td {
+        border: 5px solid black;
+
+    }
+    th, td {
+        padding: 15px;
+    }
+    th {
+        text-align: left;
+    }
+
+    .user {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+
+        object-fit: cover;
+    }
+
+    .ch-img-1 {
+        background-image: url(assets/img/02.jpg);
+    }
+
     .navbar {
         overflow: hidden;
         background-color: #333;
@@ -261,7 +315,7 @@
 
     .dropdown {
         float: left;
-        overflow: visible;
+        overflow: hidden;
     }
 
     .dropdown .dropbtn {
@@ -302,6 +356,16 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
+
+    .ch-grid {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
     .ch-grid:after,
     .ch-item {
         width: 100%;
@@ -412,16 +476,13 @@
     }
 
 
-
-
-
 </style>
 
 <!--End of css && Start of javascript-->
 
 <script type="text/javascript">
     /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+     toggle between hiding and showing the dropdown content */
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -444,5 +505,14 @@ toggle between hiding and showing the dropdown content */
 </script>
 
 </body>
+<%
+    System.out.println(session.getCreationTime() + " sessionCreationTime");
+    System.out.println(session.getLastAccessedTime() + " sessionLastAccessedTime");
+    //to remove unneccessary attributes stored in the session scope
+    session.removeAttribute("grade");
+    session.removeAttribute("servlet");
+    session.removeAttribute("ex1Score");
+    session.removeAttribute("ex2Score");
+%>
 </html>
 
