@@ -29,6 +29,9 @@
         padding: 16px;
     }
 </style>
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
