@@ -176,22 +176,21 @@ public class ScoreDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT userId, exerciseNo, quizScore, quizOverall FROM score WHERE userId = ? GROUP BY exerciseNo";
+        dbQuery = "SELECT userId, exerciseNo, quizScore, quizOverall FROM score WHERE userId = ?";
 
 
-        pstmt = db.getPreparedStatement(dbQuery);
 
-        // step 3 - execute query
+        // step 3 - using DBControlle readRequest method
+        rs = db.readRequest(dbQuery);
         try {
-            pstmt.setString(1, userId);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
                 Score score = convertToScore(rs);
                 list.add(score);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         // step 4 - close connection
         db.terminate();
