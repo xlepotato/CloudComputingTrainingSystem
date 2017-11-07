@@ -71,7 +71,7 @@
     <div align="left"><a href="onlineLearningLanding.jsp">
         <button type="button" class="btn btn-primary btn-arrow-left">Return</button>
     </a></div>
-    <div align="right"><a href="StudentSubmit.jsp">
+    <div align="right"><a href="TeacherUpload.jsp">
         <button type="button" class="btn btn-warning btn-arrow-right">Move to Assignment upload</button>
     </a></div>
     <br>
