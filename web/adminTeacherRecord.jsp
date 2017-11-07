@@ -1,4 +1,6 @@
-<%--
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -92,6 +94,11 @@
     </style>
 </head>
 <body>
+<%
+    UserDAO user = new UserDAO();
+    ArrayList<User> ulist = user.retrieveAllTeacher();
+%>
+
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="adminHome.jsp">Home</a>
@@ -155,23 +162,32 @@
                 <tr>
                     <td width="92" bgcolor="#999999">序号</td>
                     <td width="92" bgcolor="#999999">姓名</td>
-                    <td width="92" bgcolor="#999999">学号</td>
+                    <td width="92" bgcolor="#999999">Username</td>
+                    <%--<td width="92" bgcolor="#999999">学号</td>--%>
                     <td width="92" bgcolor="#999999">帐号</td>
                     <td width="92" bgcolor="#999999">密码</td>
-                    <td width="92" bgcolor="#999999">微信</td>
+                    <td width="92" bgcolor="#999999">邮件</td>
+                    <%--<td width="92" bgcolor="#999999">微信</td>--%>
                     <td width="92" bgcolor="#999999">QQ号</td>
+                    <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <td width="121" bgcolor="#999999">手机号</td>
                 </tr>
+                <%
+                    for (int i =0; i < ulist.size(); i++){
+                %>
                 <tr>
-                    <td>1</td>
-                    <td>学生</td>
-                    <td>123</td>
+                    <td><%=ulist.get(i).getUserId()%></td>
+                    <td><%=ulist.get(i).getName()%></td>
+                    <td><%=ulist.get(i).getUsername()%></td>
                     <td>s0001</td>
-                    <td>123456</td>
-                    <td>8975756</td>
+                    <td>*******</td>
+                    <td><%=ulist.get(i).getEmail()%></td>
                     <td>456898</td>
                     <td>18201292522</td>
                 </tr>
+                <%
+                    }
+                %>
             </table>
         </div>
 
