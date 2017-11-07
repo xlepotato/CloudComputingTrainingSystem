@@ -4,7 +4,9 @@
 <%@ page import="entity.UserDetail" %>
 <%@ page import="wrapper.utility.ExerciseUtility" %>
 <%@ page import="dataManager.ExerciseDAO" %>
-<%@ page import="dataManager.ScoreDAO" %><%--
+<%@ page import="dataManager.ScoreDAO" %>
+<%@ page import="entity.Score" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -49,7 +51,7 @@
     UserDAO user = new UserDAO();
     ExerciseDAO exer = new ExerciseDAO();
     ScoreDAO s = new ScoreDAO();
-    int exSize = exer.retrieveAllExercise().size();
+    int scoreSize = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId()).size();
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
 //    if (ud == null){
@@ -68,6 +70,7 @@
            grade = "Not Applicable";
        }
 
+    ArrayList<Score> scoreList = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
 
 
 %>
@@ -130,12 +133,12 @@
         </thead>
 
         <%
-        for (int i = 0; i < exSize; i ++){
+        for (int i = 0; i < scoreList.size(); i ++){
 %>
 
 
         <tr class="w3-hover-green">
-            <td><%=s.retr%></td>
+            <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td>55/63</td>
             <td><a href="#">Details</a></td>
         </tr>
