@@ -69,7 +69,7 @@
 <div class="w3-container">
     <h2>Your Quiz Grades</h2>
     <p>If you want to find out more of the grading please click the link to view more details</p>
-    <p><align="right">Your Total Grade: <label>A</label></p>
+    <p>Your Total Grade: <label>A</label></p>
     <table class="w3-table-all">
         <thead>
         <tr class="w3-light-grey">
