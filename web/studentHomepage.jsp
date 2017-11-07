@@ -94,7 +94,7 @@
             <li>
                 <div class="ch-item ch-img-1">
                     <div class="ch-info">
-                        <h3>Chapter 1</h3>
+                        <h3><a href="chapter1.jsp"> Chapter 1</a></h3>
                         <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
             <li>
                 <div class="ch-item ch-img-2">
                     <div class="ch-info">
-                        <h3>Chapter 2</h3>
+                        <h3><a href="chapter2.jsp"> Chapter 2</a></h3>
                         <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
             <li>
                 <div class="ch-item ch-img-3">
                     <div class="ch-info">
-                        <h3>Chapter 3</h3>
+                        <h3><a href="chapter3.jsp">Chapter 3</a></h3>
                         <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
             <li>
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
-                        <h3>Chapter 4</h3>
+                        <h3><a href="chapter4.jsp">Chapter 4</a></h3>
                         <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
