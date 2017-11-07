@@ -124,10 +124,10 @@
 
                     %>
 
-                </p></td><hr>
-        </tr>
+                </p></td>
+        </tr><hr>
     </table>
-    <input type="submit" value="Submit" alight="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px;"/>
+    <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px;"/>
 
 </form>
 </body>
