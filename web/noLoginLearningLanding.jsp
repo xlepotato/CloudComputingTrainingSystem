@@ -27,7 +27,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.htm" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <div class="sousuo">
@@ -38,10 +38,10 @@
                 </div>
             </div>
 
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="NoLoginLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
-            <a href="Register.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
+            <a href="index.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
+            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
 
 
         </div>
@@ -64,7 +64,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>History  Evolution</h3>
-                    <p>by Cloud Computing <a href="Chapter1.html">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter1.jsp">Click to Start</a></p>
                 </div>
                 <div class="ch-thumb ch-img-1"></div>
             </div>
@@ -73,7 +73,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Special Technology</h3>
-                    <p>by Cloud Computing <a href="Chapter2.html">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter2.jsp">Click to Start</a></p>
                 </div>
                 <div class="ch-thumb ch-img-2"></div>
             </div>
@@ -82,7 +82,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Industry Chain</h3>
-                    <p>by Cloud Computing <a href="Chapter3.html">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter3.jsp">Click to Start</a></p>
                 </div>
                 <div class="ch-thumb ch-img-3"></div>
             </div>
@@ -91,7 +91,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Influence Range</h3>
-                    <p>by Cloud Computing <a href="Chapter4.html">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter4.jsp">Click to Start</a></p>
                 </div>
                 <div class="ch-thumb ch-img-4"></div>
             </div>
@@ -101,7 +101,7 @@
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="OnlineLearningLanding.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="noLoginLearningLanding.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -179,7 +179,7 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .navbar {

@@ -39,7 +39,7 @@
 
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="studentHomepage.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
 
 
     </div>
@@ -89,7 +89,7 @@
         </table>
         <br>
         <br>
-        <a href="index.jsp"><input type="button" value="Return to Home Page"/><span>&nbsp;</span></a>
+        <a href="studentHomepage.jsp"><input type="button" value="Return to Home Page"/><span>&nbsp;</span></a>
         <span><a href="login.jsp"><input type="button" value="Move to Log In Page"/>&nbsp;</a></span>
     </div>
 

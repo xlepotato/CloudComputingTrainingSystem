@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Aloylim98
-  Date: 6/11/2017
-  Time: 11:28 AM
+  User: Ying
+  Date: 3/11/2017
+  Time: 10:49 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
@@ -22,7 +23,7 @@
     .bgimg-1 {
         background-position: center;
         background-size: cover;
-        background-image: url("image/denglu.jpg");
+        background-image: url("assets/img/denglu.jpg");
         min-height: 100%;
     }
     .w3-bar .w3-button {
@@ -34,21 +35,30 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="studentHomepage.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
+
             <div class="sousuo">
                 <div class="wenbenkuang">
                     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
                         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入搜索内容" style="color:gray; width:100%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}" /><br />
                     </form>
                 </div>
-            </div>
 
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="NoLoginLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
-            <a href="Register.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
+            </div>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
+            <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-envelope"></i> Contact</button>
+                <div class="dropdown-content">
+                    <a href="#Contact">Contact Us</a>
+                    <a href="#Location">Our location</a>
+                </div>
+            </div>
+            <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log out</a>
 
 
         </div>
@@ -84,32 +94,32 @@
             <li>
                 <div class="ch-item ch-img-1">
                     <div class="ch-info">
-                        <h3>History  Evolution</h3>
-                        <p>by Cloud Computing </p>
+                        <h3>Chapter 1</h3>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-2">
                     <div class="ch-info">
-                        <h3>Special Technology</h3>
-                        <p>by Cloud Computing </p>
+                        <h3>Chapter 2</h3>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-3">
                     <div class="ch-info">
-                        <h3>Industry Chain</h3>
-                        <p>by Cloud Computing </p>
+                        <h3>Chapter 3</h3>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
-                        <h3>Influence Range</h3>
-                        <p>by Cloud Computing </p>
+                        <h3>Chapter 4</h3>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -117,7 +127,7 @@
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
                         <h3>Future Chapters</h3>
-                        <p>by Cloud Computing </p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -168,9 +178,8 @@
     <div class="w3-row-padding">
         <div class="w3-col m6">
             <h3>Want to know more about cloud computing?</h3>
-            <p>Log in or register below!</p>
-            <p><a href="Log In.html" class="w3-button w3-black"><i class="fa fa-th"> </i> Log In</a></p>
-            <p><a href="Register.html" class="w3-button w3-black w3-right-align"><i class="fa fa-th"> </i> Register</a></p>
+            <p>Click on the link below.</p>
+            <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
         </div>
     </div>
 </div>
@@ -320,18 +329,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/03.jpg);
+        background-image: url(assets/img/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/04.jpg);
+        background-image: url(assets/img/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/05.jpg);
+        background-image: url(assets/img/05.jpg);
     }
 
     .ch-info {
