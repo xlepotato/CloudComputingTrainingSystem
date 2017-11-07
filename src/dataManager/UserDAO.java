@@ -267,6 +267,41 @@ public class UserDAO {
         return success;
     }
 
+    public boolean updatePassword(String newPassword, String userId) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "UPDATE user SET password = ? WHERE userId = ?";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to update record using executeUpdate method
+        try {
+
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2, userId);
+
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(success);
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
     public boolean checkForExistingUser(String username, String password){
 
         boolean allowLogin = false;

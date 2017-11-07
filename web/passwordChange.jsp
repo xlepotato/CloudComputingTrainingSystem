@@ -94,7 +94,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Change your password</div>
-                    <form action="" method="post">
+                    <form action="/changePassword" method="post">
                         <label for><span>Old Password <span class="required">*</span></span><input type="password"
                                                                                                class="input-field"
                                                                                                name="oldPassword"
