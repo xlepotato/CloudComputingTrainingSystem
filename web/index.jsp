@@ -22,7 +22,7 @@
     .bgimg-1 {
         background-position: center;
         background-size: cover;
-        background-image: url("image/denglu.jpg");
+        background-image: url("assets/img/denglu.jpg");
         min-height: 100%;
     }
     .w3-bar .w3-button {
@@ -34,7 +34,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <div class="sousuo">
@@ -45,10 +45,10 @@
                 </div>
             </div>
 
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="NoLoginLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
-            <a href="Register.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
+            <a href="index.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
+            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
 
 
         </div>
@@ -169,8 +169,8 @@
         <div class="w3-col m6">
             <h3>Want to know more about cloud computing?</h3>
             <p>Log in or register below!</p>
-            <p><a href="Log In.html" class="w3-button w3-black"><i class="fa fa-th"> </i> Log In</a></p>
-            <p><a href="Register.html" class="w3-button w3-black w3-right-align"><i class="fa fa-th"> </i> Register</a></p>
+            <p><a href="login.jsp" class="w3-button w3-black"><i class="fa fa-th"> </i> Log In</a></p>
+            <p><a href="registration.jsp" class="w3-button w3-black w3-right-align"><i class="fa fa-th"> </i> Register</a></p>
         </div>
     </div>
 </div>
@@ -320,18 +320,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/03.jpg);
+        background-image: url(assets/img/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/04.jpg);
+        background-image: url(assets/img/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/05.jpg);
+        background-image: url(assets/img/05.jpg);
     }
 
     .ch-info {
