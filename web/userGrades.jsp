@@ -54,10 +54,13 @@
 //        pw.println("</script>");
 //    }
     String grade = "";
-   if (ud.getTotalScoreOverall() == 0){
-       grade = "Not Applicable";
-   }
-         grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
+
+        String tempOverall = (Integer.toString(ud.getTotalScoreOverall()));
+        System.out.println("Tryy overall int " + tempOverall);
+       grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
+       if (tempOverall.equals("0")){
+           grade = "Not Applicable";
+       }
 
 %>
 
