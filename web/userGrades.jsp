@@ -18,13 +18,20 @@
 <head>
 <title>Online Learning Portal</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <%--<script>--%>
+        <%--$(document).ready(function() {--%>
+            <%--$(".quizreview").click(function(event){--%>
+                <%--event.preventDefault();--%>
+                <%--var url =$(this).attr("href");--%>
+
+                <%--console.log(url);--%>
+            <%--});--%>
+        <%--});--%>
+    <%--</script>--%>
     <script>
         $(document).ready(function() {
             $(".quizreview").click(function(event){
-                event.preventDefault();
-                var url =$(this).attr("href");
-
-                console.log(url);
+            location='quizReview.jsp'
             });
         });
     </script>
