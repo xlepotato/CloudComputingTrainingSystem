@@ -20,13 +20,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function() {
-            $("#quizreview").click(function(event){
+            $(".quizreview").click(function(event){
                 event.preventDefault();
                 var url =$(this).attr("href");
 
-                $('#right-pane').load(url, function(data) {
-                    console.log(data);
-                });
                 console.log(url);
             });
         });
@@ -158,7 +155,7 @@
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a href="quizReview.jsp" id="quizReview">Details</a></td>
+            <td><a href="quizReview.jsp" class="quizreview">Details</a></td>
         </tr>
 
         <%
