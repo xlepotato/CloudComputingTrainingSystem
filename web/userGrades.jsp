@@ -129,15 +129,18 @@
 
         <%
         for (int i = 0; i < exSize; i ++){
+%>
 
-        }
-        %>
 
         <tr class="w3-hover-green">
-            <td>1</td>
+            <td><%=exer.retrieveAllExercise().get(i).getexerciseNo()%></td>
             <td>55/63</td>
             <td><a href="#">Details</a></td>
         </tr>
+
+        <%
+            }
+        %>
 
     </table>
 </div>
