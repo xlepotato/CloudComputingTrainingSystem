@@ -5,7 +5,7 @@
   Created by IntelliJ IDEA.
   User: Ying
   Date: 6/11/2017
-  Time: 2:28 PM
+  Time: 11:42 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -24,12 +24,16 @@
     .w3-bar .w3-button {
         padding: 16px;
     }
+    #question {
+        text-indent: 50px;
+    }
 </style>
 <body>
+
 <%
     ExerciseDAO exercise = new ExerciseDAO();
     //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-    int exerciseNo = 2;
+    int exerciseNo = 1;
     session.setAttribute("exercy", exerciseNo);
 
 %>
@@ -37,7 +41,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="studentHomepage.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <div class="sousuo">
@@ -70,75 +74,72 @@
         </a>
     </div>
 </div>
+<div class="w3-center">
+    <!--Body section-->
+    <form name="qnsForm" action="/exercise2" method="post" onsubmit="return validateRadioBtn()">
+        <table width="80%" border="1" align="center">
+            <tr>
+                <td><h1 align="center">在线练习</h1></td>
+            </tr>
 
-<!--Body section-->
-
-<form name="qnsForm" action="/exercise2" method="post" onsubmit="return validateRadioBtn()">
-    <table width="80%" border="0" align="center">
-        <tr>
-            <td><h1 align="center">在线练习</h1></td>
-        </tr>
-
-    </table>
-    <%
-        //  String exer = "";
-        String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
+            <tr>
+                <td><%
+                    //  String exer = "";
+                    String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
 //    for (int i = 0; i < exList.size(); i ++ ) {
 //        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
 //
 //        exer =  exList.get(1).getexerciseName();
-    %>
-    <br>
-    <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
-    <%
-        //  exerciseNo = exList.get(i).getexerciseNo();
-        ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
-        System.out.println(exerciseNo + " - exerciseNo");
-        System.out.println(qnsList.size() + " qnsList size");
-        for (int a = 0; a < qnsList.size(); a++ ) {
-            qnsList.get(a).getQuestionDetail();
-            /*
-               *NOTE: questionId in Question table is unique, questionNo is just the numbering of the question.
-               questionNo in MCQ table is referring to the questionId in Question table
-               For more info, refer to SQL table
-
-            */
-            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
-    %>
-    <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
-    <%
-        String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
-        for (int m =0; m < mcqList.size(); m++){
-    %>
-    <br> <p id="question">
-    <%
-        String idName = parameterName + mcqList.get(m).getOption();
-    %>
-    <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
-    <%
-
-        if(m == (mcqList.size()-1)){
-    %> <br><br>
-    <%
-                }
-            }
-        }
-
-    %>
-
-</p>
-
-    <input type="submit" value="Submit" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;"/>
-
-</form>
+                %>
+                    <br>
+                    <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+                    <%
+                        //  exerciseNo = exList.get(i).getexerciseNo();
+                        ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+                        System.out.println(exerciseNo + " - exerciseNo");
+                        System.out.println(qnsList.size() + " qnsList size");
+                        for (int a = 0; a < qnsList.size(); a++ ) {
+                            qnsList.get(a).getQuestionDetail();
+                            //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+                            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
+                    %>
+                    <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
+                    <%
+                        String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+                        for (int m =0; m < mcqList.size(); m++){
+                    %>
+                    <br> <p id="question">
+                        <%
+                            String idName = parameterName + mcqList.get(m).getOption();
+                        %>
+                        <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
+                        <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
 
+                        <%
 
+                            if(m == (mcqList.size()-1)){
+                        %> <br><br>
+                        <%
+                                    }
+                                }
+                            }
 
-</table>
+                        %>
 
+                    </p></td>
+            </tr><hr>
 
+        </table>
+        <br>
+        <div style="padding-right:152px">
+            <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px; float:right;"/>
+        </div>
+    </form>
+</div>
+<br>
+</br>
+</body>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
@@ -196,15 +197,50 @@
         mySidebar.style.display = "none";
     }
 </script>
+<script>
+    var count = 0;
+    <%
+    String parameterName = "";
+    %>
+    function validateRadioBtn() {
+        <%
+
+//    for (int i = 0; i < exList.size(); i ++ ) {
+//        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
+//        exerciseNo = exList.get(i).getexerciseNo();
+   //     ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+        System.out.println(exerciseNo + " - exerciseNo");
+        System.out.println(qnsList.size() + " qnsList size");
+        for (int a = 0; a < qnsList.size(); a++ ) {
+            qnsList.get(a).getQuestionDetail();
+            System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionNo());
+               parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+
+        %>
+        if(document.qnsForm.<%=parameterName%>.value == "" || null) {
+            alert("please answer all the question " + <%=parameterName%>);
+            count = count ++;
+            return false;
+        } else if (count = qnsList.size() - 1 ){
+            console.log(count);
+            document.qnsForm.submit();
+        }
+        <%
+          //  }
+        }
+        %>
+    }
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <style type="text/css">
 
     table, th, td {
-        border: 5px solid black;
-
+        border: 1px solid black;
+        border-collapse: collapse;
     }
     th, td {
-        padding: 15px;
+        padding: 8px;
     }
     th {
         text-align: left;
@@ -431,3 +467,4 @@
 
 </body>
 </html>
+
