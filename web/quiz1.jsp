@@ -73,9 +73,9 @@
 </div>
 
 <!--Body section-->
-
+<div class="w3-center">
 <form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
-    <table width="80%" border="0" align="center">
+    <table width="80%" border="1" align="center">
         <tr>
             <td><h1 align="center">在线练习</h1></td>
         </tr>
@@ -131,7 +131,7 @@
 </form>
 
 
-
+</div>
 
 
 <!-- Footer -->
