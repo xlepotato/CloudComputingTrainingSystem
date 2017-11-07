@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +29,17 @@
         padding: 16px;
     }
 </style>
+    <%
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='index.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -97,7 +109,7 @@
             <p><a href="accountDetail.jsp">Manage your account details here</a></p>
         </div>
         <div class="w3-quarter">
-            <a href="#"><i class="fa fa-heart w3-margin-bottom w3-jumbo"></i></a>
+            <a href="userProgress.jsp"><i class="fa fa-heart w3-margin-bottom w3-jumbo"></i></a>
             <p class="w3-large">Progress</p>
             <p><a href="userProgress.jsp">Click to view your past progress</a></p>
         </div>

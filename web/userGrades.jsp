@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -7,6 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +26,33 @@
         padding: 16px;
     }
 </style>
+    <%
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='initialIndex.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
+</head>
 <body>
+
+<%
+    //    DecimalFormat df = new DecimalFormat()
+    String username = session.getAttribute("username").toString();
+    UserDAO user = new UserDAO();
+    User a = user.retrieveUserByUsername(username);
+    UserDetail ud = user.retrieveUserDetailByUsername(username);
+    if (ud == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You have not added your details yet.')");
+        pw.println("location='index.jsp';");
+        pw.println("</script>");
+    }
+%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -69,7 +99,9 @@
 <div class="w3-container">
     <h2>Your Quiz Grades</h2>
     <p>If you want to find out more of the grading please click the link to view more details</p>
+    <p>Your Total Score: <label>A</label></p>
     <p>Your Total Grade: <label>A</label></p>
+
     <table class="w3-table-all">
         <thead>
         <tr class="w3-light-grey">
