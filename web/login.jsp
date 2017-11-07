@@ -48,7 +48,7 @@
                                                                                                          class="input-field"
                                                                                                          name="username"
                                                                                                          value=""/></label>
-                        <label for><span>Password <span class="required"></span></span><input type="text"
+                        <label for><span>Password <span class="required"></span></span><input type="password"
                                                                                                          class="input-field"
                                                                                                          name="password"
                                                                                                          value=""/></label>

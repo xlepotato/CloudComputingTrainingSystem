@@ -63,7 +63,7 @@
                                                                                                          value=""/></label>
 
                         <label for><span>重复密码： <span class="required"></span></span><input
-                                type="text" class="input-field" name="2ndpassword" value=""/></label>
+                                type="password" class="input-field" name="2ndpassword" value=""/></label>
 
                         <label for><span>姓名： <span class="required"></span></span><input type="text"
                                                                                           class="input-field"
