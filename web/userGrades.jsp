@@ -135,7 +135,7 @@
 
 
         <tr class="w3-hover-green">
-            <td><%=exer.retrieveAllExercise().get(i).getexerciseNo()%></td>
+            <td><%=s.retr%></td>
             <td>55/63</td>
             <td><a href="#">Details</a></td>
         </tr>

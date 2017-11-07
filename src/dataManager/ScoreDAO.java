@@ -162,6 +162,44 @@ public class ScoreDAO {
     }
 
 
+    //for display each and every quiz score taken by a particular student
+
+    public ArrayList<Score> retrieveAllScoreDoneByAStudent(String userId) {
+        // declare local variables
+        ArrayList<Score> list = new ArrayList<Score>();
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT s.userId, s.exerciseNo, quizScore, quizOverall FROM score s INNER JOIN user u ON s.userId = u.userId INNER JOIN exercise e ON s.exerciseNo = e.exerciseNo WHERE s.userId = ? GROUP BY s.userId";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setString(1, userId);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Score score = convertToScore(rs);
+                list.add(score);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return list;
+    }
+
+
 
     public ArrayList<Answer> retrieveStudentCheckboxAnswerByUserIdAndQnsId(String userId, int questionId) {
         // declare local variables
