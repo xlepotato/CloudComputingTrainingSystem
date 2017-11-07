@@ -125,10 +125,9 @@
 
 </p>
 
-    <input type="submit" value="Submit" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;"/>
+    <input type="submit" value="Submit" style="background:#EBEBEB; color:#FFF; width:80px; height:40px; font-size:15px;"/>
 
 </form>
-
 </body>
 
 <!-- Footer -->
