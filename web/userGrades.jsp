@@ -136,13 +136,12 @@
         <%
 
         for (int i = 0; i < scoreList.size(); i ++){
-            String score = ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getExerciseNo());
 %>
 
 
         <tr class="w3-hover-green">
-            <td><%=score%></td>
-            <td><%=scoreList.get(i).getQuizScore()%>/<%=scoreList.get(i).getQuizOverall()%></td>
+            <td><%=scoreList.get(i).getExerciseNo()%></td>
+            <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getExerciseNo())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <td><a href="#">Details</a></td>
         </tr>
 
