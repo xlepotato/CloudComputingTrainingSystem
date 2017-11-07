@@ -54,11 +54,11 @@
 //        pw.println("</script>");
 //    }
     String grade = "";
-    try {
+   if (ud.getTotalScoreOverall() == 0){
+       grade = "Not Applicable";
+   }
          grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
-    }catch(Exception e){
-        grade = "Not Applicable";
-    }
+
 %>
 
 <!-- Navbar (sit on top) -->
