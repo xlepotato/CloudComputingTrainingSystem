@@ -184,7 +184,7 @@
 </body>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="UserDashboard.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>

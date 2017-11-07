@@ -5,6 +5,7 @@
   Time: 9:10 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ page import="dataManager.ExerciseDAO" %>
 <%@ page import="entity.Question" %>
@@ -15,7 +16,7 @@
 <%@ page import="entity.Answer" %>
 <%@ page import="entity.Score" %>
 <%@ page import="wrapper.utility.ExerciseUtility" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
 <title>Quiz Review</title>
