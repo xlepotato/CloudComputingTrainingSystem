@@ -42,11 +42,11 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("homepage.jsp");
             } else if (userType == 1){
                 session.setAttribute("authorisedUser",true);
-                response.sendRedirect("loginAdmin.jsp");
+                response.sendRedirect("adminHome.jsp");
             }  else if (userType == 2){
                 //Teacher's login
                 session.setAttribute("authorisedUser",true);
-                response.sendRedirect("loginTeacher.jsp");
+                response.sendRedirect("teacherHomepage.jsp");
             }
         }else{
             System.out.println("Login failed");
