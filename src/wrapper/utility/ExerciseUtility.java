@@ -49,7 +49,7 @@ public class ExerciseUtility {
     }
 
     public static String formatToOneDecimalPlace(double num){
-        DecimalFormat df = new DecimalFormat("#");
+        DecimalFormat df = new DecimalFormat("0");
         String formattedNum = df.format(num);
         return formattedNum;
     }
