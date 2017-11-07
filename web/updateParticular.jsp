@@ -118,7 +118,7 @@
                                                                                                value="<%=a.getUsername()%>"/></label>
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
-                                                                                                    name="name"
+                                                                                                    name="uname"
                                                                                                     value="<%=a.getName()%>"/></label>
                         <label for><span>Email <span class="required">*</span></span><input type="text"
                                                                                                      class="email"

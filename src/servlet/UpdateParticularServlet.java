@@ -20,9 +20,10 @@ public class UpdateParticularServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         PrintWriter pw = response.getWriter();
-        String name = request.getAttribute("name").toString();
-        String email = request.getAttribute("email").toString();
-        String username = request.getAttribute("username").toString();
+        String name = request.getParameter("uname");
+        System.out.println("nameee  " + name);
+        String email = request.getParameter("email").toString();
+        String username = request.getParameter("username").toString();
 //        String password = request.getAttribute("password").toString();
         UserDAO u = new UserDAO();
         boolean success = u.updateUser(name,email,username,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
