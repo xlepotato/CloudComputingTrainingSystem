@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<title>Admin Home</title>
+<title>Admin: Teacher records</title>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
