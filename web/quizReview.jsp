@@ -17,6 +17,7 @@
 <%@ page import="wrapper.utility.ExerciseUtility" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,22 +33,22 @@
         padding: 16px;
     }
 </style>
-<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <%
+
+        ExerciseDAO exercise = new ExerciseDAO();
+        ScoreDAO score = new ScoreDAO();
+        UserDAO u = new UserDAO();
+        //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
+        int exerciseNo = ((Integer) session.getAttribute("exNo"));
+
+
+        String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
+
+    %>
 </head>
 <body>
-<%
 
-    ExerciseDAO exercise = new ExerciseDAO();
-    ScoreDAO score = new ScoreDAO();
-    UserDAO u = new UserDAO();
-    //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-    int exerciseNo = ((Integer) session.getAttribute("exNo"));
-
-
-    String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
-
-%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
