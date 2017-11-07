@@ -35,7 +35,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
 
@@ -47,9 +47,9 @@
                 </div>
 
             </div>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
-            <a href="OnlineLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
+            <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
 
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-envelope"></i> Contact</button>
@@ -103,7 +103,7 @@
                 <div class="ch-item ch-img-2">
                     <div class="ch-info">
                         <h3>Chapter 2</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -111,7 +111,7 @@
                 <div class="ch-item ch-img-3">
                     <div class="ch-info">
                         <h3>Chapter 3</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -119,7 +119,7 @@
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
                         <h3>Chapter 4</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -127,7 +127,7 @@
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
                         <h3>Future Chapters</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
