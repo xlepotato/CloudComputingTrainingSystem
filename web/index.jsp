@@ -23,7 +23,7 @@
     .bgimg-1 {
         background-position: center;
         background-size: cover;
-        background-image: url("image/denglu.jpg");
+        background-image: url("assets/img/denglu.jpg");
         min-height: 100%;
     }
     .w3-bar .w3-button {
@@ -95,7 +95,7 @@
                 <div class="ch-item ch-img-1">
                     <div class="ch-info">
                         <h3>Chapter 1</h3>
-                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -329,18 +329,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/03.jpg);
+        background-image: url(assets/img/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/04.jpg);
+        background-image: url(assets/img/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/05.jpg);
+        background-image: url(assets/img/05.jpg);
     }
 
     .ch-info {

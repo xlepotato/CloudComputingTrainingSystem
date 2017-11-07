@@ -138,7 +138,7 @@ public class Exercise2Servlet extends HttpServlet {
             session.setAttribute("servlet","ex2");
 
          //   getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
-            response.sendRedirect("scores.jsp");
+            response.sendRedirect("quizResult.jsp");
         }
 
     }

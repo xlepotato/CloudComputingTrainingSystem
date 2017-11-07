@@ -111,7 +111,7 @@ public class QuestionServlet extends HttpServlet {
             session.setAttribute("servlet","ex1");
             session.setAttribute("grade", grade);
 //            getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
-            response.sendRedirect("scores.jsp");
+            response.sendRedirect("quizResult.jsp");
 
                 }
 
