@@ -124,7 +124,7 @@
 
                     %>
 
-                </p></td>
+                </p></td><hr>
         </tr>
     </table>
     <input type="submit" value="Submit" style="background:#000000; color:#FFF; width:80px; height:40px; font-size:15px;"/>
