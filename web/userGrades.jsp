@@ -16,7 +16,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<title>Grades</title>
+<title>Online Learning Portal</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $(".quizreview").click(function(event){
+                event.preventDefault();
+                var url =$(this).attr("href");
+
+                console.log(url);
+            });
+        });
+    </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -144,7 +155,7 @@
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a src="/quizReview">Details</a></td>
+            <td><a href="quizReview.jsp" class="quizreview">Details</a></td>
         </tr>
 
         <%
