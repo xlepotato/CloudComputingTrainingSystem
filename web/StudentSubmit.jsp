@@ -72,11 +72,11 @@
         <button type="button" class="btn btn-primary btn-arrow-left">Return</button>
     </a></div>
     <div align="right"><a href="StudentSubmit.jsp">
-        <button type="button" class="btn btn-warning btn-arrow-right">Move to Assignment upload</button>
+        <button type="button" class="btn btn-warning btn-arrow-right">Move to View All Assignments</button>
     </a></div>
     <br>
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">View All Assignment Submissions</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">Assignment Submissions</button>
     </div>
 
     <div id="London" class="tabcontent w3-center">
@@ -84,53 +84,31 @@
         <h3>Available Assignments</h3>
         <p>
         <table>
-            <tr>
-                <th>Assignment No.
-                </th>
-                <th colspan="3">Students:</th>
-            </tr>
-            <tr>
-                <td>Assignment 1:
+            <form action="#">
+                <td>Assignment Submission
                 </td>
-                <div width=100%>
-                    <td>
-                        <select name="Student list" id="StuName1">
-
-                            <option>Please Select a Student</option>
-                            <option value="#">Zac</option>
-                            <option value="#">Tom</option>
-                            <option value="#">Amy</option>
-
-                        </select>
-                    </td>
-                </div>
+                <td>Remarks
+                </td>
                 <td>
-                    <a href="#" >Download</a></td>
+
                 </td>
-                <td> <a href="#"> Download all </a></td>
-            </tr>
 
-            <tr>
-                <td>Assignment 1:
-                </td>
-                <div width=100%>
-                    <td>
-                        <select name="Student list" id="StuName2">
 
-                            <option>Please Select a Student</option>
-                            <option value="#">Zac</option>
-                            <option value="#">Tom</option>
-                            <option value="#">Amy</option>
+                <tr>
+                    <td><input type="file" name="Assignment" accept="file/*"></td>
+                    <td><input type="text" name="Remarks" placeholder="Remarks"></td>
+                    <td><input type="submit"></td>
+                </tr>
 
-                        </select>
-                    </td>
-                </div>
-                <td>
-                    <a href="#" >Download</a></td>
-                </td>
-                <td> <a href="#"> Download all </a></td>
-            </tr>
+                <tr>
 
+                </tr>
+
+                <tr>
+
+
+                </tr>
+            </form>
         </table>
         </p>
     </div>
@@ -156,22 +134,6 @@
 
 <!-- Add Google Maps -->
 <script>
-    function myMap()
-    {
-        myCenter=new google.maps.LatLng(41.878114, -87.629798);
-        var mapOptions= {
-            center:myCenter,
-            zoom:12, scrollwheel: false, draggable: false,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: myCenter,
-        });
-        marker.setMap(map);
-    }
-
     // Modal Image Gallery
     function onClick(element) {
         document.getElementById("img01").src = element.src;
