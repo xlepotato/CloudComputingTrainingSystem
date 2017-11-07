@@ -75,7 +75,7 @@
                         <a href="quiz2.jsp">Quiz 2</a>
                     </div>
                 </div>
-                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
+                <a href="contactUs.jsp" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
                 <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
 
 
