@@ -27,6 +27,9 @@
         padding: 16px;
     }
 </style>
+<head>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+</head>
 <body background="">
 <script type="text/javascript" src="jquery.autotab.js"></script>
 <script type="text/javascript" charset="utf-8">

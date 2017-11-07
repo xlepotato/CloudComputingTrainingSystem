@@ -9,6 +9,7 @@
 <html>
 <title>Admin Home</title>
 <head>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
         body {
             font-family: "Lato", sans-serif;

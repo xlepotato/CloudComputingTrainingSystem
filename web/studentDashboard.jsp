@@ -29,6 +29,9 @@
         padding: 16px;
     }
 </style>
+    <head>
+        <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    </head>
     <%
         if (session.getAttribute("authorisedUser") == null){
             PrintWriter pw = response.getWriter();
