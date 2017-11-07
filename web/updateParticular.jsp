@@ -106,10 +106,6 @@
                                                                                                      class="email"
                                                                                                      name="field2"
                                                                                                      value=""/></label>
-                        <label for><span>Gender</span><select name="field4" class="select-field">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Update"/></label>
