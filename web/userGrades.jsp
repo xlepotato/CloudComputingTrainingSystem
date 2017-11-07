@@ -1,7 +1,8 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
-<%@ page import="entity.UserDetail" %><%--
+<%@ page import="entity.UserDetail" %>
+<%@ page import="wrapper.utility.ExerciseUtility" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -45,12 +46,18 @@
     UserDAO user = new UserDAO();
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
-    if (ud == null){
-        PrintWriter pw = response.getWriter();
-        pw.println("<script type=\"text/javascript\">");
-        pw.println("alert('You have not added your details yet.')");
-        pw.println("location='index.jsp';");
-        pw.println("</script>");
+//    if (ud == null){
+//        PrintWriter pw = response.getWriter();
+//        pw.println("<script type=\"text/javascript\">");
+//        pw.println("alert('You have not added your details yet.')");
+//        pw.println("location='index.jsp';");
+//        pw.println("</script>");
+//    }
+    String grade = "";
+    try {
+         grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
+    }catch(Exception e){
+        grade = "Not Applicable";
     }
 %>
 
@@ -99,8 +106,8 @@
 <div class="w3-container">
     <h2>Your Quiz Grades</h2>
     <p>If you want to find out more of the grading please click the link to view more details</p>
-    <p>Your Total Score: <label>A</label></p>
-    <p>Your Total Grade: <label>A</label></p>
+    <p>Your Total Score: <label>  <%=Integer.valueOf((int) ud.getTotalScore())%> / <%=ud.getTotalScoreOverall()%> </label></p>
+    <p>Your Total Grade: <label> <%=grade%></label></p>
 
     <table class="w3-table-all">
         <thead>
