@@ -3,7 +3,8 @@
 <%@ page import="entity.User" %>
 <%@ page import="entity.UserDetail" %>
 <%@ page import="wrapper.utility.ExerciseUtility" %>
-<%@ page import="dataManager.ExerciseDAO" %><%--
+<%@ page import="dataManager.ExerciseDAO" %>
+<%@ page import="dataManager.ScoreDAO" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -47,6 +48,7 @@
     String username = session.getAttribute("username").toString();
     UserDAO user = new UserDAO();
     ExerciseDAO exer = new ExerciseDAO();
+    ScoreDAO s = new ScoreDAO();
     int exSize = exer.retrieveAllExercise().size();
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
@@ -227,7 +229,7 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .navbar {
@@ -325,18 +327,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/03.jpg);
+        background-image: url(assets/img/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/04.jpg);
+        background-image: url(assets/img/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/05.jpg);
+        background-image: url(assets/img/05.jpg);
     }
 
     .ch-info {
