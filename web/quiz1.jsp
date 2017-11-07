@@ -71,66 +71,71 @@
         </a>
     </div>
 </div>
+<div class="w3-center">
+    <!--Body section-->
+    <form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
+        <table width="80%" border="1" align="center">
+            <tr>
+                <td><h1 align="center">在线练习</h1></td>
+            </tr>
 
-<!--Body section-->
-<form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
-    <table width="80%" border="1" align="center">
-        <tr>
-            <td><h1 align="center">在线练习</h1></td>
-        </tr>
-
-        <tr>
-            <td><%
-                //  String exer = "";
-                String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
+            <tr>
+                <td><%
+                    //  String exer = "";
+                    String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
 //    for (int i = 0; i < exList.size(); i ++ ) {
 //        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
 //
 //        exer =  exList.get(1).getexerciseName();
-            %>
-                <br>
-                <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
-                <%
-                    //  exerciseNo = exList.get(i).getexerciseNo();
-                    ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
-                    System.out.println(exerciseNo + " - exerciseNo");
-                    System.out.println(qnsList.size() + " qnsList size");
-                    for (int a = 0; a < qnsList.size(); a++ ) {
-                        qnsList.get(a).getQuestionDetail();
-                        //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
-                        ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
                 %>
-                <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
-                <%
-                    String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
-                    for (int m =0; m < mcqList.size(); m++){
-                %>
-                <br> <p id="question">
+                    <br>
+                    <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
                     <%
-                        String idName = parameterName + mcqList.get(m).getOption();
+                        //  exerciseNo = exList.get(i).getexerciseNo();
+                        ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+                        System.out.println(exerciseNo + " - exerciseNo");
+                        System.out.println(qnsList.size() + " qnsList size");
+                        for (int a = 0; a < qnsList.size(); a++ ) {
+                            qnsList.get(a).getQuestionDetail();
+                            //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+                            ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
                     %>
-                    <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
-                    <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
-
+                    <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
                     <%
+                        String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+                        for (int m =0; m < mcqList.size(); m++){
+                    %>
+                    <br> <p id="question">
+                        <%
+                            String idName = parameterName + mcqList.get(m).getOption();
+                        %>
+                        <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
+                        <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
-                        if(m == (mcqList.size()-1)){
-                    %> <br><br>
-                    <%
+
+                        <%
+
+                            if(m == (mcqList.size()-1)){
+                        %> <br><br>
+                        <%
+                                    }
                                 }
                             }
-                        }
 
-                    %>
+                        %>
 
-                </p></td>
-        </tr><hr>
-        <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px; alignment: right"/>
-    </table>
+                    </p></td>
+            </tr><hr>
 
-
-</form>
+        </table>
+        <br>
+        <div style="padding-right:152px">
+            <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px; float:right;"/>
+        </div>
+    </form>
+</div>
+<br>
+</br>
 </body>
 
 <!-- Footer -->
