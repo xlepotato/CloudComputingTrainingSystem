@@ -141,7 +141,7 @@
 
         <tr class="w3-hover-green">
             <td><%=scoreList.get(i).getExerciseNo()%></td>
-            <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getExerciseNo())%>/<%=scoreList.get(i).getQuizOverall()%></td>
+            <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <td><a href="#">Details</a></td>
         </tr>
 
