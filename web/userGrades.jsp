@@ -63,11 +63,32 @@
 </div>
 
 <!--Body section-->
+<span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+<span class="w3-jumbo w3-hide-small"></span><br>
+<br>
+<div class="w3-container">
+    <h2>Your Quiz Grades</h2>
+    <p>If you want to find out more of the grading please click the link to view more details</p>
+    <p>Your Total Grade: <label>A</label></p>
+    <table class="w3-table-all">
+        <thead>
+        <tr class="w3-light-grey">
+            <th>Quiz Number</th>
+            <th>Score</th>
+            <th>Remarks</th>
+        </tr>
+        </thead>
+        <tr class="w3-hover-green">
+            <td>1</td>
+            <td>55/63</td>
+            <td><a href="#">Details</a></td>
+        </tr>
 
+    </table>
+</div>
+<span class="w3-jumbo w3-hide-small"></span><br>
 
-
-
-
+</body>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
     <a href="UserDashboard.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
