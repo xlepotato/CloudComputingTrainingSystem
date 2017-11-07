@@ -85,7 +85,7 @@
                 <div class="ch-item ch-img-1">
                     <div class="ch-info">
                         <h3>History  Evolution</h3>
-                        <p>by Cloud Computing </p>
+                        <p>by Cloud Computing <a href="chapter1.jsp">Learn Now</a></p>
                     </div>
                 </div>
             </li>
@@ -93,7 +93,7 @@
                 <div class="ch-item ch-img-2">
                     <div class="ch-info">
                         <h3>Special Technology</h3>
-                        <p>by Cloud Computing </p>
+                        <p>by Cloud Computing <a href="chapter2.jsp">Learn Now</a></p>
                     </div>
                 </div>
             </li>
@@ -101,7 +101,7 @@
                 <div class="ch-item ch-img-3">
                     <div class="ch-info">
                         <h3>Industry Chain</h3>
-                        <p>by Cloud Computing </p>
+                        <p>by Cloud Computing <a href="chapter3.jsp">Learn Now</a></p>
                     </div>
                 </div>
             </li>
@@ -109,7 +109,7 @@
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
                         <h3>Influence Range</h3>
-                        <p>by Cloud Computing </p>
+                        <p>by Cloud Computing <a href="chapter4.jsp">Learn Now</a></p>
                     </div>
                 </div>
             </li>
