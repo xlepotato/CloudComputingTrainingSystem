@@ -41,8 +41,9 @@
         ScoreDAO score = new ScoreDAO();
         UserDAO u = new UserDAO();
         //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-        int exerciseNo = ((Integer) session.getAttribute("exNo"));
+//        int exerciseNo = ((Integer) session.getAttribute("exNo"));
 
+        int exerciseNo = Integer.parseInt(session.getAttribute("exNo").toString());
 
         String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
 
