@@ -27,6 +27,9 @@
         padding: 16px;
     }
 </style>
+<head>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+</head>
 <body>
 <!--Body section-->
 <div class="w3-top">
