@@ -529,10 +529,7 @@
     System.out.println(session.getCreationTime() + " sessionCreationTime");
     System.out.println(session.getLastAccessedTime() + " sessionLastAccessedTime");
     //to remove unneccessary attributes stored in the session scope
-    session.removeAttribute("grade");
-    session.removeAttribute("servlet");
-    session.removeAttribute("ex1Score");
-    session.removeAttribute("ex2Score");
+
 %>
 </html>
 

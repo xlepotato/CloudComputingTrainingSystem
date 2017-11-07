@@ -164,10 +164,12 @@
         <tr class="w3-hover-green">
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
-            <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
+
             <td>
-                <form action="/quizReview" method="get">
+                <form action="/quizreview" method="post">
+                    <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
                     <button type="submit" name="your_name" value="Details" class="btn-link">Details</button>
+
                 </form>
                 <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>
             </td>
@@ -181,7 +183,6 @@
 </div>
 <span class="w3-jumbo w3-hide-small"></span><br>
 
-</body>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
     <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
