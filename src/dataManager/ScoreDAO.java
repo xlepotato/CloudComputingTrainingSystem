@@ -176,7 +176,7 @@ public class ScoreDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT s.userId, s.exerciseNo, quizScore, quizOverall FROM score s INNER JOIN user u ON s.userId = u.userId WHERE s.userId = ? ";
+        dbQuery = "SELECT userId, exerciseNo, quizScore, quizOverall FROM score WHERE userId = ? GROUP BY exerciseNo";
 
 
         pstmt = db.getPreparedStatement(dbQuery);

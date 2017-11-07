@@ -52,6 +52,7 @@
     ExerciseDAO exer = new ExerciseDAO();
     ScoreDAO s = new ScoreDAO();
     int scoreSize = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId()).size();
+    System.out.println(scoreSize + " DIFF SCORE SIZE");
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
 //    if (ud == null){
@@ -71,6 +72,7 @@
        }
 
     ArrayList<Score> scoreList = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
+    System.out.println(scoreList.size()+ " SIZEEE NYa");
 
 
 %>
@@ -133,13 +135,14 @@
         </thead>
 
         <%
+
         for (int i = 0; i < scoreList.size(); i ++){
 %>
 
 
         <tr class="w3-hover-green">
             <td><%=scoreList.get(i).getExerciseNo()%></td>
-            <td><%=scoreList.get(i).getQuizScore()%>/<%=scoreList.get(i).getQuizOverall()%></td>
+            <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <td><a href="#">Details</a></td>
         </tr>
 

@@ -1,5 +1,7 @@
 package wrapper.utility;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Ying on 20/10/2017.
  */
@@ -44,6 +46,12 @@ public class ExerciseUtility {
     public static int sumUpScoreOverall(int existingDBScoreOverall, int newScoreOverall){
         int latestScoreOverall = existingDBScoreOverall + newScoreOverall;
         return latestScoreOverall;
+    }
+
+    public static String formatToOneDecimalPlace(double num){
+        DecimalFormat df = new DecimalFormat("0");
+        String formattedNum = df.format(num);
+        return formattedNum;
     }
 
 
