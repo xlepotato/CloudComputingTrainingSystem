@@ -40,7 +40,7 @@
     ScoreDAO score = new ScoreDAO();
     UserDAO u = new UserDAO();
     //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-    int exerciseNo = ((Integer) session.getAttribute("exercy"));
+    int exerciseNo = ((Integer) session.getAttribute("exNo"));
 
 
     String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
@@ -92,7 +92,7 @@
 
 
         <%
-            if (session.getAttribute("servlet").equals("ex1")){
+            if (session.getAttribute("exNo").equals("1")){
         %>
         <table style="width:100%">
             <caption>测验结果</caption>
