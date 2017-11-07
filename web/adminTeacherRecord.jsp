@@ -101,7 +101,7 @@
 </div>
 
 <div id="main">
-    <h2>Student Administration</h2>
+    <h2>Teacher Administration</h2>
     <p>This page is for the administration for Teacher members, functionalities include adding,modifying and deleting data.</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>

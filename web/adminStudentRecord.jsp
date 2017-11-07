@@ -1,4 +1,6 @@
-<%--
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.User" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -92,6 +94,10 @@
     </style>
 </head>
 <body>
+<%
+    UserDAO user = new UserDAO();
+    ArrayList<User> ulist = user.retrieveAllStudent();
+%>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="adminHome.jsp">Home</a>
@@ -162,8 +168,11 @@
                     <td width="92" bgcolor="#999999">QQ号</td>
                     <td width="121" bgcolor="#999999">手机号</td>
                 </tr>
+                <%
+                    for (int i =0; i < ulist.size(); i++){
+                %>
                 <tr>
-                    <td>1</td>
+                    <td><%=ulist.get(i).getUserId()%></td>
                     <td>学生</td>
                     <td>123</td>
                     <td>s0001</td>
@@ -172,6 +181,9 @@
                     <td>456898</td>
                     <td>18201292522</td>
                 </tr>
+                <%
+                    }
+                %>
             </table>
         </div>
 
