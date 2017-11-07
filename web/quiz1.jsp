@@ -77,7 +77,7 @@
 <div class="w3-center">
     <!--Body section-->
     <form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
-        <table width="80%" border="1" align="center">
+        <table width="80%" border="0" align="center">
             <tr>
                 <td><h1 align="center">在线练习</h1></td>
             </tr>
