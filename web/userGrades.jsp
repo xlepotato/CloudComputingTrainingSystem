@@ -166,9 +166,10 @@
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
 
             <td>
+                <%--<%session.setAttribute("exxNo",scoreList.get(i).getExerciseNo());%>--%>
                 <form action="/quizreview" method="post">
-                    <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-                    <button type="submit" name="your_name" value="Details" class="btn-link">Details</button>
+                    <%--<%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>--%>
+                    <button type="submit" name="detail" value="<%=scoreList.get(i).getExerciseNo()%>" class="btn-link">Details</button>
 
                 </form>
                 <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>

@@ -15,7 +15,8 @@ import java.io.IOException;
 public class QuizReviewServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-       String exNo = session.getAttribute("exNo").toString();
+        String exNo = request.getParameter("detail");
+//       String exNo = session.getAttribute("exxNo").toString();
        session.setAttribute("exNo",exNo);
         response.sendRedirect("quizReview.jsp");
 
