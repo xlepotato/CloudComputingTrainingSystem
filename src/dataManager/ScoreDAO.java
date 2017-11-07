@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class ScoreDAO {
 
 
+    //consist of Answer entity & Score entity data access object methods
+
 
     private Score convertToScore(ResultSet rs) throws SQLException {
         Score score;
