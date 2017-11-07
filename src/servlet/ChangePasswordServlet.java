@@ -23,8 +23,9 @@ public class ChangePasswordServlet extends HttpServlet {
        String newPassword = request.getParameter("newPassword");
        String confirmNewPassword = request.getParameter("cfmNewPassword");
 
-       if (confirmNewPassword.equals(password) && password.equals(user.retrieveUserByUsername(session.getAttribute("username").toString()))){
+       if (confirmNewPassword.equals(newPassword) && password.equals(user.retrieveUserByUsername(session.getAttribute("username").toString()).getPassword())){
            user.updatePassword(newPassword,user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
+           response.sendRedirect("updateParticular.jsp");
        }else
            System.out.println("Change password failed");
     }
