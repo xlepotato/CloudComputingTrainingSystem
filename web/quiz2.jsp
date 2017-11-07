@@ -130,19 +130,16 @@
                 %></td>
         </tr>
     </table>
-</p>
-
-    <input type="submit" value="Submit" style="background:#00F; color:#FFF; width:50px; height:30px; font-size:15px;"/>
-
+    <br>
+    <div style="padding-right:152px">
+        <input type="submit" value="Submit" align="right" style="background:#000000; color:#FFF; width:150px; height:40px; font-size:15px; float:right;"/>
+    </div>
 </form>
-
+    <br>
+    <br>
 </div>
 
-
-</table>
-
-
-
+</body>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
     <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
