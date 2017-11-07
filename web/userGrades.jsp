@@ -52,7 +52,7 @@
     ExerciseDAO exer = new ExerciseDAO();
     ScoreDAO s = new ScoreDAO();
     int scoreSize = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId()).size();
-    System.out.println(scoreSize + " DIFF SCORE SIZE")
+    System.out.println(scoreSize + " DIFF SCORE SIZE");
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
 //    if (ud == null){
