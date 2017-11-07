@@ -144,7 +144,7 @@
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a href="quizReview.jsp">Details</a></td>
+            <td><a href="/quizReview">Details</a></td>
         </tr>
 
         <%

@@ -18,7 +18,7 @@ public class QuizReviewServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String exNo = request.getAttribute("exNo").toString();
+        response.sendRedirect("quizReview.jsp");
 
 
     }
