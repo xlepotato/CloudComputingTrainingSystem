@@ -23,18 +23,21 @@
             <%--$(".quizreview").click(function(event){--%>
                 <%--event.preventDefault();--%>
                 <%--var url =$(this).attr("href");--%>
+                <%--url.load(function(data){--%>
+                    <%--console.log(data);--%>
+                <%--});--%>
 
                 <%--console.log(url);--%>
             <%--});--%>
         <%--});--%>
     <%--</script>--%>
-    <script>
-        $(document).ready(function() {
-            $(".quizreview").click(function(event){
-            location='quizReview.jsp'
-            });
-        });
-    </script>
+    <%--<script>--%>
+        <%--$(document).ready(function() {--%>
+            <%--$(".quizreview").click(function(event){--%>
+            <%--self.location='quizReview.jsp'--%>
+            <%--});--%>
+        <%--});--%>
+    <%--</script>--%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -162,7 +165,12 @@
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a href="quizReview.jsp" class="quizreview">Details</a></td>
+            <td>
+                <form action="/quizReview" method="get">
+                    <button type="submit" name="your_name" value="Details" class="btn-link">Details</button>
+                </form>
+                <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>
+            </td>
         </tr>
 
         <%
