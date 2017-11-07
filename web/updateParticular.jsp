@@ -1,4 +1,7 @@
-<%@ page import="java.io.PrintWriter" %><%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -41,6 +44,21 @@
     %>
 </head>
 <body>
+
+<%
+    //    DecimalFormat df = new DecimalFormat()
+    String username = session.getAttribute("username").toString();
+    UserDAO user = new UserDAO();
+    User a = user.retrieveUserByUsername(username);
+    UserDetail ud = user.retrieveUserDetailByUsername(username);
+    if (ud == null){
+        PrintWriter pw = response.getWriter();
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("alert('You have not added your details yet.')");
+        pw.println("location='homepage.jsp';");
+        pw.println("</script>");
+    }
+%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -93,19 +111,19 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Update your information here</div>
-                    <form action="" method="post">
+                    <form action="/updateParticular" method="post">
                         <label for><span>Username <span class="required">*</span></span><input type="text"
                                                                                                class="email"
                                                                                                name="username"
-                                                                                               value=""/></label>
+                                                                                               value="<%=a.getUsername()%>"/></label>
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
                                                                                                     name="name"
-                                                                                                    value=""/></label>
+                                                                                                    value="<%=a.getName()%>"/></label>
                         <label for><span>Email <span class="required">*</span></span><input type="text"
                                                                                                      class="email"
                                                                                                      name="email"
-                                                                                                     value=""/></label>
+                                                                                                     value="<%=a.getEmail()%>"/></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Update"/></label>
