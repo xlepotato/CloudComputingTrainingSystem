@@ -139,7 +139,7 @@
 
         <tr class="w3-hover-green">
             <td><%=scoreList.get(i).getExerciseNo()%></td>
-            <td>55/63</td>
+            <td><%=scoreList.get(i).getQuizScore()%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <td><a href="#">Details</a></td>
         </tr>
 
