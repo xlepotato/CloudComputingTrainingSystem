@@ -30,27 +30,18 @@
         <a href="Homepage.html" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
-
             <div class="sousuo">
                 <div class="wenbenkuang">
                     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
                         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入搜索内容" style="color:gray; width:100%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}" /><br />
                     </form>
                 </div>
+            </div>
 
-            </div>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
+            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
             <a href="OnlineLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
-            <div class="dropdown">
-                <button class="dropbtn"><i class="fa fa-th"></i> Static</button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
+            <a href="Log In.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
+            <a href="Register.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
 
 
         </div>
@@ -60,57 +51,67 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-
 </div>
 
-<!-- Body Section -->
+<!--Body section-->
+
 <div class="w3-container" style="padding:128px 16px" id="body">
     <span class="w3-large w3-hide-small"></span><br>
-    <span class="w3-large w3-hide-small"></span><br>
-    <h3 class="w3-center">Your Learning Progress</h3>
+
     <ul class="ch-grid">
         <li>
-            <div class="ch-item">
+            <div class="ch-item ch-img-1">
                 <div class="ch-info">
-                    <h3>History  Evolution</h3>
-                    <p>by Cloud Computing <a href="Chapter1.html">Click to View</a></p>
+                    <h3>History Evolution</h3>
+                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
-                <div class="ch-thumb ch-img-1"></div>
             </div>
+            <br>
+            <div class="w3-light-grey w3-round-large">
+                <div class="w3-container w3-blue w3-round-large" style="width:25%">25%</div>
+            </div><br>
         </li>
         <li>
-            <div class="ch-item">
+            <div class="ch-item ch-img-2">
                 <div class="ch-info">
                     <h3>Special Technology</h3>
-                    <p>by Cloud Computing <label></label></p>
+                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
-                <div class="ch-thumb ch-img-2"></div>
             </div>
+            <br>
+            <div class="w3-light-grey w3-round-large">
+                <div class="w3-container w3-red w3-round-large" style="width:50%">50%</div>
+            </div><br>
         </li>
         <li>
-            <div class="ch-item">
-                <div class="ch-info">
-                    <h3>Industry Chain</h3>
-                    <p>by Cloud Computing <a href="Chapter3.html">Click to View</a></p>
-                </div>
-                <div class="ch-thumb ch-img-3"></div>
-            </div>
-        </li>
-        <li>
-            <div class="ch-item">
+            <div class="ch-item ch-img-3">
                 <div class="ch-info">
                     <h3>Influence Range</h3>
-                    <p>by Cloud Computing <a href="Chapter4.html">Click to View</a></p>
+                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
-                <div class="ch-thumb ch-img-4"></div>
-            </div>
+            </div><br>
+            <div class="w3-light-grey w3-round-large">
+                <div class="w3-container w3-green w3-round-large" style="width:75%">75%</div>
+            </div><br>
+        </li>
+        <li>
+            <div class="ch-item ch-img-4">
+                <div class="ch-info">
+                    <h3>Industry Chain</h3>
+                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
+                </div>
+            </div><br>
+            <div class="w3-light-grey w3-round-large">
+                <div class="w3-container w3-yellow w3-round-large" style="width:100%">100%</div>
+            </div><br>
         </li>
     </ul>
 </div>
+</body>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="OnlineLearningLanding.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="UserDashboard.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -208,7 +209,7 @@
 
     .dropdown {
         float: left;
-        overflow: visible;
+        overflow: hidden;
     }
 
     .dropdown .dropbtn {
@@ -260,18 +261,18 @@
     }
 
     .ch-grid:after,
-    .ch-item:before {
-        content: '';
-        display: table;
-    }
-
     .ch-item {
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        overflow: hidden;
         position: relative;
         cursor: default;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        box-shadow:
+                inset 0 0 0 16px rgba(255,255,255,0.6),
+                0 1px 2px rgba(0,0,0,0.1);
+        transition: all 0.4s ease-in-out;
+
     }
 
     .ch-grid:after {
@@ -285,83 +286,41 @@
         margin: 20px;
     }
 
-    .ch-thumb {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        overflow: hidden;
-        position: absolute;
-        box-shadow: inset 0 0 0 15px rgba(255,255,255, 0.5);
-        transform-origin: 95% 40%;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .ch-thumb:after {
-        content: '';
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        border-radius: 50%;
-        top: 40%;
-        left: 95%;
-        margin: -4px 0 0 -4px;
-        background: radial-gradient(ellipse at center, rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%);
-        box-shadow: 0 0 1px rgba(255,255,255,0.9);
-    }
-
     .ch-img-1 {
-        background-image: url(image/Number1.png);
-        z-index: 12;
+        background-image: url(image/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/Number2.png);
-        z-index: 11;
+        background-image: url(image/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/Number3.png);
-        z-index: 10;
+        background-image: url(image/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/Number4.png);
-        z-index: 9;
+        background-image: url(image/05.jpg);
     }
 
     .ch-info {
         position: absolute;
+        background: rgba(63,147,147, 0.8);
         width: inherit;
         height: inherit;
         border-radius: 50%;
         overflow: hidden;
-        background: #c9512e url(image/03.jpg);
-        box-shadow: inset 0 0 0 5px rgba(0,0,0,0.05);
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        transform: scale(0);
     }
 
     .ch-info h3 {
         color: #fff;
         text-transform: uppercase;
-        position: relative;
         letter-spacing: 2px;
-        font-size: 18px;
-        margin: 0 60px;
-        padding: 22px 0 0 0;
-        height: 85px;
-        font-family: 'Open Sans', Arial, sans-serif;
-        text-shadow:
-                0 0 1px #fff,
-                0 1px 2px rgba(0,0,0,0.3);
-    }
-
-    .ch-info h6 {
-        color: #fff;
-        text-transform: uppercase;
-        position: relative;
-        letter-spacing: 2px;
-        font-size: 10px;
-        margin: 0 60px;
-        padding: 22px 0 0 0;
-        height: 85px;
+        font-size: 22px;
+        margin: 0 30px;
+        padding: 45px 0 0 0;
+        height: 140px;
         font-family: 'Open Sans', Arial, sans-serif;
         text-shadow:
                 0 0 1px #fff,
@@ -375,46 +334,40 @@
         margin: 0 30px;
         font-size: 12px;
         border-top: 1px solid rgba(255,255,255,0.5);
+        opacity: 0;
+        transition: all 1s ease-in-out 0.4s;
     }
 
     .ch-info p a {
         display: block;
-        color: #333;
-        width: 80px;
-        height: 80px;
-        background: rgba(255,255,255,0.3);
-        border-radius: 50%;
-        color: #fff;
+        color: rgba(255,255,255,0.7);
         font-style: normal;
         font-weight: 700;
         text-transform: uppercase;
         font-size: 9px;
         letter-spacing: 1px;
-        padding-top: 24px;
-        margin: 7px auto 0;
+        padding-top: 4px;
         font-family: 'Open Sans', Arial, sans-serif;
-        opacity: 0;
-        transition:
-                transform 0.3s ease-in-out 0.2s,
-                opacity 0.3s ease-in-out 0.2s,
-                background 0.2s linear 0s;
-        transform: translateX(60px) rotate(90deg);
     }
 
     .ch-info p a:hover {
-        background: rgba(255,255,255,0.5);
+        color: rgba(255,242,34, 0.8);
     }
 
-    .ch-item:hover .ch-thumb {
-        box-shadow: inset 0 0 0 15px rgba(255,255,255, 0.5), 0 1px 3px rgba(0,0,0,0.2);
-        transform: rotate(-110deg);
+    .ch-item:hover {
+        box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.1),
+                0 1px 2px rgba(0,0,0,0.1);
     }
-    .ch-item:hover .ch-info p a{
+
+    .ch-item:hover .ch-info {
+        transform: scale(1);
         opacity: 1;
-        transform: translateX(0px) rotate(0deg);
     }
 
-
+    .ch-item:hover .ch-info p {
+        opacity: 1;
+    }
 
 </style>
 
