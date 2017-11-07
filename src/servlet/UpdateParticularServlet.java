@@ -28,6 +28,8 @@ public class UpdateParticularServlet extends HttpServlet {
         UserDAO u = new UserDAO();
         boolean success = u.updateUser(name,email,username,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
         if (success){
+            //set the new updated username to session scope
+            session.setAttribute("username",username);
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('Update success')");
             pw.println("location='accountDetail.jsp';");

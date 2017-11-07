@@ -50,14 +50,8 @@
     String username = session.getAttribute("username").toString();
     UserDAO user = new UserDAO();
     User a = user.retrieveUserByUsername(username);
-    UserDetail ud = user.retrieveUserDetailByUsername(username);
-    if (ud == null){
-        PrintWriter pw = response.getWriter();
-        pw.println("<script type=\"text/javascript\">");
-        pw.println("alert('You have not added your details yet.')");
-        pw.println("location='homepage.jsp';");
-        pw.println("</script>");
-    }
+
+
 %>
 
 <!-- Navbar (sit on top) -->

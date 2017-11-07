@@ -252,6 +252,7 @@ public class UserDAO {
             pstmt.setString(1, name);
             pstmt.setString(2, email);
             pstmt.setString(3, username);
+            pstmt.setString(4, userId);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
