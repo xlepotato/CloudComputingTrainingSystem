@@ -143,8 +143,8 @@
         <tr class="w3-hover-green">
             <td><%=scoreList.get(i).getExerciseNo()%></td>
             <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
-            <%request.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a href="/quizReview">Details</a></td>
+            <%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
+            <td><a href="quizReview.jsp">Details</a></td>
         </tr>
 
         <%
