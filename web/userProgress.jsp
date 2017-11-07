@@ -48,7 +48,7 @@
                 </div>
             </div>
             <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
-            <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
+            <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
         </div>
         <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 

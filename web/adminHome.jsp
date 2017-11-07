@@ -96,7 +96,7 @@
     <a href="adminHome.jsp">Home</a>
     <a href="adminStudentRecord.jsp">Students</a>
     <a href="adminTeacherRecord.jsp">Teachers</a>
-    <a href="logOut.jsp">Log out</a>
+    <a href="/logout">Log out</a>
 </div>
 
 <div id="main">
