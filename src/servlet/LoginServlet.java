@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("usertype:" + userType);
             if (userType == 0) {
                 session.setAttribute("authorisedUser",true);
-                response.sendRedirect("homepage.jsp");
+                response.sendRedirect("studentHomepage.jsp");
             } else if (userType == 1){
                 session.setAttribute("authorisedUser",true);
                 response.sendRedirect("adminHome.jsp");

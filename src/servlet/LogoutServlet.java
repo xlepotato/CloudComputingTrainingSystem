@@ -30,6 +30,6 @@ public class LogoutServlet extends HttpServlet {
         User user = u.retrieveUserByUsername(session.getAttribute("username").toString());
         u.updateUserLastLogin("CURRENT_TIMESTAMP",user.getUserId());
         session.invalidate();
-        response.sendRedirect("initialIndex.jsp");
+        response.sendRedirect("index.jsp");
     }
 }
