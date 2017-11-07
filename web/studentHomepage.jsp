@@ -182,7 +182,7 @@
         <div class="w3-col m6">
             <h3>Want to know more about cloud computing?</h3>
             <p>Click on the link below.</p>
-            <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
+            <p><a href="onlineLearningLanding.jsp" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
         </div>
     </div>
 </div>
