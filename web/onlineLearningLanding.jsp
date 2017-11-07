@@ -50,7 +50,6 @@
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
             <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa fa-th"></i> Online Quiz</button>
                 <div class="dropdown-content">
@@ -58,6 +57,7 @@
                     <a href="quiz2.jsp">Quiz 2</a>
                 </div>
             </div>
+            <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
             <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
 
 

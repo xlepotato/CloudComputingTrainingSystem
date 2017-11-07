@@ -39,18 +39,18 @@
                 </div>
 
             </div>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="UserDashboard.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
-            <a href="OnlineLearningLanding.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
+            <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
             <div class="dropdown">
-                <button class="dropbtn"><i class="fa fa-envelope"></i> Contact</button>
+                <button class="dropbtn"><i class="fa fa-th"></i> Online Quiz</button>
                 <div class="dropdown-content">
-                    <a href="#Contact">Contact Us</a>
-                    <a href="#Location">Our location</a>
+                    <a href="quiz1.jsp">Quiz 1</a>
+                    <a href="quiz2.jsp">Quiz 2</a>
                 </div>
             </div>
-            <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log out</a>
+            <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
+            <a href="#log out" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
 
 
         </div>
