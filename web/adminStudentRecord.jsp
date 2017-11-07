@@ -161,7 +161,8 @@
                 <tr>
                     <td width="92" bgcolor="#999999">序号</td>
                     <td width="92" bgcolor="#999999">姓名</td>
-                    <td width="92" bgcolor="#999999">学号</td>
+                    <td width="92" bgcolor="#999999">Username</td>
+                    <%--<td width="92" bgcolor="#999999">学号</td>--%>
                     <td width="92" bgcolor="#999999">帐号</td>
                     <td width="92" bgcolor="#999999">密码</td>
                     <td width="92" bgcolor="#999999">邮件</td>
