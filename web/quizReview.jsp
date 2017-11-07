@@ -1,21 +1,20 @@
-<%@ page import="java.io.PrintWriter" %>
-<%@ page import="dataManager.UserDAO" %>
-<%@ page import="entity.User" %>
-<%@ page import="entity.UserDetail" %>
-<%@ page import="wrapper.utility.ExerciseUtility" %>
-<%@ page import="dataManager.ExerciseDAO" %>
-<%@ page import="dataManager.ScoreDAO" %>
-<%@ page import="entity.Score" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
-  User: Aloylim98
-  Date: 6/11/2017
-  Time: 11:23 AM
+  User: Ying
+  Date: 7/11/2017
+  Time: 9:10 PM
   To change this template use File | Settings | File Templates.
 --%>
+
+<%@ page import="dataManager.ExerciseDAO" %>
+<%@ page import="entity.Question" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.MCQ" %>
+<%@ page import="dataManager.ScoreDAO" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.Answer" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,49 +30,20 @@
         padding: 16px;
     }
 </style>
-    <%
-        if (session.getAttribute("authorisedUser") == null){
-            PrintWriter pw = response.getWriter();
-            pw.println("<script type=\"text/javascript\">");
-            pw.println("alert('You do not have the permission to access this page. Please login.')");
-            pw.println("location='index.jsp';");
-            pw.println("</script>");
-
-        }
-    %>
+<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-
 <%
-    //    DecimalFormat df = new DecimalFormat()
-    String username = session.getAttribute("username").toString();
-    UserDAO user = new UserDAO();
-    ExerciseDAO exer = new ExerciseDAO();
-    ScoreDAO s = new ScoreDAO();
-    int scoreSize = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId()).size();
-    System.out.println(scoreSize + " DIFF SCORE SIZE");
-    User a = user.retrieveUserByUsername(username);
-    UserDetail ud = user.retrieveUserDetailByUsername(username);
-//    if (ud == null){
-//        PrintWriter pw = response.getWriter();
-//        pw.println("<script type=\"text/javascript\">");
-//        pw.println("alert('You have not added your details yet.')");
-//        pw.println("location='index.jsp';");
-//        pw.println("</script>");
-//    }
-    String grade = "";
 
-        String tempOverall = (Integer.toString(ud.getTotalScoreOverall()));
-        System.out.println("Tryy overall int " + tempOverall);
-       grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
-       if (tempOverall.equals("0")){
-           grade = "Not Applicable";
-       }
+    ExerciseDAO exercise = new ExerciseDAO();
+    ScoreDAO score = new ScoreDAO();
+    UserDAO u = new UserDAO();
+    //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
+    int exerciseNo = ((Integer) session.getAttribute("exercy"));
 
-    ArrayList<Score> scoreList = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
-    System.out.println(scoreList.size()+ " SIZEEE NYa");
 
+    String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
 
 %>
 
@@ -83,15 +53,14 @@
         <a href="studentHomepage.jsp" class="w3-bar-item w3-button w3-wide"><img border="0" alt="cloudcomputing" src="assets/img/Logo.png" width="200" height="100"></a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
-
             <div class="sousuo">
                 <div class="wenbenkuang">
                     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
                         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入搜索内容" style="color:gray; width:100%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}" /><br />
                     </form>
                 </div>
-
             </div>
+
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
             <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
             <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
@@ -105,7 +74,6 @@
             <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
             <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
 
-
         </div>
         <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -116,49 +84,151 @@
 </div>
 
 <!--Body section-->
-<span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
-<span class="w3-jumbo w3-hide-small"></span><br>
-<br>
-<div class="w3-container">
-    <h2>Your Quiz Grades</h2>
-    <p>If you want to find out more of the grading please click the link to view more details</p>
-    <p>Your Total Score: <label>  <%=Integer.valueOf((int) ud.getTotalScore())%> / <%=ud.getTotalScoreOverall()%> </label></p>
-    <p>Your Total Grade: <label> <%=grade%></label></p>
 
-    <table class="w3-table-all">
-        <thead>
-        <tr class="w3-light-grey">
-            <th>Quiz Number</th>
-            <th>Score</th>
-            <th>Remarks</th>
-        </tr>
-        </thead>
+
+<form id="result" name="result" method="post" action="">
+
+    <div class="ScoreTable">
+
 
         <%
+            if (session.getAttribute("servlet").equals("ex1")){
+        %>
+        <table style="width:100%">
+            <caption>测验结果</caption>
+            <tr>
+                <th>练习号: 1</th>
+                <th>练习结果: <%=session.getAttribute("ex1Score")%></th>
+                <th>成绩级别: <%=session.getAttribute("grade")%></th>
+            </tr>
+        </table>
+        <%--<tr>--%>
+        <%--<td> asd </td>--%>
+        <%--<td> aaa </td>--%>
+        <%--</tr>--%>
+        <%--<tr>--%>
+        <%--<td> aa </td>--%>
+        <%--<td> sss </td>--%>
+        <%--</tr>--%>
+        <br>
+        <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+        <%
+            //  exerciseNo = exList.get(i).getexerciseNo();
+            ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+            System.out.println(exerciseNo + " - exerciseNo");
+            System.out.println(qnsList.size() + " qnsList size");
+            for (int a = 0; a < qnsList.size(); a++ ) {
+                qnsList.get(a).getQuestionDetail();
+                //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
+                ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
+        %>
+        <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
+        <%
+            String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+            for (int m =0; m < mcqList.size(); m++){
+        %>
+        <br> <p id="question">
+            <%
+        String idName = parameterName + mcqList.get(m).getOption();
+    %>
+        <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
+            <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
 
-        for (int i = 0; i < scoreList.size(); i ++){
-%>
 
+            <%
 
-        <tr class="w3-hover-green">
-            <td><%=scoreList.get(i).getExerciseNo()%></td>
-            <td><%=ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getQuizScore())%>/<%=scoreList.get(i).getQuizOverall()%></td>
-            <%request.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>
-            <td><a href="/quizReview">Details</a></td>
-        </tr>
+        if(m == (mcqList.size()-1)){
+    %> <br><br>
+            <%
+                }
+            }
+            %>
+        <br>  Selected choice: <%=score.retrieveStudentAnswerByUserIdAndQnsId(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),qnsList.get(a).getQuestionId()).getChosenOptionLetter()%>
+        <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
+        <%
+            }
 
+        %>
+        </p>
+
+        <%
+        }
+        else if(session.getAttribute("servlet").equals("ex2")){
+        %>
+        <table style="width:100%">
+            <caption>测验结果</caption>
+            <tr>
+                <th>练习号: 2</th>
+                <th>练习结果: <%=session.getAttribute("ex2Score")%></th>
+                <th>成绩级别: <%=session.getAttribute("grade")%></th>
+            </tr>
+        </table>
+        <br>
+        <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+        <%
+            //  exerciseNo = exList.get(i).getexerciseNo();
+            ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
+            System.out.println(exerciseNo + " - exerciseNo");
+            System.out.println(qnsList.size() + " qnsList size");
+            for (int a = 0; a < qnsList.size(); a++ ) {
+                qnsList.get(a).getQuestionDetail();
+            /*
+               *NOTE: questionId in Question table is unique, questionNo is just the numbering of the question.
+               questionNo in MCQ table is referring to the questionId in Question table
+               For more info, refer to SQL table
+
+            */
+                ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
+        %>
+        <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
+        <%
+            String parameterName = "selectedChoice" + qnsList.get(a).getQuestionId();
+            for (int m =0; m < mcqList.size(); m++){
+        %>
+        <br> <p id="question">
+            <%
+                String idName = parameterName + mcqList.get(m).getOption();
+            %>
+        <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
+
+            <%
+
+                if(m == (mcqList.size()-1)){
+            %> <br><br>
+            <%
+                        }
+                    }
+                    ArrayList<Answer> ansList = score.retrieveStudentCheckboxAnswerByUserIdAndQnsId(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),qnsList.get(a).getQuestionId());
+                    String answer = "";
+                    for (int z = 0; z < ansList.size(); z++){
+                        answer = answer + ansList.get(z).getChosenOptionLetter();
+//                        System.out.println(answer + "this is important yoooo");
+                    }
+                    %>
+        <br>  Selected choice: <%=answer%>
+        <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
+        <%
+            }
+
+        %>
+
+        </p>
         <%
             }
         %>
 
-    </table>
-</div>
-<span class="w3-jumbo w3-hide-small"></span><br>
 
-</body>
+
+
+    </div>
+</form>
+
+
+
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="UserDashboard.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="studentDashboard.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -423,7 +493,7 @@
 
 <script type="text/javascript">
     /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+     toggle between hiding and showing the dropdown content */
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -446,4 +516,14 @@ toggle between hiding and showing the dropdown content */
 </script>
 
 </body>
+<%
+    System.out.println(session.getCreationTime() + " sessionCreationTime");
+    System.out.println(session.getLastAccessedTime() + " sessionLastAccessedTime");
+    //to remove unneccessary attributes stored in the session scope
+    session.removeAttribute("grade");
+    session.removeAttribute("servlet");
+    session.removeAttribute("ex1Score");
+    session.removeAttribute("ex2Score");
+%>
 </html>
+
