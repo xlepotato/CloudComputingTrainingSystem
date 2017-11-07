@@ -73,7 +73,7 @@
 </div>
 
 <!--Body section-->
-<div class="w3-center">
+<div class="w3-left">
 <form name="qnsForm" action="/question" method="post" onsubmit="return validateRadioBtn()">
     <table width="80%" border="1" align="center">
         <tr>
@@ -229,11 +229,11 @@
 <style type="text/css">
 
     table, th, td {
-        border: 5px solid black;
-
+        border: 1px solid black;
+        border-collapse: collapse;
     }
     th, td {
-        padding: 15px;
+        padding: 8px;
     }
     th {
         text-align: left;
