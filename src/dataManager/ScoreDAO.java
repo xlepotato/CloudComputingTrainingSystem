@@ -178,11 +178,13 @@ public class ScoreDAO {
         // step 2 - declare the SQL statement
         dbQuery = "SELECT userId, exerciseNo, quizScore, quizOverall FROM score WHERE userId = ?";
 
-
+        pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - using DBControlle readRequest method
-        rs = db.readRequest(dbQuery);
+
         try {
+            pstmt.setString(1,userId);
+            rs = pstmt.executeQuery();
             while (rs.next()) {
                 Score score = convertToScore(rs);
                 list.add(score);
