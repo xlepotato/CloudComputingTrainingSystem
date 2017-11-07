@@ -71,6 +71,7 @@
        }
 
     ArrayList<Score> scoreList = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
+    System.out.println(scoreList.size()+ " SIZEEE NYa");
 
 
 %>
@@ -133,12 +134,14 @@
         </thead>
 
         <%
+
         for (int i = 0; i < scoreList.size(); i ++){
+            String score = ExerciseUtility.formatToOneDecimalPlace(scoreList.get(i).getExerciseNo());
 %>
 
 
         <tr class="w3-hover-green">
-            <td><%=scoreList.get(i).getExerciseNo()%></td>
+            <td><%=score%></td>
             <td><%=scoreList.get(i).getQuizScore()%>/<%=scoreList.get(i).getQuizOverall()%></td>
             <td><a href="#">Details</a></td>
         </tr>
