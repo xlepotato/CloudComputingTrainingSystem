@@ -58,41 +58,69 @@
 
 <!--Body section-->
 
-<div class="w3-container" style="padding:128px 16px" id="body">
-    <h3 class="w3-center">Student Assignment View</h3>
-    <a href="onlineLearningLanding.jsp">
+<div class="w3-container w3-center" style="padding:128px 16px" id="body">
+    <h3 class="w3-center">Student Assignment Submission</h3>
+    <div align="left"><a href="onlineLearningLanding.jsp">
         <button type="button" class="btn btn-primary btn-arrow-left">Return</button>
-    </a>
+    </a></div>
     <div align="right"><a href="StudentSubmit.jsp">
-        <button type="button" class="btn btn-warning btn-arrow-right">Move to Assignment Submission</button>
+        <button type="button" class="btn btn-warning btn-arrow-right">Move to Assignment upload</button>
     </a></div>
     <br>
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">View All Available Assignments</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">View All Assignment Submissions</button>
     </div>
 
-    <div id="London" class="tabcontent">
+    <div id="London" class="tabcontent w3-center">
         <span onclick="this.parentElement.style.display='none'" class="topright">Click to close tab</span>
         <h3>Available Assignments</h3>
         <p>
         <table>
-        <tr>
-            <td>Assignment No.
-            </td>
-            <td>Remarks and Instructions</td>
-            <td> </td>
-        </tr>
+            <tr>
+                <th>Assignment No.
+                </th>
+                <th colspan="3">Students:</th>
+            </tr>
             <tr>
                 <td>Assignment 1:
                 </td>
-                <td>Ensure that quiz 1 is finished and submit a reflection on it.</td>
-                <td> <a href="StudentSubmit.jsp"> Submit </a></td>
-            </tr>
-            <tr>
-                <td>Assignment 2:
+                <div width=100%>
+                    <td>
+                        <select name="Student list" id="StuName1">
+
+                            <option>Please Select a Student</option>
+                            <option value="#">Zac</option>
+                            <option value="#">Tom</option>
+                            <option value="#">Amy</option>
+
+                        </select>
+                    </td>
+                </div>
+                <td>
+                    <a href="#" >Download</a></td>
                 </td>
-                <td>Ensure that quiz 2 is finished and submit a reflection on it.</td>
-                <td> <a href="StudentSubmit.jsp"> Submit </a></td>
+                <td> <a href="#"> Download all </a></td>
+            </tr>
+
+            <tr>
+                <td>Assignment 1:
+                </td>
+                <div width=100%>
+                    <td>
+                        <select name="Student list" id="StuName2">
+
+                            <option>Please Select a Student</option>
+                            <option value="#">Zac</option>
+                            <option value="#">Tom</option>
+                            <option value="#">Amy</option>
+
+                        </select>
+                    </td>
+                </div>
+                <td>
+                    <a href="#" >Download</a></td>
+                </td>
+                <td> <a href="#"> Download all </a></td>
             </tr>
 
         </table>
