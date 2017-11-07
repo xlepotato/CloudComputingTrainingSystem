@@ -164,8 +164,10 @@
                     <td width="92" bgcolor="#999999">学号</td>
                     <td width="92" bgcolor="#999999">帐号</td>
                     <td width="92" bgcolor="#999999">密码</td>
-                    <td width="92" bgcolor="#999999">微信</td>
+                    <td width="92" bgcolor="#999999">邮件</td>
+                    <%--<td width="92" bgcolor="#999999">微信</td>--%>
                     <td width="92" bgcolor="#999999">QQ号</td>
+                    <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <td width="121" bgcolor="#999999">手机号</td>
                 </tr>
                 <%
@@ -173,11 +175,11 @@
                 %>
                 <tr>
                     <td><%=ulist.get(i).getUserId()%></td>
-                    <td>学生</td>
-                    <td>123</td>
+                    <td><%=ulist.get(i).getName()%></td>
+                    <td><%=ulist.get(i).getUsername()%></td>
                     <td>s0001</td>
-                    <td>123456</td>
-                    <td>8975756</td>
+                    <td>*******</td>
+                    <td><%=ulist.get(i).getEmail()%></td>
                     <td>456898</td>
                     <td>18201292522</td>
                 </tr>
