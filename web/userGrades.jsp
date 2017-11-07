@@ -2,7 +2,8 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
 <%@ page import="entity.UserDetail" %>
-<%@ page import="wrapper.utility.ExerciseUtility" %><%--
+<%@ page import="wrapper.utility.ExerciseUtility" %>
+<%@ page import="dataManager.ExerciseDAO" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -44,6 +45,8 @@
     //    DecimalFormat df = new DecimalFormat()
     String username = session.getAttribute("username").toString();
     UserDAO user = new UserDAO();
+    ExerciseDAO exer = new ExerciseDAO();
+    int exSize = exer.retrieveAllExercise().size();
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
 //    if (ud == null){
@@ -61,6 +64,8 @@
        if (tempOverall.equals("0")){
            grade = "Not Applicable";
        }
+
+
 
 %>
 
@@ -120,6 +125,13 @@
             <th>Remarks</th>
         </tr>
         </thead>
+
+        <%
+        for (int i = 0; i < exSize; i ++){
+
+        }
+        %>
+
         <tr class="w3-hover-green">
             <td>1</td>
             <td>55/63</td>
