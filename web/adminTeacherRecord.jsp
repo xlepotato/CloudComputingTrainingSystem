@@ -96,16 +96,13 @@
     <a href="adminHome.jsp">Home</a>
     <a href="adminStudentRecord.jsp">Student</a>
     <a href="adminTeacherRecord.jsp">Teachers</a>
-    <a href="#">Data</a>
+    <a href="logOut.jsp">Log out</a>
 </div>
 
 <div id="main">
     <h2>Student Administration</h2>
     <p>This page is for the administration for Teacher members, functionalities include adding,modifying and deleting data.</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-    <div class="button-left">
-        <input name="log out" value="log out" type="button" style="height:40px;width:40%;"/>
-    </div>
 </div>
 
 <script>
