@@ -30,14 +30,14 @@
     }
 </style>
 <head>
-    <link rel="shortcut icon" href="#{resource['images/favicon.ico']}" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card-2" id="myNavbar">
-        <a href="index.jsp" class="w3-bar-item w3-button w3-wide">Insert LOGO here</a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-wide"><img border="0" alt="cloudcomputing" src="assets/img/Logo.png" width="200" height="100"></a>
         <!-- Right-sided navbar links -->
         <div class="w3-right w3-hide-small">
             <div class="sousuo">
