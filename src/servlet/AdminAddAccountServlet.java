@@ -23,6 +23,7 @@ public class AdminAddAccountServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         UserDAO u = new UserDAO();
         String userType = request.getParameter("userType");
+        System.out.println(userType + " USERRR NYAN TYPEEEE");
         String userId = UserUtility.generateUserId();
         String username = request.getParameter("username").toString();
         String password = request.getParameter("password").toString();
