@@ -1,5 +1,7 @@
 package servlet;
 
+import dataManager.UserDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,7 @@ import java.io.IOException;
 public class AdminUpdateAccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        UserDAO user = new UserDAO();
         HttpSession session = request.getSession();
         String btnType = request.getParameter("detail");
         String clickuser = request.getParameter("selectedUser");
@@ -22,7 +25,12 @@ public class AdminUpdateAccountServlet extends HttpServlet {
         if (btnType.equals("update")){
             System.out.println("adminupdate");
             System.out.println(clickuser);
-            response.sendRedirect("updateStudentInfo.jsp");
+            if (user.retrieveUserByUsername(session.getAttribute("selectedUser").toString()).getUserType()==0){
+                response.sendRedirect("updateStudentInfo.jsp");
+            }else if (user.retrieveUserByUsername(session.getAttribute("selectedUser").toString()).getUserType()==2){
+                response.sendRedirect("updateTeacherInfo.jsp");
+            }
+
         }else if (btnType.equals("change")){
             System.out.println("changepassword");
             System.out.println(clickuser);

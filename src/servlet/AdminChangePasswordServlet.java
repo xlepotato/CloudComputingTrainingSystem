@@ -31,7 +31,7 @@ public class AdminChangePasswordServlet extends HttpServlet {
             pw.println("alert('Password has been changed successfully')");
             if (user.retrieveUserByUsername(session.getAttribute("selectedUser").toString()).getUserType()==0){
                 pw.println("location='adminStudentRecord.jsp';");
-            }else if (user.retrieveUserByUsername(session.getAttribute("selectedUser").toString()).getUserType()==0){
+            }else if (user.retrieveUserByUsername(session.getAttribute("selectedUser").toString()).getUserType()==2){
                 pw.println("location='adminTeacherRecord.jsp';");
             }
             pw.println("</script>");

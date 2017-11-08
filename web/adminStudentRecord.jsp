@@ -131,12 +131,9 @@
 <div class="wenbenkuang">
     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入查询关键字" style="color:gray; width:50%;height:40px; font-size:16px;" ; onfocus="if(this.value == '请输入查询关键字') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入查询关键字'; this.style.color = 'gray';}" />
-    </form>
-
-
-
 
         <input name="查询" type="button" style="height:40px; width:80px;" value="查询" />
+    </form>
 
         <div button>
             <div class="button-left">

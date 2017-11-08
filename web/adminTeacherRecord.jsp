@@ -130,12 +130,8 @@
 <div class="wenbenkuang">
     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入查询关键字" style="color:gray; width:50%;height:40px; font-size:16px;" ; onfocus="if(this.value == '请输入查询关键字') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入查询关键字'; this.style.color = 'gray';}" />
-
-
-
-
-
         <input name="查询" type="button" style="height:40px; width:80px;" value="查询" />
+    </form>
 
         <div button>
             <div class="button-left">
@@ -174,7 +170,7 @@
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
                     <%--<td width="121" bgcolor="999999">Last Login</td>--%>
-                    <td width="121" bgcolor="999999">Last Login</td>
+                    <%--<td width="121" bgcolor="999999">Last Login</td>--%>
                     <td width="50" bgcolor="999999">Update Info</td>
                     <td width="50" bgcolor="#999999">Change Password</td>
                     <td width="50" bgcolor="#999999">Remove User</td>
@@ -182,6 +178,7 @@
                 <%
                     for (int i =0; i < ulist.size(); i++){
                 %>
+                <form action="/adminUpdate" method="post">
                 <tr>
                     <td><%=ulist.get(i).getUserId()%></td>
                     <td><%=ulist.get(i).getName()%></td>
@@ -191,8 +188,13 @@
                     <td><%=ulist.get(i).getEmail()%></td>
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
-                    <td> <a href="updateStudentInfo.jsp">Update Info</a></td>
-                    <td><a href="changeStudentPassword.jsp">Change Password</a></td>
+                    <%--<td> <a href="updateStudentInfo.jsp">Update Info</a></td>--%>
+                    <%--<td><a href="changeStudentPassword.jsp">Change Password</a></td>--%>
+                    <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="update" class="btn-link">Update Info</button></label></td>
+                    <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
+                    <input type="hidden"  name="selectedUser" value="<%=ulist.get(i).getUsername()%>"/>
+                    <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link">Change Password</button></label></td>
+
                     <td><a href="#">Remove</a></td>
                 </tr>
                 <%
