@@ -165,6 +165,46 @@ public class UserDAO {
         return success;
     }
 
+    /*
+  Method Name: createUserAdmin
+  Usage: Registration, Admin Add Student, Admin Add Teacher
+   */
+    public boolean createUserAdmin(String userId, String username, int userType, String password, String name) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "INSERT INTO user(userId, username, userType, password, name) VALUES(?, ?, ?, ?, ?)";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to insert record using executeUpdate method
+        try {
+            pstmt.setString(1, userId);
+            pstmt.setString(2, username);
+            pstmt.setInt(3, userType);
+            pstmt.setString(4, password);
+            pstmt.setString(5, name);
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
     public boolean createUserDetail(String userId, int userlevel, String progress, String lastLogin, String lastBrowse) {
         // declare local variables
         boolean success = false;
