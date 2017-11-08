@@ -24,6 +24,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     body, html {
@@ -105,23 +107,27 @@
 
     <div class="ScoreTable">
         <table style="width:100%">
-            <caption>测验结果</caption>
+            <caption><h1>测验结果</h1></caption>
+            <thead>
             <tr>
-                <th>练习号: 1</th>
-                <th>练习结果: <%=s.getQuizScore()%>/<%=s.getQuizOverall()%></th>
-                <th>成绩级别: <%=grade%></th>
+                <th scope="col">练习号: </th>
+                <th scope="col">练习结果: </th>
+                <th scope="col">成绩级别: </th>
             </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></td>
+                <td>9</td>
+                <td><%=grade%></td>
+            </tr>
+            </tbody>
         </table>
-        <%--<tr>--%>
-        <%--<td> asd </td>--%>
-        <%--<td> aaa </td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td> aa </td>--%>
-        <%--<td> sss </td>--%>
-        <%--</tr>--%>
+
         <br>
-        <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
+        <h2> <%=exerciseNo%>.  <%=exer%></h2> <br> <br>
         <%
             //  exerciseNo = exList.get(i).getexerciseNo();
             ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
