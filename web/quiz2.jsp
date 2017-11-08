@@ -1,7 +1,10 @@
 <%@ page import="dataManager.ExerciseDAO" %>
 <%@ page import="entity.Question" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="entity.MCQ" %><%--
+<%@ page import="entity.MCQ" %>
+<%@ page import="dataManager.ScoreDAO" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 6/11/2017
@@ -10,6 +13,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,15 +34,24 @@
         text-indent: 50px;
     }
 </style>
-<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <%
+    ScoreDAO s = new ScoreDAO();
+    UserDAO u = new UserDAO();
     ExerciseDAO exercise = new ExerciseDAO();
     //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
     int exerciseNo = 2;
     session.setAttribute("exercy", exerciseNo);
+
+    if (s.retrieveScoreByUserIdAndExerciseNo(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),exerciseNo)!=null){
+        PrintWriter pw = response.getWriter();
+        session.setAttribute("detail",exerciseNo);
+        pw.println("<script type=\"text/javascript\">");
+        pw.println("location='/quizreview';");
+        pw.println("</script>");
+    }
 
 %>
 
