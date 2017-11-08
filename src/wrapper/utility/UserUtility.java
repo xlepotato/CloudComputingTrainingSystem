@@ -75,7 +75,7 @@ public class UserUtility {
 
 
         try{
-        FileOutputStream out = new FileOutputStream(new File("../../exceldatabase.xlsx"));
+        FileOutputStream out = new FileOutputStream(new File("catexceldatabase.xlsx"));
         workbook.write(out);
             System.out.println("exceldatabase.xlsx written successfully");
         out.close();

@@ -2,7 +2,8 @@
 <%@ page import="entity.User" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.UserDetail" %>
-<%@ page import="wrapper.utility.UserUtility" %><%--
+<%@ page import="wrapper.utility.UserUtility" %>
+<%@ page import="dataManager.ExcelDatabase" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -152,7 +153,7 @@
                 <div class="button-right-right">
                     <input name="批量导入账号" value="批量导入账号" type="button" style="height:40px;width:100%;"/>
                     <%--<a href="<%=UserUtility.excel()%>">下载模板</a>--%>
-                    <a   href="#" onclick= "<%UserUtility.excel(); %> return false;" > <i class="glyphicon glyphicon-menu-right icon"  ></i>下载模板</a>
+                    <a   href="#" onclick= "<%=response.sendRedirect("/excel")%> return false;" > <i class="glyphicon glyphicon-menu-right icon"  ></i>下载模板</a>
                 </div>
             </div>
         </div>
