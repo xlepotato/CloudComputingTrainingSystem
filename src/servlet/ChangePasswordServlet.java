@@ -28,7 +28,7 @@ public class ChangePasswordServlet extends HttpServlet {
         if (confirmNewPassword.equals(newPassword) && password.equals(user.retrieveUserByUsername(session.getAttribute("username").toString()).getPassword())) {
             user.updatePassword(newPassword, user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
             pw.println("<script type=\"text/javascript\">");
-            pw.println("alert('.')");
+            pw.println("alert('Password has been changed successfully')");
             pw.println("location='updateParticular.jsp';");
             pw.println("</script>");
           //  response.sendRedirect("updateParticular.jsp");
