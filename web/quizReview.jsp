@@ -286,16 +286,16 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <style type="text/css">
 
-    /*table, th, td {*/
-        /*border: 5px solid black;*/
+    table, th, td {
+        border: 1px black;
 
-    /*}*/
-    /*th, td {*/
-        /*padding: 15px;*/
-    /*}*/
-    /*th {*/
-        /*text-align: left;*/
-    /*}*/
+    }
+    th, td {
+        padding: 5px;
+    }
+    th {
+        text-align: left;
+    }
 
     .user {
         display: inline-block;
