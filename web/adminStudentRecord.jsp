@@ -130,7 +130,7 @@
 
 <div class="wenbenkuang">
     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
-        <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入查询关键字" style="color:gray; width:50%;height:40px; font-size:16px;" ; onfocus="javascript:if(this.value == '请输入查询关键字') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入查询关键字'; this.style.color = 'gray';}" />
+        <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入查询关键字" style="color:gray; width:50%;height:40px; font-size:16px;" ; onfocus="if(this.value == '请输入查询关键字') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入查询关键字'; this.style.color = 'gray';}" />
 
 
 
@@ -160,7 +160,7 @@
         <div class="table">
 
             <table cellspacing="0" cellpadding="0" border="1" width="100%">
-                <col width="92" span="8" />
+                <col width="92" span="7" />
                 <col width="121" />
                 <tr>
                     <td width="92" bgcolor="#999999">序号</td>
@@ -174,10 +174,9 @@
                     <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
-                    <td width="121" bgcolor="#999999">Last Login</td>
-                    <td width="50" bgcolor="#999999">Update Info</td>
-                    <td width="50" bgcolor="#999999">Change Password</td>
-                    <td width="50" bgcolor="#999999">Remove User</td>
+                    <td width="121" bgcolor="999999">Last Login</td>
+                    <td width="50" bgcolor="999999">Update Info</td>
+                    <td width="50" bgcolor="999999">Change Password</td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
@@ -192,9 +191,16 @@
                     <td><%=ulist.get(i).getlastLogin()%></td>
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
-                    <td> <a href="updateStudentInfo.jsp">Update Info</a></td>
-                    <td><a href="changeStudentPassword.jsp">Change Password</a></td>
-                    <td><a href="#">Remove</a></td>
+                    <%--<td width="50" bgcolor="999999"><a href="updateStudentInfo.jsp"> Update Info</a></td>--%>
+
+
+                    <form action="/adminUpdate" method="post">
+                    <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Update Info</button></label></td>
+                    <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
+                    </form>
+                    <form action="/adminChangePassword" method="post">
+                        <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Change Password</button></label></td>
+                    </form>
                 </tr>
                 <%
                     }
