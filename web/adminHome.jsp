@@ -1,6 +1,7 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -96,7 +97,7 @@
 
 <%
     UserDAO user = new UserDAO();
-    ArrayList<User> ulist = user.retrieveAllUser();
+    ArrayList<UserDetail> ulist = user.retrieveAllUserWithUserDetail();
 %>
 
 <div id="mySidenav" class="sidenav">
@@ -180,11 +181,11 @@
                     <td><%=ulist.get(i).getUserId()%></td>
                     <td><%=ulist.get(i).getName()%></td>
                     <td><%=ulist.get(i).getUsername()%></td>
-                    <td>s0001</td>
-                    <td>*******</td>
+                    <%--<td>s0001</td>--%>
+                    <%--<td>*******</td>--%>
                     <td><%=ulist.get(i).getEmail()%></td>
-                    <td>456898</td>
-                    <td>18201292522</td>
+                    <%--<td>456898</td>--%>
+                    <td><%=ulist.get(i).getlastLogin()%></td>
                 </tr>
                 <%
                     }
