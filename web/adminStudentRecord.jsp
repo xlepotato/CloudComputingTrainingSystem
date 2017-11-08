@@ -160,7 +160,7 @@
         <div class="table">
 
             <table cellspacing="0" cellpadding="0" border="1" width="100%">
-                <col width="92" span="7" />
+                <col width="92" span="8" />
                 <col width="121" />
                 <tr>
                     <td width="92" bgcolor="#999999">序号</td>
@@ -174,9 +174,10 @@
                     <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
-                    <td width="121" bgcolor="999999">Last Login</td>
-                    <td width="50" bgcolor="999999">Update Info</td>
-                    <td width="50" bgcolor="999999">Change Password</td>
+                    <td width="121" bgcolor="#999999">Last Login</td>
+                    <td width="50" bgcolor="#999999">Update Info</td>
+                    <td width="50" bgcolor="#999999">Change Password</td>
+                    <td width="50" bgcolor="#999999">Remove User</td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
@@ -191,8 +192,9 @@
                     <td><%=ulist.get(i).getlastLogin()%></td>
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
-                    <td width="50" bgcolor="999999"><a href="updateStudentInfo.jsp"> Update Info</a></td>
-                    <td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>
+                    <td> <a href="updateStudentInfo.jsp">Update Info</a></td>
+                    <td><a href="changeStudentPassword.jsp">Change Password</a></td>
+                    <td><a href="#">Remove</a></td>
                 </tr>
                 <%
                     }
