@@ -104,7 +104,6 @@
             String grade = ExerciseUtility.computeGrade(s.getQuizScore(),s.getQuizOverall());
 
     %>
-
     <div class="ScoreTable">
         <table style="width:100%">
             <caption><h1>测验结果</h1></caption>
@@ -287,8 +286,8 @@
 <style type="text/css">
 
     table, th, td {
-        border: 1px black;
-
+        border: 1px solid black;
+        border-collapse: collapse;
     }
     th, td {
         padding: 5px;
