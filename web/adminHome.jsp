@@ -97,7 +97,7 @@
 
 <%
     UserDAO user = new UserDAO();
-    ArrayList<UserDetail> ulist = user.retrieveAllUserWithUserDetail();
+    ArrayList<User> ulist = user.retrieveAllUser();
 %>
 
 <div id="mySidenav" class="sidenav">
