@@ -61,8 +61,8 @@
     <a href="/logout">Log out</a>
 </div>
 <div id="main">
-    <h2>Adding new Students</h2>
-    <p>This page is for the administrator to add new students</p>
+    <h2>Update Student Information</h2>
+    <p>This page is for the administrator to update student's information</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>
 <div class="w3-container" style="padding:128px 16px" id="body" align="center">
@@ -70,7 +70,7 @@
         <table style="width:100%">
             <tr>
                 <th>
-                    <div class="form-style-2-heading">Update your information here</div>
+                    <div class="form-style-2-heading">Update Student's information here</div>
                     <form action="/updateParticular" method="post">
                         <label for><span>Username <span class="required">*</span></span><input type="text"
                                                                                                class="email"
