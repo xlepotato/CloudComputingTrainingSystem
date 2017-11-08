@@ -306,21 +306,22 @@
     }
 
     .ch-img-1 {
-        background-image: url(assets/img/02.jpg);
+        background-image: url(assets/img/Number1.png);
         z-index: 12;
     }
 
     .ch-img-2 {
-        background-image: url(assets/img/03.jpg);
+        background-image: url(assets/img/Number2.png);
         z-index: 11;
     }
 
     .ch-img-3 {
-        background-image: url(assets/img/04.jpg);
+        background-image: url(assets/img/Number3.png);
         z-index: 10;
     }
+
     .ch-img-4 {
-        background-image: url(assets/img/05.jpg);
+        background-image: url(assets/img/Number4.png);
         z-index: 9;
     }
 
