@@ -192,11 +192,13 @@
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
                     <%--<td width="50" bgcolor="999999"><a href="updateStudentInfo.jsp"> Update Info</a></td>--%>
-                    <form>
 
 
+                    <form action="/adminUpdate" method="post">
                     <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Update Info</button></label></td>
                     <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
+                    </form>
+                    <form action="">
                         <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Change Password</button></label></td>
                     </form>
                 </tr>
