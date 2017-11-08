@@ -33,7 +33,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Register a new student</div>
-                    <form action="/register" method="post" accept-charset="utf-8">
+                    <form action="/adminAdd" method="post" accept-charset="utf-8" name="userType" value="student">
                         <label for><span>用户名： <span class="required"></span></span><input type="text"
                                                                                           class="input-field"
                                                                                           name="username"
