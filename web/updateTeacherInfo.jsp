@@ -47,7 +47,7 @@
 <%--%>--%>
 <%
     //    DecimalFormat df = new DecimalFormat()
-    String username = session.getAttribute("username").toString();
+    String username = session.getAttribute("selectedUser").toString();
     UserDAO user = new UserDAO();
     User a = user.retrieveUserByUsername(username);
 

@@ -33,7 +33,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Change Student's password</div>
-                    <form action="/changePassword" method="post">
+                    <form action="/adminChangePassword" method="post">
                         <label for><span>New Password <span class="required">*</span></span><input type="password"
                                                                                                    class="input-field"
                                                                                                    name="newPassword"
