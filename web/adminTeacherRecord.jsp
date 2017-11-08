@@ -174,6 +174,9 @@
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
                     <%--<td width="121" bgcolor="999999">Last Login</td>--%>
+                    <td width="121" bgcolor="999999">Last Login</td>
+                    <td width="50" bgcolor="999999">Update Info</td>
+                    <td width="50" bgcolor="999999">Change Password</td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
@@ -187,6 +190,8 @@
                     <td><%=ulist.get(i).getEmail()%></td>
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
+                    <td width="50" bgcolor="999999"><a href="updateStudentInfo.jsp"> Update Info</a></td>
+                    <td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>
                 </tr>
                 <%
                     }
