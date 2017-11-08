@@ -180,7 +180,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO user(userId, username, userType, password, name) VALUES(?, ?, ?, ?, ?)";
+        dbQuery = "INSERT INTO user(userId, username, userType, password, name, email) VALUES(?, ?, ?, ?, ?, ?)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
@@ -190,6 +190,7 @@ public class UserDAO {
             pstmt.setInt(3, userType);
             pstmt.setString(4, password);
             pstmt.setString(5, name);
+            pstmt.setString(6, "");
 
 
             if (pstmt.executeUpdate() == 1)
