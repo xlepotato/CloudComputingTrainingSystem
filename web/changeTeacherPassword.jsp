@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 8/11/2017
-  Time: 10:31 AM
+  Time: 10:54 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Change Student Password</title>
+    <title>Change Teacher's Password</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
@@ -21,8 +21,8 @@
 </div>
 
 <div id="main">
-    <h2>Changing student's password</h2>
-    <p>This page is for the administrator to change student's password</p>
+    <h2>Changing Teacher's password</h2>
+    <p>This page is for the administrator to change Teacher's password</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>
 <div class="w3-container" style="padding:128px 16px" id="body" align="center">
@@ -30,7 +30,7 @@
         <table style="width:100%">
             <tr>
                 <th>
-                    <div class="form-style-2-heading">Change Student's password</div>
+                    <div class="form-style-2-heading">Change Teacher's password</div>
                     <form action="/changePassword" method="post">
                         <label for><span>New Password <span class="required">*</span></span><input type="password"
                                                                                                    class="input-field"
@@ -50,8 +50,8 @@
         </table>
         <br>
         <br>
-        <a href="updateStudentInfo.jsp"><input type="button" value="Move to Student Update Page"/><span>&nbsp;</span></a>
-        <a href="adminStudentRecord.jsp"><input type="button" value="Go to Student Admin Home"/><span>&nbsp;</span></a>
+        <a href="updateTeacherInfo.jsp"><input type="button" value="Move to Teacher Update Page"/><span>&nbsp;</span></a>
+        <a href="adminTeacherRecord.jsp"><input type="button" value="Go to Teacher Admin Home"/><span>&nbsp;</span></a>
     </div>
 
 

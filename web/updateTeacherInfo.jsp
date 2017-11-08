@@ -1,16 +1,57 @@
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %>
 <%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 8/11/2017
-  Time: 10:31 AM
+  Time: 10:51 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Change Student Password</title>
+    <title>Update Teacher Info</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body, html {
+        height: 100%;
+        line-height: 1.8;
+    }
+
+    .w3-bar .w3-button {
+        padding: 16px;
+    }
+</style>
+<%--<%--%>
+<%--//Validation on authorised access--%>
+<%--if (session.getAttribute("authorisedUser") == null){--%>
+<%--PrintWriter pw = response.getWriter();--%>
+<%--pw.println("<script type=\"text/javascript\">");--%>
+<%--pw.println("alert('You do not have the permission to access this page. Please login.')");--%>
+<%--pw.println("location='index.jsp';");--%>
+<%--pw.println("</script>");--%>
+
+<%--}--%>
+<%--%>--%>
+<%
+    //    DecimalFormat df = new DecimalFormat()
+    String username = session.getAttribute("username").toString();
+    UserDAO user = new UserDAO();
+    User a = user.retrieveUserByUsername(username);
+
+
+%>
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -19,10 +60,9 @@
     <a href="adminTeacherRecord.jsp">Teachers</a>
     <a href="/logout">Log out</a>
 </div>
-
 <div id="main">
-    <h2>Changing student's password</h2>
-    <p>This page is for the administrator to change student's password</p>
+    <h2>Update Teacher's information</h2>
+    <p>This page is for the administrator to update Teacher's information</p>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>
 <div class="w3-container" style="padding:128px 16px" id="body" align="center">
@@ -30,19 +70,23 @@
         <table style="width:100%">
             <tr>
                 <th>
-                    <div class="form-style-2-heading">Change Student's password</div>
-                    <form action="/changePassword" method="post">
-                        <label for><span>New Password <span class="required">*</span></span><input type="password"
-                                                                                                   class="input-field"
-                                                                                                   name="newPassword"
-                                                                                                   value="" required/></label>
-                        <label for><span>Confirm New Password <span class="required">*</span></span><input type="password"
-                                                                                                           class="input-field"
-                                                                                                           name="cfmNewPassword"
-                                                                                                           value="" required/></label>
+                    <div class="form-style-2-heading">Update Teacher's information here</div>
+                    <form action="/updateParticular" method="post">
+                        <label for><span>Username <span class="required">*</span></span><input type="text"
+                                                                                               class="email"
+                                                                                               name="username"
+                                                                                               value="<%=a.getUsername()%>" required/></label>
+                        <label for><span>Name <span class="required">*</span></span><input type="text"
+                                                                                           class="input-field"
+                                                                                           name="uname"
+                                                                                           value="<%=a.getName()%>" required/></label>
+                        <label for><span>Email <span class="required">*</span></span><input type="text"
+                                                                                            class="email"
+                                                                                            name="email"
+                                                                                            value="<%=a.getEmail()%>" required/></label>
 
 
-                        <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
+                        <label><span>&nbsp;</span><input type="submit" value="Update"/></label>
 
                     </form>
                 </th>
@@ -50,8 +94,8 @@
         </table>
         <br>
         <br>
-        <a href="updateStudentInfo.jsp"><input type="button" value="Move to Student Update Page"/><span>&nbsp;</span></a>
-        <a href="adminStudentRecord.jsp"><input type="button" value="Go to Student Admin Home"/><span>&nbsp;</span></a>
+        <a href="adminTeacherRecord.jsp"><input type="button" value="Return to Teacher Admin"/><span>&nbsp;</span></a>
+        <a href="changeTeacherPassword.jsp"><input type="button" value="Change Teacher Password"/><span>&nbsp;</span></a>
     </div>
 
 
