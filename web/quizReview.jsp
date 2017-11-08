@@ -114,14 +114,6 @@
                 <th scope="col"><h2>成绩级别: </h2><h3><%=grade%></h3></th>
             </tr>
             </thead>
-
-            <tbody>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
         </table>
 
         <br>
@@ -297,6 +289,9 @@
     }
     th, h3{
         text-align: right;
+    }
+    th, h2{
+        text-align: left;
     }
 
     .user {
