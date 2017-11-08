@@ -173,6 +173,8 @@
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
                     <td width="121" bgcolor="999999">Last Login</td>
+                    <a href="updateStudentInfo.jsp"> <td width="50" bgcolor="999999">Update Info</td></a>
+                    <a href="changeStudentPassword.jsp"> <td width="50" bgcolor="999999">Change Password</td></a>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
