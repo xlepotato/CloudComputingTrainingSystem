@@ -14,7 +14,6 @@
 <head>
     <title>Update Teacher Info</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -54,6 +53,7 @@
 
 
 %>
+</head>
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
