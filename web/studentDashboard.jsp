@@ -59,24 +59,22 @@
                                style="color:gray; width:100%;height:40px; font-size:16px;" ;
                                onfocus="javascript:if(this.value == '请输入搜索内容') this.value = ''; this.style.color='gray';"
                                onblur="if(this.value == '') {this.value = '请输入搜索内容'; this.style.color = 'gray';}"/><br/>
-                        <div class="container">
-                            <div class="search"></div>
-                        </div>
                     </form>
                 </div>
 
-                <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-                <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Dashboard</a>
-                <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fa fa-th"></i> Online Quiz</button>
-                    <div class="dropdown-content">
-                        <a href="quiz1.jsp">Quiz 1</a>
-                        <a href="quiz2.jsp">Quiz 2</a>
-                    </div>
+            </div>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
+            <a href="studentDashboard.jsp" class="w3-bar-item w3-button"><i class="fa fa-tachometer"></i> Dashboard</a>
+            <a href="onlineLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-book"></i> Online Learning</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-th"></i> Online Quiz</button>
+                <div class="dropdown-content">
+                    <a href="quiz1.jsp">Quiz 1</a>
+                    <a href="quiz2.jsp">Quiz 2</a>
                 </div>
-                <a href="contactUs.jsp" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
-                <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Log out</a>
+            </div>
+            <a href="contactUs.jsp" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact Us</a>
+            <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> Log out</a>
 
 
         </div>
