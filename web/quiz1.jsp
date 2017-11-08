@@ -1,7 +1,10 @@
 <%@ page import="dataManager.ExerciseDAO" %>
 <%@ page import="entity.Question" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="entity.MCQ" %><%--
+<%@ page import="entity.MCQ" %>
+<%@ page import="dataManager.ScoreDAO" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 6/11/2017
@@ -32,16 +35,26 @@
     }
 </style>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <%
+        ScoreDAO s = new ScoreDAO();
+        UserDAO u = new UserDAO();
+        int exerciseNo = 1;
+        ExerciseDAO exercise = new ExerciseDAO();
+        //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
+        session.setAttribute("exercy", exerciseNo);
+
+
+        if (s.retrieveScoreByUserIdAndExerciseNo(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),exerciseNo)!=null){
+            PrintWriter pw = response.getWriter();
+            session.setAttribute("detail",exerciseNo);
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("location='/quizreview';");
+            pw.println("</script>");
+        }
+    %>
 </head>
 <body>
 
-<%
-    ExerciseDAO exercise = new ExerciseDAO();
-    //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
-    int exerciseNo = 1;
-    session.setAttribute("exercy", exerciseNo);
-
-%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">

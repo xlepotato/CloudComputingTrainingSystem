@@ -24,7 +24,9 @@ public class QuizReviewServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
+        HttpSession session = request.getSession();
+        String exNo = session.getAttribute("detail").toString();
+        session.setAttribute("exNo",exNo);
+        response.sendRedirect("quizReview.jsp");
     }
 }
