@@ -56,13 +56,8 @@ public class SearchDAO {
         List<Exercise> list ;
         list = retrievesearchresults();
         for (int i = 0; i < list.size(); i++){
-            if(list.get(i).getexerciseName().equals(searchResult)){
-                searchSuccess = true;
-
-            }else {
-                //  System.out.println("Username does not exist");
-                searchSuccess = false;
-            }
+            //  System.out.println("Username does not exist");
+            searchSuccess = list.get(i).getexerciseName().equals(searchResult);
         }
         return searchSuccess;
     }

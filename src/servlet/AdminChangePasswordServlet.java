@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Ying on 8/11/2017.
  */
-@WebServlet(name = "AdminChangePasswordServlet", urlPatterns = "adminChangePassword")
+@WebServlet(name = "AdminChangePasswordServlet", urlPatterns = "/adminChangePassword")
 public class AdminChangePasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
