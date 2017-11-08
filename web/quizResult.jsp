@@ -83,7 +83,10 @@
 </div>
 
 <!--Body section-->
-
+<span class="w3-jumbo w3-hide-small"></span><br>
+<span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+<p><span class="w3-large"><h3><font color="white">Start learning more about cloud computing!</font></h3></span></p>
+<br>
 
 <form id="result" name="result" method="post" action="">
 
