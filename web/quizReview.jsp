@@ -259,22 +259,6 @@
 
 <!-- Add Google Maps -->
 <script>
-    function myMap()
-    {
-        myCenter=new google.maps.LatLng(41.878114, -87.629798);
-        var mapOptions= {
-            center:myCenter,
-            zoom:12, scrollwheel: false, draggable: false,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: myCenter,
-        });
-        marker.setMap(map);
-    }
-
     // Modal Image Gallery
     function onClick(element) {
         document.getElementById("img01").src = element.src;
@@ -303,16 +287,16 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <style type="text/css">
 
-    table, th, td {
-        border: 5px solid black;
+    /*table, th, td {*/
+        /*border: 5px solid black;*/
 
-    }
-    th, td {
-        padding: 15px;
-    }
-    th {
-        text-align: left;
-    }
+    /*}*/
+    /*th, td {*/
+        /*padding: 15px;*/
+    /*}*/
+    /*th {*/
+        /*text-align: left;*/
+    /*}*/
 
     .user {
         display: inline-block;
