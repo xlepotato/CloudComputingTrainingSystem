@@ -120,7 +120,6 @@
             <tr>
                 <th scope="row">1</th>
                 <td><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></td>
-                <td>9</td>
                 <td><%=grade%></td>
             </tr>
             </tbody>
