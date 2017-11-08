@@ -10,6 +10,8 @@
 <head>
     <title>Change Student Password</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
+    <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
 </head>
 <body>
 <div id="mySidenav" class="sidenav">

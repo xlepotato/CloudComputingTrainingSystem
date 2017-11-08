@@ -93,6 +93,8 @@
             text-align:center;
         }
     </style>
+    <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
+    <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
 </head>
 <body>
 
