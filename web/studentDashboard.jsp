@@ -119,11 +119,7 @@
             <p class="w3-large">Grades</p>
             <p><a href="userGrades.jsp">View your quiz grades here</a></p>
         </div>
-        <div class="w3-quarter">
-            <a href="#"><i class="fa fa-cog w3-margin-bottom w3-jumbo"></i></a>
-            <p class="w3-large">Settings</p>
-            <p><a href="#">Manage your account settings here</a></p>
-        </div>
+        
     </div>
 </div>
 
