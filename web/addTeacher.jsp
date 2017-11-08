@@ -33,7 +33,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Register a new Teacher</div>
-                    <form action="/adminAdd" method="post" accept-charset="utf-8" name="userType" value="teacher">
+                    <form action="/adminAdd" method="post" accept-charset="utf-8">
                         <label for><span>用户名： <span class="required"></span></span><input type="text"
                                                                                           class="input-field"
                                                                                           name="username"
@@ -62,6 +62,7 @@
                                    <%--value=""/></label>--%>
 
 
+                        <input type="hidden"  name="userType" value="teacher" />
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
 
 
