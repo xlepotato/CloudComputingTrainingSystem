@@ -87,17 +87,17 @@
                         <label for><span>姓名： <span class="required"></span></span><input type="text"
                                                                                          class="input-field"
                                                                                          name="name"
-                                                                                         value=""/></label>
+                                                                                         value="" required/></label>
                         <label for><span>电子邮件: <span class="required"></span></span><input type="email"
                                                                                            class="input-field"
                                                                                            name="email"
-                                                                                           value=""/></label>
-                        <label for><span>Remarks<span class="required"></span></span><textarea rows="4" cols="50"></textarea> </label>
+                                                                                           value="" required/></label>
+                        <label for><span>Remarks<span class="required"></span></span><textarea rows="4" cols="50" required></textarea> </label>
                         <label for><span>验证码: <span class="required"></span></span>
                             <img src="/imageGenerate" onclick="this.src='/imageGenerate'">
                             <input type="text" class="input-field"
                                    name="captcha"
-                                   value=""/></label>
+                                   value="" required/></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
