@@ -33,17 +33,17 @@
         padding: 16px;
     }
 </style>
-<%
-    //Validation on authorised access
-    if (session.getAttribute("authorisedUser") == null){
-        PrintWriter pw = response.getWriter();
-        pw.println("<script type=\"text/javascript\">");
-        pw.println("alert('You do not have the permission to access this page. Please login.')");
-        pw.println("location='index.jsp';");
-        pw.println("</script>");
+<%--<%--%>
+    <%--//Validation on authorised access--%>
+    <%--if (session.getAttribute("authorisedUser") == null){--%>
+        <%--PrintWriter pw = response.getWriter();--%>
+        <%--pw.println("<script type=\"text/javascript\">");--%>
+        <%--pw.println("alert('You do not have the permission to access this page. Please login.')");--%>
+        <%--pw.println("location='index.jsp';");--%>
+        <%--pw.println("</script>");--%>
 
-    }
-%>
+    <%--}--%>
+<%--%>--%>
 <%
     //    DecimalFormat df = new DecimalFormat()
     String username = session.getAttribute("username").toString();
