@@ -164,13 +164,14 @@
                     <td width="92" bgcolor="#999999">姓名</td>
                     <td width="92" bgcolor="#999999">Username</td>
                     <%--<td width="92" bgcolor="#999999">学号</td>--%>
-                    <td width="92" bgcolor="#999999">帐号</td>
-                    <td width="92" bgcolor="#999999">密码</td>
+                    <%--<td width="92" bgcolor="#999999">帐号</td>--%>
+                    <%--<td width="92" bgcolor="#999999">密码</td>--%>
                     <td width="92" bgcolor="#999999">邮件</td>
                     <%--<td width="92" bgcolor="#999999">微信</td>--%>
-                    <td width="92" bgcolor="#999999">QQ号</td>
+                    <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
-                    <td width="121" bgcolor="#999999">手机号</td>
+                    <%--<td width="121" bgcolor="#999999">手机号</td>--%>
+                    <td width="121" bgcolor="999999">Last Login</td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
