@@ -24,9 +24,9 @@ public class AdminAddAccountServlet extends HttpServlet {
         UserDAO u = new UserDAO();
         String userType = request.getParameter("userType");
         String userId = UserUtility.generateUserId();
-        String username = request.getAttribute("username").toString();
-        String password = request.getAttribute("password").toString();
-        String name = request.getAttribute("name").toString();
+        String username = request.getParameter("username").toString();
+        String password = request.getParameter("password").toString();
+        String name = request.getParameter("name").toString();
 //        String email = request.getAttribute("email").toString();
         if (userType.equals("student")){
             int userTypeInDB = 0;
