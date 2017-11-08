@@ -50,8 +50,8 @@
         </table>
         <br>
         <br>
-        <a href="accountDetail.jsp"><input type="button" value="Return to Account Page"/><span>&nbsp;</span></a>
-        <a href="updateParticular.jsp"><input type="button" value="Go to Update Particulars Page"/><span>&nbsp;</span></a>
+        <a href="updateStudentInfo.jsp"><input type="button" value="Move to Student Update Page"/><span>&nbsp;</span></a>
+        <a href="adminStudentRecord.jsp"><input type="button" value="Go to Student Admin Home"/><span>&nbsp;</span></a>
     </div>
 
 

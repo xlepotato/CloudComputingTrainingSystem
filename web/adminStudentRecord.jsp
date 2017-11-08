@@ -189,6 +189,8 @@
                     <td><%=ulist.get(i).getlastLogin()%></td>
                     <%--<td>456898</td>--%>
                     <%--<td>18201292522</td>--%>
+                    <a href="updateStudentInfo.jsp"> <td width="50" bgcolor="999999">Update Info</td></a>
+                    <a href="changeStudentPassword.jsp"> <td width="50" bgcolor="999999">Change Password</td></a>
                 </tr>
                 <%
                     }
