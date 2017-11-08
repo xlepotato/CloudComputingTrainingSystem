@@ -1,18 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Ying
-  Date: 3/11/2017
-  Time: 10:49 AM
+  User: Aloylim98
+  Date: 6/11/2017
+  Time: 1:50 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
-<title>Homepage</title>
+<title>Student Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/w3schoolsRef.css">
+<link rel="stylesheet" href="assets/css/fontawesomeRef.css">
 <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     body, html {
@@ -23,7 +24,7 @@
     .bgimg-1 {
         background-position: center;
         background-size: cover;
-        background-image: url("assets/img/denglu.jpg");
+        background-image: url("image/denglu.jpg");
         min-height: 100%;
     }
     .w3-bar .w3-button {
@@ -32,8 +33,6 @@
 </style>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
-    <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
 </head>
 <body>
 
@@ -80,15 +79,15 @@
 </div>
 
 
-    <!-- Sidebar on small screens when clicking the menu icon -->
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">WELCOME</a>
-        <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">DASHBOARD</a>
-        <a href="#Info" onclick="w3_close()" class="w3-bar-item w3-button">INFORMATION</a>
-        <a href="#Learn" onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-    </nav>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">WELCOME</a>
+    <a href="#user" onclick="w3_close()" class="w3-bar-item w3-button">DASHBOARD</a>
+    <a href="#Info" onclick="w3_close()" class="w3-bar-item w3-button">INFORMATION</a>
+    <a href="#Learn" onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
 
 </div>
 
@@ -104,32 +103,32 @@
             <li>
                 <div class="ch-item ch-img-1">
                     <div class="ch-info">
-                        <h3><a href="chapter1.jsp"> Chapter 1</a></h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
+                        <h3>Chapter 1</h3>
+                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-2">
                     <div class="ch-info">
-                        <h3><a href="chapter2.jsp"> Chapter 2</a></h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
+                        <h3>Chapter 2</h3>
+                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-3">
                     <div class="ch-info">
-                        <h3><a href="chapter3.jsp">Chapter 3</a></h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
+                        <h3>Chapter 3</h3>
+                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
-                        <h3><a href="chapter4.jsp">Chapter 4</a></h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
+                        <h3>Chapter 4</h3>
+                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -137,7 +136,7 @@
                 <div class="ch-item ch-img-4">
                     <div class="ch-info">
                         <h3>Future Chapters</h3>
-                        <p>by Aloysius Lim <a href="onlineLearningLanding.jsp">Cloud Computing</a></p>
+                        <p>by Aloysius Lim <a href="OnlineLearningLanding.html">Cloud Computing</a></p>
                     </div>
                 </div>
             </li>
@@ -189,7 +188,7 @@
         <div class="w3-col m6">
             <h3>Want to know more about cloud computing?</h3>
             <p>Click on the link below.</p>
-            <p><a href="onlineLearningLanding.jsp" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
+            <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View E-Learning Portal</a></p>
         </div>
     </div>
 </div>
@@ -339,18 +338,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(assets/img/02.jpg);
+        background-image: url(image/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(assets/img/03.jpg);
+        background-image: url(image/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(assets/img/04.jpg);
+        background-image: url(image/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(assets/img/05.jpg);
+        background-image: url(image/05.jpg);
     }
 
     .ch-info {
@@ -455,4 +454,3 @@ toggle between hiding and showing the dropdown content */
 
 </body>
 </html>
-
