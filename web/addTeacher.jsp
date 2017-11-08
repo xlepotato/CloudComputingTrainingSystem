@@ -33,7 +33,7 @@
             <tr>
                 <th>
                     <div class="form-style-2-heading">Register a new Teacher</div>
-                    <form action="/register" method="post" accept-charset="utf-8">
+                    <form action="/adminAdd" method="post" accept-charset="utf-8" name="userType" value="teacher">
                         <label for><span>用户名： <span class="required"></span></span><input type="text"
                                                                                           class="input-field"
                                                                                           name="username"
@@ -51,15 +51,15 @@
                                                                                          class="input-field"
                                                                                          name="name"
                                                                                          value=""/></label>
-                        <label for><span>电子邮件: <span class="required"></span></span><input type="email"
-                                                                                           class="input-field"
-                                                                                           name="email"
-                                                                                           value=""/></label>
-                        <label for><span>验证码: <span class="required"></span></span>
-                            <img src="/imageGenerate" onclick="this.src='/imageGenerate'">
-                            <input type="text" class="input-field"
-                                   name="captcha"
-                                   value=""/></label>
+                        <%--<label for><span>电子邮件: <span class="required"></span></span><input type="email"--%>
+                                                                                           <%--class="input-field"--%>
+                                                                                           <%--name="email"--%>
+                                                                                           <%--value=""/></label>--%>
+                        <%--<label for><span>验证码: <span class="required"></span></span>--%>
+                            <%--<img src="/imageGenerate" onclick="this.src='/imageGenerate'">--%>
+                            <%--<input type="text" class="input-field"--%>
+                                   <%--name="captcha"--%>
+                                   <%--value=""/></label>--%>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
