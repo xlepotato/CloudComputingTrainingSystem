@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 /**
  * Created by Ying on 6/11/2017.
  */
-@WebServlet(name = "AdminRemoveAccountServlet")
+@WebServlet(name = "AdminRemoveAccountServlet", urlPatterns = "/remove")
 public class AdminRemoveAccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

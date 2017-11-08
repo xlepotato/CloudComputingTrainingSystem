@@ -200,6 +200,8 @@
                         <input type="hidden"  name="selectedUser" value="<%=ulist.get(i).getUsername()%>"/>
                         <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link">Change Password</button></label></td>
 
+                    <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="remove" class="btn-link">Remove</button></label></td>
+
                 </tr>
             </form>
 
