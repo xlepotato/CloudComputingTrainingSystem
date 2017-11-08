@@ -14,6 +14,7 @@ import java.io.IOException;
 public class AdminChangePasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        System.out.println("adminchangepw");
         response.sendRedirect("index.jsp");
     }
 
