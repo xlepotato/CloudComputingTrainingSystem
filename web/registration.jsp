@@ -92,7 +92,7 @@
         </table>
         <br>
         <br>
-        <a href="studentHomepage.jsp"><input type="button" value="Return to Home Page"/><span>&nbsp;</span></a>
+        <a href="index.jsp"><input type="button" value="Return to Home Page"/><span>&nbsp;</span></a>
         <span><a href="login.jsp"><input type="button" value="Move to Log In Page"/>&nbsp;</a></span>
     </div>
 
