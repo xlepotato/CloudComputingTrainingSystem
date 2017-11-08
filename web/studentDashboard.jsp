@@ -107,19 +107,24 @@
     <p class="w3-center w3-large">User</p>
     <div class="w3-row-padding w3-center" style="margin-top:64px">
         <div class="w3-quarter">
-            <a href="accountDetail.jsp"><i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i></a>
+            <a href="accountDetail.jsp"><i class="fa fa-user-circle w3-margin-bottom w3-jumbo w3-center"></i></a>
             <p class="w3-large">Account</p>
             <p><a href="accountDetail.jsp">Manage your account details here</a></p>
         </div>
         <div class="w3-quarter">
-            <a href="userProgress.jsp"><i class="fa fa-heart w3-margin-bottom w3-jumbo"></i></a>
+            <a href="userProgress.jsp"><i class="fa fa-tasks w3-margin-bottom w3-jumbo"></i></a>
             <p class="w3-large">Progress</p>
             <p><a href="userProgress.jsp">Click to view your past progress</a></p>
         </div>
         <div class="w3-quarter">
-            <a href="userGrades.jsp"><i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i></a>
+            <a href="userGrades.jsp"><i class="fa fa-graduation-cap w3-margin-bottom w3-jumbo"></i></a>
             <p class="w3-large">Grades</p>
             <p><a href="userGrades.jsp">View your quiz grades here</a></p>
+        </div>
+        <div class="w3-quarter">
+            <a href="contactUs.jsp"><i class="fa fa-handshake-o w3-margin-bottom w3-jumbo"></i></a>
+            <p class="w3-large">Contact</p>
+            <p><a href="contactUs.jsp">Click to contact us with any inquiries or issues</a></p>
         </div>
 
     </div>
