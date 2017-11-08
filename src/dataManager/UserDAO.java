@@ -81,6 +81,26 @@ public class UserDAO {
         return user;
     }
 
+    private UserDetail convertToUserAndUserDetail(ResultSet rs) throws SQLException {
+        UserDetail user;
+
+        String userId= rs.getString("userId");
+        int userType = rs.getInt("userType");
+        String username= rs.getString("username");
+        String password = rs.getString("password");
+        String name = rs.getString("name");
+        String email = rs.getString("email");
+        int userlevel = rs.getInt("userlevel");
+        String progress = rs.getString("progress");
+        String lastBrowse = rs.getString("lastBrowse");
+        String lastLogin = rs.getString("lastLogin");
+        double totalScore = rs.getDouble("totalScore");
+        int totalScoreOverall = rs.getInt("totalScoreOverall");
+
+        user = new UserDetail(userId, username, userType, password, name, email, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall);
+        return user;
+    }
+
     /*
     Method Name: createUser
     Usage: Registration, Admin Add Student, Admin Add Teacher
@@ -390,6 +410,37 @@ public class UserDAO {
         try {
             while (rs.next()) {
                 User user = convertToUser(rs);
+                list.add(user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return list;
+    }
+
+
+    public ArrayList<UserDetail> retrieveAllUserWithUserDetail() {
+        // declare local variables
+        ArrayList<UserDetail> list = new ArrayList<UserDetail>();
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+
+        // Step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT * FROM user u INNER JOIN userDetail ud ON u.userId = ud.userId";
+
+        // step 3 - using DBControlle readRequest method
+        rs = db.readRequest(dbQuery);
+        try {
+            while (rs.next()) {
+                UserDetail user = convertToUserAndUserDetail(rs);
                 list.add(user);
             }
         } catch (Exception e) {
