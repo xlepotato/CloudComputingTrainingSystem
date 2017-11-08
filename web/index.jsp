@@ -49,9 +49,9 @@
             </div>
 
             <a href="index.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
-            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
+            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-book"></i> Online Learning</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> Log in</a>
+            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Register</a>
 
 
         </div>

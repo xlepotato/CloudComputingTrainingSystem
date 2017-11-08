@@ -42,9 +42,9 @@
             </div>
 
             <a href="index.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Welcome</a>
-            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Online Learning</a>
-            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Log in</a>
-            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Register</a>
+            <a href="noLoginLearningLanding.jsp" class="w3-bar-item w3-button"><i class="fa fa-book"></i> Online Learning</a>
+            <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> Log in</a>
+            <a href="registration.jsp" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Register</a>
 
 
         </div>
@@ -304,21 +304,21 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/Number1.png);
+        background-image: url(assets/img/02.jpg);
         z-index: 12;
     }
 
     .ch-img-2 {
-        background-image: url(image/Number2.png);
+        background-image: url(assets/img/03.jpg);
         z-index: 11;
     }
 
     .ch-img-3 {
-        background-image: url(image/Number3.png);
+        background-image: url(assets/img/04.jpg);
         z-index: 10;
     }
     .ch-img-4 {
-        background-image: url(image/Number4.png);
+        background-image: url(assets/img/05.jpg);
         z-index: 9;
     }
 
