@@ -93,21 +93,25 @@
 
 <form id="result" name="result" method="post" action="">
 
+    <%
+        if (session.getAttribute("exNo").equals("1")){
+            Score s = score.retrieveScoreByUserIdAndExerciseNo(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),1);
+            String grade = ExerciseUtility.computeGrade(s.getQuizScore(),s.getQuizOverall());
+
+    %>
+
     <div class="ScoreTable">
-
-
-        <%
-            if (session.getAttribute("exNo").equals("1")){
-                Score s = score.retrieveScoreByUserIdAndExerciseNo(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),1);
-                String grade = ExerciseUtility.computeGrade(s.getQuizScore(),s.getQuizOverall());
-
-        %>
         <table style="width:100%">
             <caption>测验结果</caption>
             <tr>
                 <th>练习号: 1</th>
                 <th>练习结果: <%=s.getQuizScore()%>/<%=s.getQuizOverall()%></th>
                 <th>成绩级别: <%=grade%></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </table>
         <%--<tr>--%>
