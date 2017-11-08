@@ -11,6 +11,8 @@
 <html>
 <title>Admin: Teacher records</title>
 <head>
+    <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
+    <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
         body {

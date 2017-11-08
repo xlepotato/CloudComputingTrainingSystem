@@ -12,6 +12,8 @@
 <html>
 <title>Admin: Student Records</title>
 <head>
+    <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
+    <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
         body {
@@ -201,10 +203,10 @@
 
         <div class="yema">
             <input name="首页" value="首页" type="button" id="首页" />
-            <input name="上一页" value="上一页" type="button" id="首页" />
+            <input name="上一页" value="上一页" type="button" id="Previous" />
             <a href="#">1</a>
-            <input name="下一页" value="下一页" type="button" id="首页" />
-            <input name="尾页" value="尾页" type="button" id="首页" />
+            <input name="下一页" value="下一页" type="button" id="Next" />
+            <input name="尾页" value="尾页" type="button" id="页" />
         </div>
     </form>
 </div>
