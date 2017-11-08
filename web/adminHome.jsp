@@ -1,7 +1,8 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="entity.UserDetail" %><%--
+<%@ page import="entity.UserDetail" %>
+<%@ page import="wrapper.utility.UserUtility" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -150,7 +151,7 @@
 
                 <div class="button-right-right">
                     <input name="批量导入账号" value="批量导入账号" type="button" style="height:40px;width:100%;"/>
-                    <a href="#">下载模板</a>
+                    <a href="<%=UserUtility.excel()%>">下载模板</a>
                 </div>
             </div>
         </div>
