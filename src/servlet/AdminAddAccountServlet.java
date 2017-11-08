@@ -22,21 +22,32 @@ public class AdminAddAccountServlet extends HttpServlet {
         HttpSession session = request.getSession();
         PrintWriter pw = response.getWriter();
         UserDAO u = new UserDAO();
+        String userType = request.getParameter("userType");
         String userId = UserUtility.generateUserId();
         String username = request.getAttribute("username").toString();
-        int userType = 0;
         String password = request.getAttribute("password").toString();
         String name = request.getAttribute("name").toString();
 //        String email = request.getAttribute("email").toString();
-
-        Boolean success = u.createUserAdmin(userId,username,userType,password,name);
-        if (success){
-            pw.println("<script type=\"text/javascript\">");
-            pw.println("alert('User account has been added')");
-            // wip
-            pw.println("location='accountDetail.jsp';");
-            pw.println("</script>");
+        if (userType.equals("student")){
+            int userTypeInDB = 0;
+            Boolean success = u.createUserAdmin(userId,username,userTypeInDB,password,name);
+            if (success){
+                pw.println("<script type=\"text/javascript\">");
+                pw.println("alert('User account has been added')");
+                // wip
+                pw.println("location='accountDetail.jsp';");
+                pw.println("</script>");
+            }
         }
+
+//        Boolean success = u.createUserAdmin(userId,username,userTypeInDB,password,name);
+//        if (success){
+//            pw.println("<script type=\"text/javascript\">");
+//            pw.println("alert('User account has been added')");
+//            // wip
+//            pw.println("location='accountDetail.jsp';");
+//            pw.println("</script>");
+//        }
 
     }
 
