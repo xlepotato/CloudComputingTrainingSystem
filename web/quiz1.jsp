@@ -10,6 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +31,6 @@
         text-indent: 50px;
     }
 </style>
-<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
