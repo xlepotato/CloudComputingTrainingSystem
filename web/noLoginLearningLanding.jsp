@@ -61,12 +61,12 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-
+</div>
 <!-- Body Section -->
 <div class="w3-container" style="padding:128px 16px" id="body">
-    <span class="w3-large w3-hide-small"></span><br>
-    <span class="w3-large w3-hide-small"></span><br>
+    <br>
     <h3 class="w3-center">Available Chapters</h3>
+    <br>
     <ul class="ch-grid">
         <li>
             <div class="ch-item">
@@ -106,7 +106,7 @@
         </li>
     </ul>
 </div>
-
+</body>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
     <a href="onlineLearningLanding.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To
