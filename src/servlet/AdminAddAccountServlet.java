@@ -29,7 +29,7 @@ public class AdminAddAccountServlet extends HttpServlet {
         String name = request.getAttribute("name").toString();
 //        String email = request.getAttribute("email").toString();
 
-        Boolean success = u.createUser(userId,username,userType,password,name);
+        Boolean success = u.createUserAdmin(userId,username,userType,password,name);
         if (success){
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('User account has been added')");
