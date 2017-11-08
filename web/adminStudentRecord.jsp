@@ -138,7 +138,7 @@
 
         <div button>
             <div class="button-left">
-                <input name="添加" value="添加" type="button" style="height:40px;width:40%;"/> <br />
+                <a href="addStudent.jsp"><input name="添加" value="添加" type="button" style="height:40px;width:40%;"/></a> <br />
                 <input name="批量导出账号" value="批量导出账号" type="button" style="height:40px;width:80%;"/>
             </div>
 
@@ -165,13 +165,14 @@
                     <td width="92" bgcolor="#999999">姓名</td>
                     <td width="92" bgcolor="#999999">Username</td>
                     <%--<td width="92" bgcolor="#999999">学号</td>--%>
-                    <td width="92" bgcolor="#999999">帐号</td>
-                    <td width="92" bgcolor="#999999">密码</td>
+                    <%--<td width="92" bgcolor="#999999">帐号</td>--%>
+                    <%--<td width="92" bgcolor="#999999">密码</td>--%>
                     <td width="92" bgcolor="#999999">邮件</td>
                     <%--<td width="92" bgcolor="#999999">微信</td>--%>
-                    <td width="92" bgcolor="#999999">QQ号</td>
+                    <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
-                    <td width="121" bgcolor="#999999">手机号</td>
+                    <%--<td width="121" bgcolor="#999999">手机号</td>--%>
+                    <td width="121" bgcolor="999999">Last Login</td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
