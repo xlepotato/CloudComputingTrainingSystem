@@ -131,7 +131,7 @@
 <div class="wenbenkuang">
     <form action="#" method="get" onsubmit="return checkReg()" onreset="chearInfo()">
         <input type="text" name="ss"  id="ss" autocomplete="off"  value="请输入查询关键字" style="color:gray; width:50%;height:40px; font-size:16px;" ; onfocus="if(this.value == '请输入查询关键字') this.value = ''; this.style.color='gray';" onblur="if(this.value == '') {this.value = '请输入查询关键字'; this.style.color = 'gray';}" />
-
+    </form>
 
 
 
@@ -159,6 +159,7 @@
 
         <div class="table">
 
+
             <table cellspacing="0" cellpadding="0" border="1" width="100%">
                 <col width="92" span="7" />
                 <col width="121" />
@@ -178,9 +179,11 @@
                     <td width="50" bgcolor="999999">Update Info</td>
                     <td width="50" bgcolor="999999">Change Password</td>
                 </tr>
+
                 <%
                     for (int i =0; i < ulist.size(); i++){
                 %>
+                <form action="/adminUpdate" method="post">
                 <tr>
                     <td><%=ulist.get(i).getUserId()%></td>
                     <td><%=ulist.get(i).getName()%></td>
@@ -194,17 +197,22 @@
                     <%--<td width="50" bgcolor="999999"><a href="updateStudentInfo.jsp"> Update Info</a></td>--%>
 
 
-                    <form action="/adminUpdate" method="post">
+
                     <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="update" class="btn-link">Update Info</button></label></td>
                     <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
                         <input type="hidden"  name="selectedUser" value="<%=ulist.get(i).getUsername()%>"/>
                         <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link">Change Password</button></label></td>
-                    </form>
+
                 </tr>
+            </form>
+
                 <%
                     }
                 %>
+
             </table>
+
+
         </div>
 
 

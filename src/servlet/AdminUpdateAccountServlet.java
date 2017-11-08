@@ -14,10 +14,19 @@ import java.io.IOException;
 public class AdminUpdateAccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String btnType = request.getParameter("detail");
         String clickuser = request.getParameter("detail");
-        System.out.println("adminupdate");
-        System.out.println(clickuser);
-        response.sendRedirect("updateStudentInfo.jsp");
+
+        if (btnType.equals("update")){
+            System.out.println("adminupdate");
+            System.out.println(clickuser);
+            response.sendRedirect("updateStudentInfo.jsp");
+        }else if (btnType.equals("change")){
+            System.out.println("changepassword");
+            System.out.println(clickuser);
+            response.sendRedirect("changeStudentPassword.jsp");
+        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
