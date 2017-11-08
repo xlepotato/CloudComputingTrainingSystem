@@ -103,7 +103,7 @@ public class UserDAO {
     }
 
 
-    //For converting Teacher entity
+    //For converting Teacher entity (still under testing)
 
     private Teacher convertToTeacher(ResultSet rs) throws SQLException {
         Teacher user;
@@ -511,7 +511,7 @@ public class UserDAO {
     /*
         The method below is for Admin
      */
-    public ArrayList<Teacher> retrieveAllTeacher() {
+    public ArrayList<User> retrieveAllTeacher() {
         // declare local variables
         ArrayList<User> list = new ArrayList<User>();
         ResultSet rs = null;
