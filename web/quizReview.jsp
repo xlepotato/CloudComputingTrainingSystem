@@ -109,17 +109,17 @@
             <caption><h1>测验结果</h1></caption>
             <thead>
             <tr>
-                <th scope="col"><h2>练习号: </h2></th>
-                <th scope="col"><h2>练习结果: </h2></th>
-                <th scope="col"><h2>成绩级别: </h2></th>
+                <th scope="col"><h2>练习号: </h2><h3>1</h3></th>
+                <th scope="col"><h2>练习结果: </h2><h3><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></h3></th>
+                <th scope="col"><h2>成绩级别: </h2><h3><%=grade%></h3></th>
             </tr>
             </thead>
 
             <tbody>
             <tr>
-                <th scope="row"><h3>1</h3></th>
-                <td><h3><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></h3></td>
-                <td><h3><%=grade%></h3></td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
@@ -294,6 +294,9 @@
     }
     th {
         text-align: left;
+    }
+    th, h3{
+        text-align: right;
     }
 
     .user {
