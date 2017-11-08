@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Aloylim98
-  Date: 6/11/2017
-  Time: 11:19 AM
+  User: Ying
+  Date: 3/11/2017
+  Time: 11:25 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <title>Online Learning Portal</title>
 <meta charset="UTF-8">
@@ -15,11 +16,15 @@
 <link rel="stylesheet" href="assets/css/w3schoolsRef.css">
 <link rel="stylesheet" href="assets/css/fontawesomeRef.css">
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", sans-serif
+    }
+
     body, html {
         height: 100%;
         line-height: 1.8;
     }
+
     .w3-bar .w3-button {
         padding: 16px;
     }
@@ -57,8 +62,6 @@
         </a>
     </div>
 
-</div>
-
 <!-- Body Section -->
 <div class="w3-container" style="padding:128px 16px" id="body">
     <span class="w3-large w3-hide-small"></span><br>
@@ -68,8 +71,8 @@
         <li>
             <div class="ch-item">
                 <div class="ch-info">
-                    <h3>History  Evolution</h3>
-                    <p>by Cloud Computing <a href="chapter1.jsp">Click to Start</a></p>
+                    <h3>History Evolution</h3>
+                    <p>by Cloud Computing <a href="chapter1.jsp">Click to View</a></p>
                 </div>
                 <div class="ch-thumb ch-img-1"></div>
             </div>
@@ -78,7 +81,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Special Technology</h3>
-                    <p>by Cloud Computing <a href="chapter2.jsp">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter2.jsp">Click to View</a></p>
                 </div>
                 <div class="ch-thumb ch-img-2"></div>
             </div>
@@ -87,7 +90,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Industry Chain</h3>
-                    <p>by Cloud Computing <a href="chapter3.jsp">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter3.jsp">Click to View</a></p>
                 </div>
                 <div class="ch-thumb ch-img-3"></div>
             </div>
@@ -96,7 +99,7 @@
             <div class="ch-item">
                 <div class="ch-info">
                     <h3>Influence Range</h3>
-                    <p>by Cloud Computing <a href="chapter4.jsp">Click to Start</a></p>
+                    <p>by Cloud Computing <a href="chapter4.jsp">Click to View</a></p>
                 </div>
                 <div class="ch-thumb ch-img-4"></div>
             </div>
@@ -106,7 +109,8 @@
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <a href="noLoginLearningLanding.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="onlineLearningLanding.jsp" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To
+        the top</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"><a href="www.facebook.com"></a></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -119,15 +123,14 @@
 
 <!-- Add Google Maps -->
 <script>
-    function myMap()
-    {
-        myCenter=new google.maps.LatLng(41.878114, -87.629798);
-        var mapOptions= {
-            center:myCenter,
-            zoom:12, scrollwheel: false, draggable: false,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
+    function myMap() {
+        myCenter = new google.maps.LatLng(41.878114, -87.629798);
+        var mapOptions = {
+            center: myCenter,
+            zoom: 12, scrollwheel: false, draggable: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
 
         var marker = new google.maps.Marker({
             position: myCenter,
@@ -167,9 +170,11 @@
         border: 5px solid black;
 
     }
+
     th, td {
         padding: 15px;
     }
+
     th {
         text-align: left;
     }
@@ -225,7 +230,7 @@
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -267,7 +272,7 @@
         border-radius: 50%;
         position: relative;
         cursor: default;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     .ch-grid:after {
@@ -287,7 +292,7 @@
         border-radius: 50%;
         overflow: hidden;
         position: absolute;
-        box-shadow: inset 0 0 0 15px rgba(255,255,255, 0.5);
+        box-shadow: inset 0 0 0 15px rgba(255, 255, 255, 0.5);
         transform-origin: 95% 40%;
         transition: all 0.3s ease-in-out;
     }
@@ -301,8 +306,8 @@
         top: 40%;
         left: 95%;
         margin: -4px 0 0 -4px;
-        background: radial-gradient(ellipse at center, rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%);
-        box-shadow: 0 0 1px rgba(255,255,255,0.9);
+        background: radial-gradient(ellipse at center, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%);
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
     }
 
     .ch-img-1 {
@@ -331,8 +336,8 @@
         height: inherit;
         border-radius: 50%;
         overflow: hidden;
-        background: #c9512e url(image/03.jpg);
-        box-shadow: inset 0 0 0 5px rgba(0,0,0,0.05);
+        background: #c9512e url(assets/img/03.jpg);
+        box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.05);
     }
 
     .ch-info h3 {
@@ -345,9 +350,8 @@
         padding: 22px 0 0 0;
         height: 85px;
         font-family: 'Open Sans', Arial, sans-serif;
-        text-shadow:
-                0 0 1px #fff,
-                0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 0 1px #fff,
+        0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .ch-info h6 {
@@ -360,9 +364,8 @@
         padding: 22px 0 0 0;
         height: 85px;
         font-family: 'Open Sans', Arial, sans-serif;
-        text-shadow:
-                0 0 1px #fff,
-                0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 0 1px #fff,
+        0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .ch-info p {
@@ -371,7 +374,7 @@
         font-style: italic;
         margin: 0 30px;
         font-size: 12px;
-        border-top: 1px solid rgba(255,255,255,0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .ch-info p a {
@@ -379,7 +382,7 @@
         color: #333;
         width: 80px;
         height: 80px;
-        background: rgba(255,255,255,0.3);
+        background: rgba(255, 255, 255, 0.3);
         border-radius: 50%;
         color: #fff;
         font-style: normal;
@@ -391,26 +394,25 @@
         margin: 7px auto 0;
         font-family: 'Open Sans', Arial, sans-serif;
         opacity: 0;
-        transition:
-                transform 0.3s ease-in-out 0.2s,
-                opacity 0.3s ease-in-out 0.2s,
-                background 0.2s linear 0s;
+        transition: transform 0.3s ease-in-out 0.2s,
+        opacity 0.3s ease-in-out 0.2s,
+        background 0.2s linear 0s;
         transform: translateX(60px) rotate(90deg);
     }
 
     .ch-info p a:hover {
-        background: rgba(255,255,255,0.5);
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .ch-item:hover .ch-thumb {
-        box-shadow: inset 0 0 0 15px rgba(255,255,255, 0.5), 0 1px 3px rgba(0,0,0,0.2);
+        box-shadow: inset 0 0 0 15px rgba(255, 255, 255, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
         transform: rotate(-110deg);
     }
-    .ch-item:hover .ch-info p a{
+
+    .ch-item:hover .ch-info p a {
         opacity: 1;
         transform: translateX(0px) rotate(0deg);
     }
-
 
 
 </style>
@@ -419,13 +421,13 @@
 
 <script type="text/javascript">
     /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+     toggle between hiding and showing the dropdown content */
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
 
     // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (!event.target.matches('.dropbtn')) {
 
             var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -443,3 +445,5 @@ toggle between hiding and showing the dropdown content */
 
 </body>
 </html>
+
+
