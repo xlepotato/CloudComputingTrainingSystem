@@ -197,6 +197,7 @@
 
                     <td><a href="#">Remove</a></td>
                 </tr>
+                </form>
                 <%
                     }
                 %>
