@@ -170,7 +170,7 @@
                 <form action="/quizreview" method="post">
                     <div class="form-style-2">
                     <%--<%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>--%>
-                        <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=scoreList.get(i).getExerciseNo()%>" class="btn-link">Details</button></label>
+                        <label><span>&nbsp;</span><input type="button" value="<%=scoreList.get(i).getExerciseNo()%>" />Details /></label>
                     </div>
                 </form>
                 <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>
