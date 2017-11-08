@@ -3,6 +3,7 @@ package dataManager;
 /**
  * Created by Ying on 5/9/2017.
  */
+import entity.Teacher;
 import entity.User;
 import entity.UserDetail;
 
@@ -100,6 +101,27 @@ public class UserDAO {
         user = new UserDetail(userId, username, userType, password, name, email, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall);
         return user;
     }
+
+
+    //For converting Teacher entity (still under testing)
+
+    private Teacher convertToTeacher(ResultSet rs) throws SQLException {
+        Teacher user;
+
+        String userId= rs.getString("userId");
+        int userType = rs.getInt("userType");
+        String username= rs.getString("username");
+        String password = rs.getString("password");
+        String name = rs.getString("name");
+        String email = rs.getString("email");
+        String lastLogin = rs.getString("lastLogin");
+
+
+        user = new Teacher(userId, username, userType, password, name, email, lastLogin);
+        return user;
+    }
+
+
 
     /*
     Method Name: createUser
@@ -456,9 +478,9 @@ public class UserDAO {
     /*
         The method below is for Admin
      */
-    public ArrayList<User> retrieveAllStudent() {
+    public ArrayList<UserDetail> retrieveAllStudent() {
         // declare local variables
-        ArrayList<User> list = new ArrayList<User>();
+        ArrayList<UserDetail> list = new ArrayList<UserDetail>();
         ResultSet rs = null;
         DBController db = new DBController();
         String dbQuery;
@@ -467,13 +489,13 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT * FROM user WHERE userType = 0";
+        dbQuery = "SELECT * FROM user u INNER JOIN userDetail ud ON u.userId = ud.userId WHERE userType = 0";
 
         // step 3 - using DBControlle readRequest method
         rs = db.readRequest(dbQuery);
         try {
             while (rs.next()) {
-                User user = convertToUser(rs);
+                UserDetail user = convertToUserAndUserDetail(rs);
                 list.add(user);
             }
         } catch (Exception e) {
