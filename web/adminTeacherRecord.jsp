@@ -137,7 +137,7 @@
 
         <div button>
             <div class="button-left">
-                <input name="添加" value="添加" type="button" style="height:40px;width:40%;"/> <br />
+               <a href="addTeacher.jsp"> <input name="添加" value="添加" type="button" style="height:40px;width:40%;"/></a> <br />
                 <input name="批量导出账号" value="批量导出账号" type="button" style="height:40px;width:80%;"/>
             </div>
 
