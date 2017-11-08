@@ -33,9 +33,9 @@ public class AdminAddAccountServlet extends HttpServlet {
             int userTypeInDB = 0;
             Boolean success = u.createUserAdmin(userId,username,userTypeInDB,password,name);
             if (success){
+                u.createUserDetail(userId,0,"0%","0000-00-00 00:00:00", "-");
                 pw.println("<script type=\"text/javascript\">");
                 pw.println("alert('Student account has been added')");
-                // wip
                 pw.println("location='adminStudentRecord.jsp';");
                 pw.println("</script>");
             }
@@ -45,7 +45,6 @@ public class AdminAddAccountServlet extends HttpServlet {
             if (success){
                 pw.println("<script type=\"text/javascript\">");
                 pw.println("alert('Teacher account has been added')");
-                // wip
                 pw.println("location='adminTeacherRecord.jsp';");
                 pw.println("</script>");
             }
