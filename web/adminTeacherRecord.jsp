@@ -180,11 +180,11 @@
                     <td><%=ulist.get(i).getUserId()%></td>
                     <td><%=ulist.get(i).getName()%></td>
                     <td><%=ulist.get(i).getUsername()%></td>
-                    <td>s0001</td>
-                    <td>*******</td>
+                    <%--<td>s0001</td>--%>
+                    <%--<td>*******</td>--%>
                     <td><%=ulist.get(i).getEmail()%></td>
-                    <td>456898</td>
-                    <td>18201292522</td>
+                    <%--<td>456898</td>--%>
+                    <%--<td>18201292522</td>--%>
                 </tr>
                 <%
                     }
