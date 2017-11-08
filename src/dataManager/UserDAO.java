@@ -522,7 +522,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT * FROM user u INNER JOIN userDetail ud ON u.userId = ud.userId WHERE userType = 2";
+        dbQuery = "SELECT * FROM user WHERE userType = 2";
 
         // step 3 - using DBControlle readRequest method
         rs = db.readRequest(dbQuery);
