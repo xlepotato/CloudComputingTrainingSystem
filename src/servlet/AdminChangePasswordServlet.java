@@ -10,10 +10,11 @@ import java.io.IOException;
 /**
  * Created by Ying on 8/11/2017.
  */
-@WebServlet(name = "AdminChangePasswordServlet")
+@WebServlet(name = "AdminChangePasswordServlet", urlPatterns = "adminChangePassword")
 public class AdminChangePasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.sendRedirect("index.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
