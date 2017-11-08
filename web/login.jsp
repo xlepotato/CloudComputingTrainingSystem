@@ -50,11 +50,11 @@
                         <label for><span>Username <span class="required"></span></span><input type="text"
                                                                                                          class="input-field"
                                                                                                          name="username"
-                                                                                                         value=""/></label>
+                                                                                                         value="" required/></label>
                         <label for><span>Password <span class="required"></span></span><input type="password"
                                                                                                          class="input-field"
                                                                                                          name="password"
-                                                                                                         value=""/></label>
+                                                                                                         value="" required/></label>
 
                         <label for><span>Account Type</span>
                             <select name="field4" class="select-field">

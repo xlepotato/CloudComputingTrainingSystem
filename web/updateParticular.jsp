@@ -110,15 +110,15 @@
                         <label for><span>Username <span class="required">*</span></span><input type="text"
                                                                                                class="email"
                                                                                                name="username"
-                                                                                               value="<%=a.getUsername()%>"/></label>
+                                                                                               value="<%=a.getUsername()%>" required/></label>
                         <label for><span>Name <span class="required">*</span></span><input type="text"
                                                                                                     class="input-field"
                                                                                                     name="uname"
-                                                                                                    value="<%=a.getName()%>"/></label>
+                                                                                                    value="<%=a.getName()%>" required/></label>
                         <label for><span>Email <span class="required">*</span></span><input type="text"
                                                                                                      class="email"
                                                                                                      name="email"
-                                                                                                     value="<%=a.getEmail()%>"/></label>
+                                                                                                     value="<%=a.getEmail()%>" required/></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Update"/></label>

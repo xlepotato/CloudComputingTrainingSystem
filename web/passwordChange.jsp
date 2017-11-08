@@ -98,15 +98,15 @@
                         <label for><span>Old Password <span class="required">*</span></span><input type="password"
                                                                                                class="input-field"
                                                                                                name="oldPassword"
-                                                                                               value=""/></label>
+                                                                                               value="" required/></label>
                         <label for><span>New Password <span class="required">*</span></span><input type="password"
                                                                                            class="input-field"
                                                                                            name="newPassword"
-                                                                                           value=""/></label>
+                                                                                           value="" required/></label>
                         <label for><span>Confirm New Password <span class="required">*</span></span><input type="password"
                                                                                             class="input-field"
                                                                                             name="cfmNewPassword"
-                                                                                            value=""/></label>
+                                                                                            value="" required/></label>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
