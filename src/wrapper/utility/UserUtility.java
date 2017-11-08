@@ -58,11 +58,11 @@ public class UserUtility {
         while(rs.next()) {
             row = spreadsheet.createRow(i);
             cell = row.createCell(1);
-            cell.setCellValue(rs.getInt("userId"));
+            cell.setCellValue(rs.getString("userId"));
             cell = row.createCell(2);
             cell.setCellValue(rs.getString("username"));
             cell = row.createCell(3);
-            cell.setCellValue(rs.getString("userType"));
+            cell.setCellValue(rs.getInt("userType"));
             cell = row.createCell(4);
             cell.setCellValue(rs.getString("name"));
             cell = row.createCell(5);
@@ -75,10 +75,10 @@ public class UserUtility {
 
 
         try{
-        FileOutputStream out = new FileOutputStream(new File("exceldatabase.xlsx"));
+        FileOutputStream out = new FileOutputStream(new File("../../exceldatabase.xlsx"));
         workbook.write(out);
-        out.close();
             System.out.println("exceldatabase.xlsx written successfully");
+        out.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
