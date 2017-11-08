@@ -170,7 +170,7 @@
                 <form action="/quizreview" method="post">
                     <div class="form-style-2">
                     <%--<%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>--%>
-                        <label><span>&nbsp;</span><input type="button" value="<%=scoreList.get(i).getExerciseNo()%>" />Details /></label>
+                        <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=scoreList.get(i).getExerciseNo()%>" class="btn-link">Details</button></label>
                     </div>
                 </form>
                 <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>
@@ -516,8 +516,8 @@
         width: 55%;
     }
 
-    .form-style-2 input[type=submit],
-    .form-style-2 input[type=button] {
+    .form-style-2 button[type=submit],
+    .form-style-2 button[type=button] {
         border: none;
         padding: 8px 15px 8px 15px;
         background: #FF8500;
@@ -530,8 +530,8 @@
         -moz-border-radius: 3px;
     }
 
-    .form-style-2 input[type=submit]:hover,
-    .form-style-2 input[type=button]:hover {
+    .form-style-2 button[type=submit]:hover,
+    .form-style-2 button[type=button]:hover {
         background: #EA7B00;
         color: #fff;
     }
