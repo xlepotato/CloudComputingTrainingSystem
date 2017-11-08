@@ -168,9 +168,10 @@
             <td>
                 <%--<%session.setAttribute("exxNo",scoreList.get(i).getExerciseNo());%>--%>
                 <form action="/quizreview" method="post">
+                    <div class="form-style-2">
                     <%--<%session.setAttribute("exNo",scoreList.get(i).getExerciseNo());%>--%>
                         <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=scoreList.get(i).getExerciseNo()%>" class="btn-link">Details</button></label>
-
+                    </div>
                 </form>
                 <%--<a href="quizReview.jsp" class="quizreview">Details</a>--%>
             </td>
