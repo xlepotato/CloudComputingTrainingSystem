@@ -110,17 +110,17 @@
             <caption><h1>测验结果</h1></caption>
             <thead>
             <tr>
-                <th scope="col">练习号: </th>
-                <th scope="col">练习结果: </th>
-                <th scope="col">成绩级别: </th>
+                <th scope="col"><h2>练习号: </h2></th>
+                <th scope="col"><h2>练习结果: </h2></th>
+                <th scope="col"><h2>成绩级别: </h2></th>
             </tr>
             </thead>
 
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></td>
-                <td><%=grade%></td>
+                <th scope="row"><h3>1</h3></th>
+                <td><h3><%=s.getQuizScore()%>/<%=s.getQuizOverall()%></h3></td>
+                <td><h3><%=grade%></h3></td>
             </tr>
             </tbody>
         </table>
