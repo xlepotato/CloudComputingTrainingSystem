@@ -195,11 +195,10 @@
 
 
                     <form action="/adminUpdate" method="post">
-                    <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Update Info</button></label></td>
+                    <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="update" class="btn-link">Update Info</button></label></td>
                     <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
-                    </form>
-                    <form action="/adminChangePassword" method="post">
-                        <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail2" value="<%=ulist.get(i).getUsername()%>" class="btn-link">Change Password</button></label></td>
+                        <input type="hidden"  name="selectedUser" value="<%=ulist.get(i).getUsername()%>"/>
+                        <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link">Change Password</button></label></td>
                     </form>
                 </tr>
                 <%
