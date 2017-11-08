@@ -1,6 +1,7 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="entity.User" %><%--
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -97,6 +98,7 @@
 <%
     UserDAO user = new UserDAO();
     ArrayList<User> ulist = user.retrieveAllStudent();
+
 %>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

@@ -3,7 +3,7 @@ package entity;
 /**
  * Created by Aloysius on 11/9/2017.
  */
-public class UserDetail {
+public class UserDetail extends User{
 
     private String userId;
     private int userlevel;
@@ -22,6 +22,19 @@ public class UserDetail {
 //        this.lastLogin = lastlogin;
 //    }
 
+
+    public UserDetail(String userId, String username, int userType, String password, String name, String email,
+                      int userlevel, String progress, String lastBrowse, String lastLogin, double totalScore,
+                      int totalScoreOverall){
+
+        super(userId,username,userType,password,name,email);
+        this.userlevel = userlevel;
+        this.progress = progress;
+        this.lastBrowse = lastBrowse;
+        this.lastLogin = lastLogin;
+        this.totalScore = totalScore;
+        this.totalScoreOverall = totalScoreOverall;
+    }
 
     public UserDetail(String userId, int userlevel, String progress, String lastBrowse, String lastLogin, double totalScore, int totalScoreOverall) {
         this.userId = userId;
