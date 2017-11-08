@@ -97,7 +97,7 @@
 
 <%
     UserDAO user = new UserDAO();
-    ArrayList<UserDetail> ulist = user.retrieveAllUserWithUserDetail();
+    ArrayList<User> ulist = user.retrieveAllUser();
 %>
 
 <div id="mySidenav" class="sidenav">
@@ -172,7 +172,7 @@
                     <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
-                    <td width="121" bgcolor="999999">Last Login</td>
+                    <%--<td width="121" bgcolor="999999">Last Login</td>--%>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
@@ -185,7 +185,7 @@
                     <%--<td>*******</td>--%>
                     <td><%=ulist.get(i).getEmail()%></td>
                     <%--<td>456898</td>--%>
-                    <td><%=ulist.get(i).getlastLogin()%></td>
+                    <%--<td><%=ulist.get(i).getlastLogin()%></td>--%>
                 </tr>
                 <%
                     }

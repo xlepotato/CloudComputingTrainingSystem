@@ -171,7 +171,7 @@
                     <%--<td width="92" bgcolor="#999999">QQ号</td>--%>
                     <%--<td width="92" bgcolor="#999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
-                    <td width="121" bgcolor="999999">Last Login</td>
+                    <%--<td width="121" bgcolor="999999">Last Login</td>--%>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
