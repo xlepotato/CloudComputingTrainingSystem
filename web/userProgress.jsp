@@ -1,4 +1,5 @@
-<%--
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -28,6 +29,10 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+<%
+    UserDAO u = new UserDAO();
+    UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
+%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -85,7 +90,7 @@
             </div>
             <br>
             <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-blue w3-round-large" style="width:25%">25%</div>
+                <div class="w3-container w3-blue w3-round-large" style="width:25%"><%=ud.getProgressPercentage()%>%</div>
             </div><br>
         </li>
         <li>
