@@ -72,13 +72,14 @@ public class UserDAO {
 
         String userId= rs.getString("userId");
         int userlevel = rs.getInt("userlevel");
-        String progress = rs.getString("progress");
+        int progress = rs.getInt("progress");
         String lastBrowse = rs.getString("lastBrowse");
         String lastLogin = rs.getString("lastLogin");
         double totalScore = rs.getDouble("totalScore");
         int totalScoreOverall = rs.getInt("totalScoreOverall");
+        double progressPercentage = rs.getDouble("progressPercentage");
 
-        user = new UserDetail(userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall);
+        user = new UserDetail(userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall, progressPercentage);
         return user;
     }
 
@@ -92,13 +93,14 @@ public class UserDAO {
         String name = rs.getString("name");
         String email = rs.getString("email");
         int userlevel = rs.getInt("userlevel");
-        String progress = rs.getString("progress");
+        int progress = rs.getInt("progress");
         String lastBrowse = rs.getString("lastBrowse");
         String lastLogin = rs.getString("lastLogin");
         double totalScore = rs.getDouble("totalScore");
         int totalScoreOverall = rs.getInt("totalScoreOverall");
+        double progressPercentage = rs.getDouble("progressPercentage");
 
-        user = new UserDetail(userId, username, userType, password, name, email, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall);
+        user = new UserDetail(userId, username, userType, password, name, email, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall,progressPercentage);
         return user;
     }
 
