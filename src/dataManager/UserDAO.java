@@ -206,7 +206,7 @@ public class UserDAO {
         return success;
     }
 
-    public boolean createUserDetail(String userId, int userlevel, String progress, String lastLogin, String lastBrowse) {
+    public boolean createUserDetail(String userId, int userlevel, int progress, String lastLogin, String lastBrowse) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -224,7 +224,7 @@ public class UserDAO {
         try {
             pstmt.setString(1, userId);
             pstmt.setInt(2, userlevel);
-            pstmt.setString(3, progress);
+            pstmt.setInt(3, progress);
           //  pstmt.setString(4, lastLogin);
             pstmt.setString(4, lastBrowse);
 
