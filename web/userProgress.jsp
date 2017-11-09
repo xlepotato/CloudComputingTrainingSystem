@@ -37,6 +37,14 @@
         line-height: 30px;
         color: white;
     }
+    #myDIV {
+        width: auto;
+        height: auto;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+        background-image: url("assets/img/firecracker.JPG");
+    }
 </style>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
@@ -44,9 +52,9 @@
 <body>
 
 <%
-       UserDAO u = new UserDAO();
-      UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
-    %>
+    UserDAO u = new UserDAO();
+    UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
+%>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -94,42 +102,12 @@
 <div class="w3-container" style="padding:128px 16px" id="body">
     <span class="w3-large w3-hide-small"></span><br>
 
-    <ul class="ch-grid">
-        <li>
-            <div class="ch-item ch-img-1">
-                <div class="ch-info">
-                    <h3><a href="chapter1.jsp">History Evolution</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div>
+    <div class="w3-center"><p>Your Progress</p>
+        <div id="myDIV" style="color: white">
+            <p>Enter message here.</p>
             <br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-2">
-                <div class="ch-info">
-                    <h3><a href="chapter2.jsp">Special Technology</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div>
-            <br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-3">
-                <div class="ch-info">
-                    <h3><a href="chapter3.jsp">Influence Range</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div><br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-4">
-                <div class="ch-info">
-                    <h3><a href="chapter4.jsp">Industry Chain</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div><br>
-        </li>
-    </ul>
+        </div>
+    </div>
     <p>Your Progress</p><br>
     <div id="myProgress">
         <div id="myBar"><%=ud.getProgressPercentage()%></div>
