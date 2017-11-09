@@ -3,6 +3,7 @@ package dataManager;
 /**
  * Created by Ying on 5/9/2017.
  */
+import entity.Progress;
 import entity.Teacher;
 import entity.User;
 import entity.UserDetail;
@@ -102,6 +103,18 @@ public class UserDAO {
 
         user = new UserDetail(userId, username, userType, password, name, email, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall,progressPercentage);
         return user;
+    }
+
+    private Progress convertToProgress(ResultSet rs) throws SQLException {
+       Progress progress;
+
+        int progressId = rs.getInt("progressId");
+        String progressCriteria = rs.getString("progressCriteria");
+        String userId= rs.getString("userId");
+
+
+        progress = new Progress(progressId, progressCriteria, userId);
+        return progress;
     }
 
 
@@ -246,6 +259,47 @@ public class UserDAO {
     }
 
 
+    /*
+Method Name: createProgress
+Usage: For creating progress each time user pass by a website that gives progress point
+ */
+    public boolean createProgress(int progressId, String progressCriteria, String userId) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "INSERT INTO progress(progressId, progressCriteria, userId) VALUES(?, ?, ?)";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to insert record using executeUpdate method
+        try {
+            pstmt.setInt(1, progressId);
+            pstmt.setString(2, progressCriteria);
+            pstmt.setString(3, userId);
+
+
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
+
     public User retrieveUserByUsername(String username) {
         // declare local variables
         User user = null;
@@ -314,6 +368,44 @@ public class UserDAO {
         db.terminate();
 
         return user;
+    }
+
+
+
+    public Progress retrieveProgressByUserIdAndProgressCriteria(String userId, String progressCriteria) {
+        // declare local variables
+        Progress progress = null;
+        ResultSet rs = null;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 -connect to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "SELECT * FROM progress WHERE userId = ? AND progressCriteria = ? ";
+
+
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - execute query
+        try {
+            pstmt.setString(1, userId);
+            pstmt.setString(2, progressCriteria);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                progress = convertToProgress(rs);
+                //   list.add(user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // step 4 - close connection
+        db.terminate();
+
+        return progress;
     }
 
 
@@ -699,6 +791,9 @@ public class UserDAO {
 
 
     //Writing to Excel spreadsheet
+
+
+
 
 
 
