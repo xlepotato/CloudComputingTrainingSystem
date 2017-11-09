@@ -1,4 +1,5 @@
-<%--
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.UserDetail" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -41,6 +42,11 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+
+<%
+       UserDAO u = new UserDAO();
+      UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
+    %>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -126,7 +132,7 @@
     </ul>
     <p>Your Progress</p><br>
     <div id="myProgress">
-        <div id="myBar">10%</div>
+        <div id="myBar"><%=ud.getProgressPercentage()%></div>
     </div>
     <br>
     <button onclick="move()">Click Me</button>
@@ -421,7 +427,7 @@ toggle between hiding and showing the dropdown content */
 
     function move() {
         var elem = document.getElementById("myBar");
-        var width = 10;
+        var width = <%=ud.getProgressPercentage()%>;
         var id = setInterval(frame, 10);
         function frame() {
             if (width >= 100) {
