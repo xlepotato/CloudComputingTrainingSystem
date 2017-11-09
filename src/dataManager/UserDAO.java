@@ -523,7 +523,7 @@ Usage: For creating progress each time user pass by a website that gives progres
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "UPDATE user SET progress = ?, progressPercentage = ? WHERE userId = ?";
+        dbQuery = "UPDATE progress SET progress = ?, progressPercentage = ? WHERE userId = ?";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to update record using executeUpdate method
