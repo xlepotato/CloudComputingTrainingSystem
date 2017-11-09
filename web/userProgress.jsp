@@ -23,6 +23,14 @@
     .w3-bar .w3-button {
         padding: 16px;
     }
+    #myBar {
+        width: 10%;
+        height: 30px;
+        background-color: #4CAF50;
+        text-align: center; /* To center it horizontally (if you want) */
+        line-height: 30px; /* To center it vertically */
+        color: white;
+    }
 </style>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
@@ -84,9 +92,6 @@
                 </div>
             </div>
             <br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-blue w3-round-large" style="width:25%">25%</div>
-            </div><br>
         </li>
         <li>
             <div class="ch-item ch-img-2">
@@ -96,9 +101,6 @@
                 </div>
             </div>
             <br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-red w3-round-large" style="width:50%">50%</div>
-            </div><br>
         </li>
         <li>
             <div class="ch-item ch-img-3">
@@ -106,9 +108,6 @@
                     <h3>Influence Range</h3>
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
-            </div><br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-green w3-round-large" style="width:75%">75%</div>
             </div><br>
         </li>
         <li>
@@ -118,10 +117,14 @@
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
             </div><br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-yellow w3-round-large" style="width:100%">100%</div>
-            </div><br>
         </li>
+
+        <div id="myProgress">
+            <div id="myBar">%</div>
+        </div>
+
+        <br>
+        <button onclick="move()">Click Me</button>
     </ul>
 </div>
 </body>
@@ -408,6 +411,21 @@ toggle between hiding and showing the dropdown content */
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
                 }
+            }
+        }
+    }
+
+    function move() {
+        var elem = document.getElementById("myBar");
+        var width = 10;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = width * 1 + '%';
             }
         }
     }
