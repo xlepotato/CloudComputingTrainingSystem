@@ -171,9 +171,7 @@
                     <%--<td width="121" bgcolor="#999999">手机号</td>--%>
                     <%--<td width="121" bgcolor="999999">Last Login</td>--%>
                     <%--<td width="121" bgcolor="999999">Last Login</td>--%>
-                    <td width="50" bgcolor="999999">Update Info</td>
-                    <td width="50" bgcolor="#999999">Change Password</td>
-                    <td width="50" bgcolor="#999999">Remove User</td>
+                    <td span="3" width="120" bgcolor="#999999"> </td>
                 </tr>
                 <%
                     for (int i =0; i < ulist.size(); i++){
@@ -190,12 +188,12 @@
                     <%--<td>18201292522</td>--%>
                     <%--<td> <a href="updateStudentInfo.jsp">Update Info</a></td>--%>
                     <%--<td><a href="changeStudentPassword.jsp">Change Password</a></td>--%>
-                    <td width="50" bgcolor="999999"> <label><span>&nbsp;</span><button type="submit" name="detail" value="update" class="btn-link">Update Info</button></label></td>
+                    <td width="40"> <label><span>&nbsp;</span><button type="submit" name="detail" value="update" class="btn-link" style="height: 100%;color: black;background-color: transparent; border: transparent; align-content: center;">Update Info</button></label></td>
                     <%--<td width="50" bgcolor="999999"><a href="changeStudentPassword.jsp"> Change Password</a></td>--%>
                     <input type="hidden"  name="selectedUser" value="<%=ulist.get(i).getUsername()%>"/>
-                    <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link">Change Password</button></label></td>
+                    <td width="40"><label><span>&nbsp;</span><button type="submit" name="detail" value="change" class="btn-link" style="height: 100%;color: black;background-color: transparent; border: transparent">Change Password</button></label></td>
 
-                    <td width="50" bgcolor="999999"><label><span>&nbsp;</span><button type="submit" name="detail" value="remove" class="btn-link">Remove</button></label></td>
+                    <td width="40"><label><span>&nbsp;</span><button type="submit" name="detail" value="remove" class="btn-link" style="height: 100%;color: black;background-color: transparent; border: transparent; align-content: center;">Remove</button></label></td>
 
                 </tr>
                 </form>
