@@ -36,6 +36,44 @@
         line-height: 30px;
         color: white;
     }
+    div#frame {
+        background: url(assets/img/cork-board.png) no-repeat;
+        width: 1000px;
+        height: 800px;
+        padding-top: 35px;
+        padding-left: 350px;
+    }
+    .note {
+        width: 160px;
+        height: 160px;
+        box-shadow: 0 3px 6px rgba(0,0,0,.25);
+        -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+        -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+        float: left;
+        margin: 8px;
+        border: 1px solid rgba(0,0,0,.25);
+    }
+
+    .sticky1 {
+        transform: rotate(-3.5deg);
+        -webkit-transform: rotate(-3.5deg);
+        -moz-transform: rotate(-3.5deg);
+        background-color: #CBFAFA;
+    }
+    div#frame a:hover.note {
+        border: 1px solid rgba(0,0,0,.75);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    #myDIV {
+        width: auto;
+        height: auto;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+        background-image: url("assets/img/firecracker.JPG");
+    }
 </style>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
@@ -85,52 +123,22 @@
 </div>
 <!--Body section-->
 
-<div class="w3-container" style="padding:128px 16px" id="body">
+    <div class="w3-container" style="padding:128px 16px" id="body">
     <span class="w3-large w3-hide-small"></span><br>
-
-    <ul class="ch-grid">
-        <li>
-            <div class="ch-item ch-img-1">
-                <div class="ch-info">
-                    <h3><a href="chapter1.jsp">History Evolution</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div>
+    <div class="w3-center"><p>Your Progress</p>
+        <div id="myDIV" style="color: white">
+            <p>Enter message here.</p>
             <br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-2">
-                <div class="ch-info">
-                    <h3><a href="chapter2.jsp">Special Technology</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div>
-            <br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-3">
-                <div class="ch-info">
-                    <h3><a href="chapter3.jsp">Influence Range</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div><br>
-        </li>
-        <li>
-            <div class="ch-item ch-img-4">
-                <div class="ch-info">
-                    <h3><a href="chapter4.jsp">Industry Chain</a></h3>
-                    <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
-                </div>
-            </div><br>
-        </li>
-    </ul>
-    <p>Your Progress</p><br>
-    <div id="myProgress">
-        <div id="myBar">10%</div>
+    </div></div>
+        <div id="myProgress">
+            <div id="myBar">10%</div>
+        </div>
+        <br>
+        <button onclick="move()">Click Me</button><br>
     </div>
-    <br>
-    <button onclick="move()">Click Me</button>
-</div>
+
+
+
 </body>
 
 <!-- Footer -->
@@ -311,18 +319,18 @@
     }
 
     .ch-img-1 {
-        background-image: url(image/02.jpg);
+        background-image: url(assets/img/02.jpg);
     }
 
     .ch-img-2 {
-        background-image: url(image/03.jpg);
+        background-image: url(assets/img/03.jpg);
     }
 
     .ch-img-3 {
-        background-image: url(image/04.jpg);
+        background-image: url(assets/img/04.jpg);
     }
     .ch-img-4 {
-        background-image: url(image/05.jpg);
+        background-image: url(assets/img/05.jpg);
     }
 
     .ch-info {
@@ -431,6 +439,14 @@ toggle between hiding and showing the dropdown content */
                 elem.style.width = width + '%';
                 elem.innerHTML = width * 1  + '%';
             }
+        }
+    }
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
         }
     }
 
