@@ -23,6 +23,19 @@
     .w3-bar .w3-button {
         padding: 16px;
     }
+    #myProgress {
+        width: 100%;
+        background-color: #ddd;
+    }
+
+    #myBar {
+        width: 10%;
+        height: 30px;
+        background-color: #4CAF50;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+    }
 </style>
 <head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
@@ -79,50 +92,44 @@
         <li>
             <div class="ch-item ch-img-1">
                 <div class="ch-info">
-                    <h3>History Evolution</h3>
+                    <h3><a href="chapter1.jsp">History Evolution</a></h3>
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
             </div>
             <br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-blue w3-round-large" style="width:25%">25%</div>
-            </div><br>
         </li>
         <li>
             <div class="ch-item ch-img-2">
                 <div class="ch-info">
-                    <h3>Special Technology</h3>
+                    <h3><a href="chapter2.jsp">Special Technology</a></h3>
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
             </div>
             <br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-red w3-round-large" style="width:50%">50%</div>
-            </div><br>
         </li>
         <li>
             <div class="ch-item ch-img-3">
                 <div class="ch-info">
-                    <h3>Influence Range</h3>
+                    <h3><a href="chapter3.jsp">Influence Range</a></h3>
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
-            </div><br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-green w3-round-large" style="width:75%">75%</div>
             </div><br>
         </li>
         <li>
             <div class="ch-item ch-img-4">
                 <div class="ch-info">
-                    <h3>Industry Chain</h3>
+                    <h3><a href="chapter4.jsp">Industry Chain</a></h3>
                     <p>by Cloud Computing <a href="OnlineLearningLanding.jsp">Learn Now</a></p>
                 </div>
             </div><br>
-            <div class="w3-light-grey w3-round-large">
-                <div class="w3-container w3-yellow w3-round-large" style="width:100%">100%</div>
-            </div><br>
         </li>
     </ul>
+    <p>Your Progress</p><br>
+    <div id="myProgress">
+        <div id="myBar">10%</div>
+    </div>
+    <br>
+    <button onclick="move()">Click Me</button>
 </div>
 </body>
 
@@ -408,6 +415,21 @@ toggle between hiding and showing the dropdown content */
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
                 }
+            }
+        }
+    }
+
+    function move() {
+        var elem = document.getElementById("myBar");
+        var width = 10;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = width * 1  + '%';
             }
         }
     }
