@@ -39,7 +39,7 @@
         PrintWriter pw = response.getWriter();
         pw.println("<script type=\"text/javascript\">");
         pw.println("alert('You do not have the permission to access this page. Please login.')");
-        pw.println("location='initialIndex.jsp';");
+        pw.println("location='login.jsp';");
         pw.println("</script>");
 
     }
