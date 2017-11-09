@@ -347,7 +347,7 @@ Usage: For creating progress each time user pass by a website that gives progres
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT a.userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall FROM userdetail a INNER JOIN user b ON a.userId = b.userId WHERE username = ? GROUP BY a.userId";
+        dbQuery = "SELECT a.userId, userlevel, progress, lastBrowse, lastLogin, totalScore, totalScoreOverall, progressPercentage FROM userdetail a INNER JOIN user b ON a.userId = b.userId WHERE username = ? GROUP BY a.userId";
 
 
         pstmt = db.getPreparedStatement(dbQuery);

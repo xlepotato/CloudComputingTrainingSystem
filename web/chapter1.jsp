@@ -505,7 +505,7 @@
         double progressPercent = ExerciseUtility.computeScorePercentage(dbProgress,12);
         boolean success = u.updateProgress(dbProgress,progressPercent,userId);
         if(success){
-            u.createProgress()
+            u.createProgress(progressCriteria,userId);
         }
         }
         %>
