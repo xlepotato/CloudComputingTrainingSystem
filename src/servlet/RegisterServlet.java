@@ -45,7 +45,7 @@ public class RegisterServlet extends HttpServlet {
         if (confirmPassword.equals(password) && verifyJCaptcha){
             user.createUser(userId, username, userType, password, name, email);
             if (userType == 0){
-                user.createUserDetail(userId,0,"0%","0000-00-00 00:00:00", "-");
+                user.createUserDetail(userId,0,0,"0000-00-00 00:00:00", "-");
             }
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('Register success')");
