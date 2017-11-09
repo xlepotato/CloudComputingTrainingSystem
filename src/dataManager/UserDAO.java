@@ -420,6 +420,42 @@ public class UserDAO {
     }
 
 
+    public boolean updateProgress(int progress, double progressPercentage, String userId) {
+        // declare local variables
+        boolean success = false;
+        DBController db = new DBController();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        // step 1 - establish connection to database
+        db.getConnection();
+
+        // step 2 - declare the SQL statement
+        dbQuery = "UPDATE user SET progress = ?, progressPercentage WHERE userId = ?";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to update record using executeUpdate method
+        try {
+
+            pstmt.setInt(1, progress);
+            pstmt.setDouble(2, progressPercentage);
+            pstmt.setString(3, userId);
+
+
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(success);
+        // step 4 - close connection
+        db.terminate();
+
+        return success;
+    }
+
     public boolean updateUserLastLogin(String lastLogin,String userId) {
         // declare local variables
         boolean success = false;
