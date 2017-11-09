@@ -2,7 +2,8 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
 <%@ page import="entity.UserDetail" %>
-<%@ page import="wrapper.utility.ExerciseUtility" %><%--
+<%@ page import="wrapper.utility.ExerciseUtility" %>
+<%@ page import="java.text.DecimalFormat" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -489,7 +490,7 @@
         <%
 
 
-         int progressPoint = 1;
+         int progressPoint = 2;
          String progressCriteria = "chapter1";
 
         UserDAO u = new UserDAO();
@@ -501,8 +502,13 @@
         UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString()) ;
         int dbProgress = ud.getprogress();
 
+        DecimalFormat df = new DecimalFormat("#.00");
+
+
         dbProgress = dbProgress + progressPoint;
-        double progressPercent = ExerciseUtility.computeScorePercentage(dbProgress,12);
+        String formatPercent = df.format(ExerciseUtility.computeScorePercentage(dbProgress,12));
+        double progressPercent = Double.parseDouble(formatPercent);
+        System.out.println(progressPercent);
         boolean success = u.updateProgress(dbProgress,progressPercent,userId);
         if(success){
             u.createProgress(progressCriteria,userId);
