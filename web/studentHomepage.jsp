@@ -24,7 +24,7 @@
     .bgimg-1 {
         background-position: center;
         background-size: cover;
-        background-image: url("image/denglu.jpg");
+        background-image: url("assets/img/denglu.jpg");
         min-height: 100%;
     }
     .w3-bar .w3-button {
