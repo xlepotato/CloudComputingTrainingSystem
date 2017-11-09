@@ -1,4 +1,8 @@
-<%@ page import="java.io.PrintWriter" %><%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.UserDetail" %>
+<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="wrapper.utility.ExerciseUtility" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -39,7 +43,7 @@
         PrintWriter pw = response.getWriter();
         pw.println("<script type=\"text/javascript\">");
         pw.println("alert('You do not have the permission to access this page. Please login.')");
-        pw.println("location='initialIndex.jsp';");
+        pw.println("location='login.jsp';");
         pw.println("</script>");
 
     }
@@ -515,6 +519,35 @@
     };
 
     function openCity(evt, cityName) {
+        <%
+
+
+       int progressPoint = 2;
+       String progressCriteria = "chapter2";
+
+      UserDAO u = new UserDAO();
+
+      String userId = u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId();
+      if (u.retrieveProgressByUserIdAndProgressCriteria(userId,progressCriteria)!= null){
+
+      }else{
+      UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString()) ;
+      int dbProgress = ud.getprogress();
+
+      DecimalFormat df = new DecimalFormat("#.00");
+
+
+      dbProgress = dbProgress + progressPoint;
+      String formatPercent = df.format(ExerciseUtility.computeScorePercentage(dbProgress,12));
+      double progressPercent = Double.parseDouble(formatPercent);
+      System.out.println(progressPercent);
+      boolean success = u.updateProgress(dbProgress,progressPercent,userId);
+      if(success){
+          u.createProgress(progressCriteria,userId);
+      }
+      }
+      %>
+
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {

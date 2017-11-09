@@ -5,6 +5,7 @@ import dataManager.ScoreDAO;
 import dataManager.UserDAO;
 import entity.MCQ;
 import entity.Question;
+import entity.UserDetail;
 import wrapper.utility.ExerciseUtility;
 
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -132,6 +134,36 @@ public class Exercise2Servlet extends HttpServlet {
             double latestScore = ExerciseUtility.sumUpScore(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScore(),score);
             int latestScoreOverall = ExerciseUtility.sumUpScoreOverall(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScoreOverall(),q1.size());
             u.updateUserTotalScore(latestScore,latestScoreOverall,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
+
+
+            // ============= wip
+
+            int progressPoint = 3;
+            String progressCriteria = "quiz2";
+
+
+            String userId = u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId();
+            if (u.retrieveProgressByUserIdAndProgressCriteria(userId,progressCriteria)!= null){
+
+            }else{
+                UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString()) ;
+                int dbProgress = ud.getprogress();
+
+                DecimalFormat df = new DecimalFormat("#.00");
+
+
+                dbProgress = dbProgress + progressPoint;
+                String formatPercent = df.format(ExerciseUtility.computeScorePercentage(dbProgress,12));
+                double progressPercent = Double.parseDouble(formatPercent);
+                System.out.println(progressPercent);
+                boolean success = u.updateProgress(dbProgress,progressPercent,userId);
+                if(success){
+                    u.createProgress(progressCriteria,userId);
+                }
+            }
+            // ====================
+
+
 
             session.setAttribute("ex2Score",displayScore);
             session.setAttribute("grade", grade);
