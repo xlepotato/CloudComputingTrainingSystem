@@ -232,7 +232,7 @@ public class UserDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO userdetail VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?, 0, 0)";
+        dbQuery = "INSERT INTO userdetail VALUES(?, ?, ?, CURRENT_TIMESTAMP, ?, 0, 0, 0)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
@@ -263,7 +263,7 @@ public class UserDAO {
 Method Name: createProgress
 Usage: For creating progress each time user pass by a website that gives progress point
  */
-    public boolean createProgress(int progressId, String progressCriteria, String userId) {
+    public boolean createProgress(String progressCriteria, String userId) {
         // declare local variables
         boolean success = false;
         DBController db = new DBController();
@@ -274,14 +274,14 @@ Usage: For creating progress each time user pass by a website that gives progres
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "INSERT INTO progress(progressId, progressCriteria, userId) VALUES(?, ?, ?)";
+        dbQuery = "INSERT INTO progress(progressCriteria, userId) VALUES(?, ?)";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - to insert record using executeUpdate method
         try {
-            pstmt.setInt(1, progressId);
-            pstmt.setString(2, progressCriteria);
-            pstmt.setString(3, userId);
+
+            pstmt.setString(1, progressCriteria);
+            pstmt.setString(2, userId);
 
 
 

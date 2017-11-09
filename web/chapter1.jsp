@@ -1,4 +1,8 @@
-<%@ page import="java.io.PrintWriter" %><%--
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="dataManager.UserDAO" %>
+<%@ page import="entity.User" %>
+<%@ page import="entity.UserDetail" %>
+<%@ page import="wrapper.utility.ExerciseUtility" %><%--
   Created by IntelliJ IDEA.
   User: Ying
   Date: 3/11/2017
@@ -482,6 +486,29 @@
     };
 
     function openCity(evt, cityName) {
+        <%
+
+
+         int progressPoint = 1;
+         String progressCriteria = "chapter1";
+
+        UserDAO u = new UserDAO();
+
+        String userId = u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId();
+        if (u.retrieveProgressByUserIdAndProgressCriteria(userId,progressCriteria)!= null){
+
+        }else{
+        UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString()) ;
+        int dbProgress = ud.getprogress();
+
+        dbProgress = dbProgress + progressPoint;
+        double progressPercent = ExerciseUtility.computeScorePercentage(dbProgress,12);
+        boolean success = u.updateProgress(dbProgress,progressPercent,userId);
+        if(success){
+            u.createProgress()
+        }
+        }
+        %>
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
