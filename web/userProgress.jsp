@@ -104,11 +104,31 @@
 
     <div class="w3-center"><p>Your Progress</p>
         <div id="myDIV" style="color: white">
-            <p>Enter message here.</p>
+            <p>
+                <%
+                    if(ud.getProgressPercentage() >= 100){
+                        %>
+              Congratulations! You have completed the whole course of Cloud Computing training.
+                <%
+                    }else if (ud.getProgressPercentage() >=50 && ud.getProgressPercentage() < 100){
+                        %>
+                Keep it up! You are halfway getting close to finishing!
+                <%
+                    }else if (ud.getProgressPercentage() == 0){
+                        %>
+                Ahhh ... you have not started on anything. You should start now!
+                <%
+                    }else {
+                        %>
+                Doing great! Just keep it going.
+                <%
+                    }
+                %>
+            </p>
             <br>
         </div>
     </div>
-    <p>Your Progress</p><br>
+    <%--<p>Your Progress</p><br>--%>
     <div id="myProgress">
         <div id="myBar"><%=ud.getProgressPercentage()%></div>
     </div>
