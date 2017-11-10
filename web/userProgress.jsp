@@ -8,7 +8,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <title>Progress</title>
+
+<%
+    UserDAO u = new UserDAO();
+    UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
+%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -30,7 +36,7 @@
     }
 
     #myBar {
-        width: 10%;
+        width: 0%;
         height: 30px;
         background-color: #4CAF50;
         text-align: center;
@@ -38,15 +44,11 @@
         color: white;
     }
 </style>
-<head>
+
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
-<%
-       UserDAO u = new UserDAO();
-      UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString());
-    %>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -132,10 +134,10 @@
     </ul>
     <p>Your Progress</p><br>
     <div id="myProgress">
-        <div id="myBar"><%=ud.getProgressPercentage()%></div>
+        <div id="myBar"><%=ud.getProgressPercentage()%>%</div>
     </div>
     <br>
-    <button onclick="move()">Click Me</button>
+    <%--<button onclick="move()">Click Me</button>--%>
 </div>
 </body>
 
@@ -425,22 +427,58 @@ toggle between hiding and showing the dropdown content */
         }
     }
 
-    function move() {
+    <%--function move() {--%>
+        <%--var elem = document.getElementById("myBar");--%>
+        <%--var width = <%=ud.getProgressPercentage()%>;--%>
+        <%--var id = setInterval(frame, 10);--%>
+        <%--function frame() {--%>
+            <%--if (width >= 100) {--%>
+                <%--clearInterval(id);--%>
+            <%--} else {--%>
+                <%--width++;--%>
+                <%--elem.style.width = width + '%';--%>
+                <%--elem.innerHTML = width * 1  + '%';--%>
+            <%--}--%>
+        <%--}--%>
+    <%--}--%>
+
+    <%--$('#myBar').load(function() {--%>
+        <%--// Handler for .load() called.--%>
+        <%--var elem = document.getElementById("myBar");--%>
+        <%--var width = 0;--%>
+        <%--var id = setInterval(frame, 10);--%>
+        <%--function frame() {--%>
+            <%--if (width >= <%=ud.getProgressPercentage()%>) {--%>
+                <%--clearInterval(id);--%>
+            <%--} else {--%>
+                <%--width++;--%>
+                <%--elem.style.width = width + '%';--%>
+                <%--elem.innerHTML = width * 1  + '%';--%>
+            <%--}--%>
+        <%--}--%>
+    <%--});--%>
+
+    width = 0;
+    window.setInterval(
+        function() {
         var elem = document.getElementById("myBar");
-        var width = <%=ud.getProgressPercentage()%>;
-        var id = setInterval(frame, 10);
+
+        var id = setInterval(frame, 50);
         function frame() {
-            if (width >= 100) {
-                clearInterval(id);
-            } else {
-                width++;
-                elem.style.width = width + '%';
-                elem.innerHTML = width * 1  + '%';
-            }
+        if (width >= <%=ud.getProgressPercentage()%>) {
+        clearInterval(id);
+        } else {
+        width++;
+        elem.style.width = width + '%';
+        elem.innerHTML = width * 1  + '%';
+
         }
-    }
+
+        }
+        },
+       200);
 
 </script>
-
+<script src="assets/js/jquery.js"></script>
 </body>
 </html>
