@@ -12,9 +12,11 @@
 <%@ page import="dataManager.ScoreDAO" %>
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.Answer" %>
+<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <title>Quiz Results</title>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -31,8 +33,18 @@
         padding: 16px;
     }
 </style>
-<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <%
+        //Validation on authorised access
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='login.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
 </head>
 <body>
 <%

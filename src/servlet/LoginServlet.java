@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +51,11 @@ public class LoginServlet extends HttpServlet {
             }
         }else{
             System.out.println("Login failed");
-            response.sendRedirect("failAuthentication.jsp");
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('Login failed')");
+            pw.println("location='login.jsp';");
+            pw.println("</script>");
         }
 
     }

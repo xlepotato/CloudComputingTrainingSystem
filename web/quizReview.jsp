@@ -16,6 +16,7 @@
 <%@ page import="entity.Answer" %>
 <%@ page import="entity.Score" %>
 <%@ page import="wrapper.utility.ExerciseUtility" %>
+<%@ page import="java.io.PrintWriter" %>
 
 <html>
 <head>
@@ -40,6 +41,17 @@
 </style>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <%
+        //Validation on authorised access
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='login.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
+    <%
 
         ExerciseDAO exercise = new ExerciseDAO();
         ScoreDAO score = new ScoreDAO();
@@ -52,6 +64,7 @@
         String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
 
     %>
+
 </head>
 <body>
 

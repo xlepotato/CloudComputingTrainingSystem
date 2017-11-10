@@ -1,6 +1,7 @@
 <%@ page import="dataManager.UserDAO" %>
 <%@ page import="entity.User" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 6/11/2017
@@ -94,6 +95,17 @@
             text-align:center;
         }
     </style>
+    <%
+        //Validation on authorised access
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='login.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
 </head>
 <body>
 <%

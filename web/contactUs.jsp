@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Aloylim98
   Date: 7/11/2017
@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+<head>
 <title>Contact Us</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,8 +30,18 @@
         padding: 16px;
     }
 </style>
-<head>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <%
+        //Validation on authorised access
+        if (session.getAttribute("authorisedUser") == null){
+            PrintWriter pw = response.getWriter();
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('You do not have the permission to access this page. Please login.')");
+            pw.println("location='login.jsp';");
+            pw.println("</script>");
+
+        }
+    %>
 </head>
 <body background="">
 <script type="text/javascript" src="jquery.autotab.js"></script>
