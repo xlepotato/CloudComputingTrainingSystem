@@ -57,7 +57,7 @@
         PrintWriter pw = response.getWriter();
         pw.println("<script type=\"text/javascript\">");
         pw.println("alert('You have not added your details yet.')");
-        pw.println("location='homepage.jsp';");
+        pw.println("location='updateParticular.jsp';");
         pw.println("</script>");
     }
 %>
@@ -109,7 +109,7 @@
 <div class="w3-container" style="padding:128px 16px" id="body">
     <div class="w3-quarter">
         <a href="#"></a>
-        <div class="user ch-img-2" align="center"></div>
+        <%--<div class="user ch-img-2" align="center"></div>--%>
         <div id="main">
             <div class="form-style-2" align="left">
                 <%--<h1>Your awesome profile</h1>--%>
@@ -119,9 +119,9 @@
                 <%--</form>--%>
 
                 <div id="response"></div>
-                <%--<ul id="image-list">--%>
+                <ul id="image-list">
 
-                <%--</ul>--%>
+                </ul>
             </div>
         </div>
 
