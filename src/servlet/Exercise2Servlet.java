@@ -72,7 +72,7 @@ public class Exercise2Servlet extends HttpServlet {
 
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('Please answer all the question before submission')");
-            pw.println("location='onlinePracticeEx2.jsp';");
+            pw.println("location='quiz2.jsp';");
             pw.println("</script>");
 
 //            getServletContext().getRequestDispatcher("onlinePracticeEx2.jsp").forward(request, response);
