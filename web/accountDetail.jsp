@@ -39,7 +39,7 @@
             PrintWriter pw = response.getWriter();
             pw.println("<script type=\"text/javascript\">");
             pw.println("alert('You do not have the permission to access this page. Please login.')");
-            pw.println("location='initialIndex.jsp';");
+            pw.println("location='login.jsp';");
             pw.println("</script>");
 
         }
@@ -112,16 +112,16 @@
         <div class="user ch-img-2" align="center"></div>
         <div id="main">
             <div class="form-style-2" align="left">
-                <h1>Your awesome profile</h1>
-                <form method="post" enctype="multipart/form-data" action="upload.php">
-                    <input type="file" name="images" id="images" multiple/><br><br>
-                    <button type="submit" id="btn"><span>&nbsp;Upload Profile Picture!</span></button>
-                </form>
+                <%--<h1>Your awesome profile</h1>--%>
+                <%--<form method="post" enctype="multipart/form-data" action="upload.php">--%>
+                    <%--<input type="file" name="images" id="images" multiple/><br><br>--%>
+                    <%--<button type="submit" id="btn"><span>&nbsp;Upload Profile Picture!</span></button>--%>
+                <%--</form>--%>
 
                 <div id="response"></div>
-                <ul id="image-list">
+                <%--<ul id="image-list">--%>
 
-                </ul>
+                <%--</ul>--%>
             </div>
         </div>
 
