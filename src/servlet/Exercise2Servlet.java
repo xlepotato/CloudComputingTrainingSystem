@@ -30,19 +30,14 @@ public class Exercise2Servlet extends HttpServlet {
         ExerciseDAO ex = new ExerciseDAO();
         UserDAO u = new UserDAO();
         ScoreDAO s = new ScoreDAO();
-        //   ArrayList<Exercise> exList = ex.retrieveAllExercise();
         int exerciseNoFromFrontEnd = Integer.parseInt(session.getAttribute("exercy").toString());
         System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
         String msg = "";
-    //    String [] checkboxValue = new String[ex.retrieveQuestion(exerciseNoFromFrontEnd).size()];
         int score = 0;
-//        System.out.println("exercise Size: " + exList.size());
-//        for (int q = 0; q < exList.size(); q++ ) {
         ArrayList<Question> q1 = ex.retrieveQuestion(exerciseNoFromFrontEnd);
         System.out.println(q1.size());
         for (int i = 0; i < q1.size(); i++ ) {
             ArrayList<String> arrList = new ArrayList<String>();
-//                String qns [] = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
             try {
                 String[] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
 
@@ -54,15 +49,12 @@ public class Exercise2Servlet extends HttpServlet {
                 arrList.add(answer);
             }
 
-          //  arrList.add(checkboxValue);
             System.out.println(q1.get(i).getQuestionId() + "qns id @@@@@@@@@@@@@@@@");
             request.setAttribute("userInput", answer);
-            //   System.out.println(arrList.size());
             }catch(NullPointerException e){
                 msg = "There are field that is not filled up";
             }
             for (int a = 0; a < arrList.size(); a++) {
-                //    System.out.println(arrList.get(a) + " choice");
                 if (arrList.get(a) == null){
                     msg = "There are field that is not filled up";
                 }
@@ -81,32 +73,21 @@ public class Exercise2Servlet extends HttpServlet {
             pw.println("location='quiz2.jsp';");
             pw.println("</script>");
 
-//            getServletContext().getRequestDispatcher("onlinePracticeEx2.jsp").forward(request, response);
 
         }else{
 
-            // To be continued at here :DDD
+
             ArrayList<String> arrList = new ArrayList<>();
-
-
-//            for (int q = 0; q < exList.size(); q++ ) {
-//           int exerciseNoFromFrontEnd = Integer.parseInt(request.getAttribute("exerciseNo").toString());
-//           System.out.println("exerciseNoFromFrontEnd ~ " + exerciseNoFromFrontEnd);
-
-            //  q1 = ex.retrieveQuestion(exerciseNoFromFrontEnd);
             for (int i = 0; i < q1.size(); i++ ) {
                 System.out.println(i + " i atm ~ ");
                 System.out.println(q1.get(i).getQuestionId() + " qns id currently retrieving qns ");
-          //      arrList.add(request.getParameter("selectedChoice" + q1.get(i).getQuestionId()));
+
                 String answer = "";
 
                 String [] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
 
-            //    arrList.add(checkboxValue);
+
                 for(int n = 0; n<checkboxValue.length;n++){
-//                    String answer = "";
-//                    answer = answer + checkboxValue[n];
-//                    System.out.println(answer + " answer !!!");
                     answer = answer + checkboxValue[n];
                     arrList.add(answer);
 
@@ -115,13 +96,11 @@ public class Exercise2Servlet extends HttpServlet {
                 s.createAnswer(u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId(),q1.get(i).getQuestionId(),answer,exerciseNoFromFrontEnd);
 
 
-                //    while (i < q1.size()) {
 
                 //*NOTE: change QuestionNo to QuestionId
                 ArrayList<MCQ> mcqList = ex.retrieveMCQOption(q1.get(i).getQuestionId());
 
                 System.out.println(answer + " **** user given input");
-                //       System.out.println(mcqList.get(i).getOption() + " *** right answer taken from DB");
                 System.out.println(q1.get(i).getAnswer() + " *** right answer taken from DB");
                 if (answer.equals(q1.get(i).getAnswer())) {
                     System.out.println(answer + " user given input");
@@ -140,24 +119,15 @@ public class Exercise2Servlet extends HttpServlet {
             double latestScore = ExerciseUtility.sumUpScore(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScore(),score);
             int latestScoreOverall = ExerciseUtility.sumUpScoreOverall(u.retrieveUserDetailByUsername(session.getAttribute("username").toString()).getTotalScoreOverall(),q1.size());
             u.updateUserTotalScore(latestScore,latestScoreOverall,u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
-
-
-            // ============= wip
-
             int progressPoint = 3;
             String progressCriteria = "quiz2";
-
-
             String userId = u.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId();
             if (u.retrieveProgressByUserIdAndProgressCriteria(userId,progressCriteria)!= null){
 
             }else{
                 UserDetail ud = u.retrieveUserDetailByUsername(session.getAttribute("username").toString()) ;
                 int dbProgress = ud.getprogress();
-
                 DecimalFormat df = new DecimalFormat("#.00");
-
-
                 dbProgress = dbProgress + progressPoint;
                 String formatPercent = df.format(ExerciseUtility.computeScorePercentage(dbProgress,12));
                 double progressPercent = Double.parseDouble(formatPercent);
@@ -167,15 +137,10 @@ public class Exercise2Servlet extends HttpServlet {
                     u.createProgress(progressCriteria,userId);
                 }
             }
-            // ====================
-
-
 
             session.setAttribute("ex2Score",displayScore);
             session.setAttribute("grade", grade);
             session.setAttribute("servlet","ex2");
-
-         //   getServletContext().getRequestDispatcher("/scores.jsp").forward(request, response);
             response.sendRedirect("quizResult.jsp");
         }
 
