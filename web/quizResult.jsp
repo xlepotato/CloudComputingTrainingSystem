@@ -124,24 +124,14 @@
                 <th>成绩级别: <%=session.getAttribute("grade")%></th>
             </tr>
         </table>
-        <%--<tr>--%>
-        <%--<td> asd </td>--%>
-        <%--<td> aaa </td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td> aa </td>--%>
-        <%--<td> sss </td>--%>
-        <%--</tr>--%>
         <br>
         <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
         <%
-            //  exerciseNo = exList.get(i).getexerciseNo();
             ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
             System.out.println(exerciseNo + " - exerciseNo");
             System.out.println(qnsList.size() + " qnsList size");
             for (int a = 0; a < qnsList.size(); a++ ) {
                 qnsList.get(a).getQuestionDetail();
-                //    System.out.println(qnsList.get(a).getQuestionDetail() + " details");
                 ArrayList<MCQ> mcqList = exercise.retrieveMCQOption(qnsList.get(a).getQuestionId());
         %>
         <%=qnsList.get(a).getQuestionNo()%>. <%=qnsList.get(a).getQuestionDetail()%>
@@ -155,10 +145,7 @@
     %>
         <input type="radio" name="<%=parameterName%>" id="<%=idName%>" value="<%=mcqList.get(m).getOption()%>">
             <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
-
             <%
-
         if(m == (mcqList.size()-1)){
     %> <br><br>
             <%
@@ -169,7 +156,6 @@
         <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
         <%
             }
-
         %>
         </p>
 
