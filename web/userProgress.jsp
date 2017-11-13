@@ -142,7 +142,7 @@
     </div>
     <%--<p>Your Progress</p><br>--%>
     <div id="myProgress">
-        <div id="myBar"><%=ud.getProgressPercentage()%></div>
+        <div id="myBar"><%=ud.getProgressPercentage()%>%</div>
     </div>
     <br>
     <%--<button onclick="move()">Click Me</button>--%>

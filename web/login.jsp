@@ -58,12 +58,12 @@
                                                                                                          name="password"
                                                                                                          value="" required/></label>
 
-                        <label for><span>Account Type</span>
-                            <select name="field4" class="select-field">
-                                <option value="student">Student</option>
-                                <option value="teacher">Teacher</option>
-                                <option value="admin">Admin</option>
-                            </select></label>
+                        <%--<label for><span>Account Type</span>--%>
+                            <%--<select name="field4" class="select-field">--%>
+                                <%--<option value="student">Student</option>--%>
+                                <%--<option value="teacher">Teacher</option>--%>
+                                <%--<option value="admin">Admin</option>--%>
+                            <%--</select></label>--%>
 
 
                         <label><span>&nbsp;</span><input type="submit" value="Submit"/></label>
