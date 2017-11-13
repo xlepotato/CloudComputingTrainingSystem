@@ -43,7 +43,9 @@ public class Exercise2Servlet extends HttpServlet {
         for (int i = 0; i < q1.size(); i++ ) {
             ArrayList<String> arrList = new ArrayList<String>();
 //                String qns [] = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
-            String [] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+            try {
+                String[] checkboxValue = request.getParameterValues("selectedChoice" + q1.get(i).getQuestionId());
+
             String answer = "";
             for(int n = 0; n<checkboxValue.length;n++){
 
@@ -56,6 +58,9 @@ public class Exercise2Servlet extends HttpServlet {
             System.out.println(q1.get(i).getQuestionId() + "qns id @@@@@@@@@@@@@@@@");
             request.setAttribute("userInput", answer);
             //   System.out.println(arrList.size());
+            }catch(NullPointerException e){
+                msg = "There are field that is not filled up";
+            }
             for (int a = 0; a < arrList.size(); a++) {
                 //    System.out.println(arrList.get(a) + " choice");
                 if (arrList.get(a) == null){
@@ -64,6 +69,7 @@ public class Exercise2Servlet extends HttpServlet {
 
 
             }
+
         }
         //   }
 
