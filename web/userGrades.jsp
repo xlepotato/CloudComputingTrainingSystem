@@ -78,26 +78,14 @@
     System.out.println(scoreSize + " DIFF SCORE SIZE");
     User a = user.retrieveUserByUsername(username);
     UserDetail ud = user.retrieveUserDetailByUsername(username);
-//    if (ud == null){
-//        PrintWriter pw = response.getWriter();
-//        pw.println("<script type=\"text/javascript\">");
-//        pw.println("alert('You have not added your details yet.')");
-//        pw.println("location='index.jsp';");
-//        pw.println("</script>");
-//    }
     String grade = "";
-
         String tempOverall = (Integer.toString(ud.getTotalScoreOverall()));
         System.out.println("Tryy overall int " + tempOverall);
        grade = ExerciseUtility.computeGrade(ud.getTotalScore(), ud.getTotalScoreOverall());
        if (tempOverall.equals("0")){
            grade = "Not Applicable";
        }
-
     ArrayList<Score> scoreList = s.retrieveAllScoreDoneByAStudent(user.retrieveUserByUsername(session.getAttribute("username").toString()).getUserId());
-    System.out.println(scoreList.size()+ " SIZEEE NYa");
-
-
 %>
 
 <!-- Navbar (sit on top) -->
