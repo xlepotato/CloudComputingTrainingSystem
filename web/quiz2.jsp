@@ -52,7 +52,6 @@
     ScoreDAO s = new ScoreDAO();
     UserDAO u = new UserDAO();
     ExerciseDAO exercise = new ExerciseDAO();
-    //  ArrayList<Exercise> exList = exercise.retrieveAllExercise();
     int exerciseNo = 2;
     session.setAttribute("exercy", exerciseNo);
 
@@ -117,17 +116,12 @@
         </tr>
         <tr>
             <td><%
-                //  String exer = "";
                 String exer = exercise.retrieveExerciseByExerciseNo(exerciseNo).getexerciseName();
-//    for (int i = 0; i < exList.size(); i ++ ) {
-//        System.out.println(exList.get(i).getexerciseName() + " exercise Name !! ");
-//
-//        exer =  exList.get(1).getexerciseName();
+
             %>
                 <br>
                 <h1> <%=exerciseNo%>.  <%=exer%></h1> <br> <br>
                 <%
-                    //  exerciseNo = exList.get(i).getexerciseNo();
                     ArrayList<Question> qnsList = exercise.retrieveQuestion(exerciseNo);
                     System.out.println(exerciseNo + " - exerciseNo");
                     System.out.println(qnsList.size() + " qnsList size");
