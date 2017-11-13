@@ -219,9 +219,7 @@
                 String idName = parameterName + mcqList.get(m).getOption();
             %>
         <input type="checkbox" id="<%=idName%>" name="<%=parameterName%>" value="<%=mcqList.get(m).getOption()%>"> <%=mcqList.get(m).getOption()%>. <%=mcqList.get(m).getOptionDetail()%>
-
             <%
-
                 if(m == (mcqList.size()-1)){
             %> <br><br>
             <%
@@ -231,24 +229,17 @@
                     String answer = "";
                     for (int z = 0; z < ansList.size(); z++){
                         answer = answer + ansList.get(z).getChosenOptionLetter();
-//                        System.out.println(answer + "this is important yoooo");
                     }
                     %>
         <br>  Selected choice: <%=answer%>
         <br>  Correct answer: <%=qnsList.get(a).getAnswer()%> <br><br> <hr>
         <%
             }
-
         %>
-
         </p>
         <%
             }
         %>
-
-
-
-
     </div>
 </form>
 
