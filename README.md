@@ -1,2 +1,2 @@
 # CloudComputingTrainingSystem
-BITC - NYP collaboration
+BITC
